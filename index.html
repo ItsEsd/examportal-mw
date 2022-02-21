@@ -1,0 +1,622 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exam Portal | MASTROWALL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="/images/mwalllogo.png" type="image/png" sizes="16x16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+   <div id="flsback"></div> 
+    <div id="stuinfo" align='center' style="display: none;">
+      <div><img style="width:160px;padding-top:40px;padding-bottom:40px;pointer-events: none;" src="/images/mwalllogo.png"/></div>
+      <div id="stubio"></div>
+      
+  <button id="stbtn" class="btn btn-danger" onclick="timer();$('#stuinfo').hide();document.getElementById('qcontainer').style.display ='block';">Start</button>
+</div>
+    <div id="expdash" class="row">
+<div id="left-block" class="col-md-6">
+<img src="/images/exam-portal.png" id="leftimg">
+</div>
+    <div id="right-block" class="col-md-6">
+    <form id="expone" onsubmit="return false;">
+<label>Exam ID:</label>
+<input class="form-control" id="chexid" required/><br>
+<label>Exam Pass:</label>
+<input class="form-control" id="chpass" required/><br>
+
+<input type="submit" class="btn btn-warning" value="Continue" style="float:right;">
+<br><p>** Answers will be submitted automatically after allocated time</p>
+    </form>
+    <div id="enrollid" style="display:none;">
+      <div id="expdetails"></div>
+      <form  id="exptwo" onsubmit="return false;">
+      <label>Enrollment ID:</label>
+      <input class="form-control" id="chenid" required /><br>
+      <input type="submit" class="btn btn-warning" value="Go"  style="float:right;">
+    </form></div>
+      <div id="loader-vq" class="spinner-border text-light" style="display: none;"></div>
+<p id="troomlimit"></p>
+  </div>
+  <div align="right" id="info">
+      <span><a target="_blank" href="https://mastrowall.com/privacy-and-terms.html">Privacy and Terms</a></span><br>
+      <span><a target="_blank" href="https://mastrowall.com">M A S T R O W A L L</a></span>
+  </div>
+</div>  
+ <div id="qcontainer" align="center" style="display:none;">
+ <input id="tmili" style="display:none;">
+ <h4 id="timer"><time>00:00:00</time></h4>
+<div id="examheader" align="left">
+<div class="enrhead"><img src="/images/mwalllogo.png" id="examheaderlogo" ></div>
+<div id="enrname" class="enrhead"></div>
+<div id="enrmail" class="enrhead"></div>
+<div id="testtimer" class="enrhead_right">
+  <span id="timeleft">00:00</span><span>Min</span>
+</div>
+</div>
+<div align="center">
+    <div id='boxexp-one' class="boxexp">
+      <div id="viewqset"></div>
+    </div>
+    <div id="boxexp-two" class="boxexp">
+     <div id="quesindex"></div>
+    </div>
+
+    <div id="boxexp-three" class="boxexp">
+    <div id="calculatorbtn">
+      <button class="btn btn-success" onclick="$('#calculator').toggle();">Calculator</button>
+    </div>
+      <div id="calculator">
+      <table border="1">
+        <tr>
+          <td colspan="3"><input type="text" id="result" disabled/></td>
+          <td><input type="button" value="c" onclick="clr()"/> </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="1" onclick="dis('1')"/> </td>
+          <td><input type="button" value="2" onclick="dis('2')"/> </td>
+          <td><input type="button" value="3" onclick="dis('3')"/> </td>
+          <td><input type="button" value="/" onclick="dis('/')"/> </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="dis('4')"/> </td>
+          <td><input type="button" value="5" onclick="dis('5')"/> </td>
+          <td><input type="button" value="6" onclick="dis('6')"/> </td>
+          <td><input type="button" value="-" onclick="dis('-')"/> </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="dis('7')"/> </td>
+          <td><input type="button" value="8" onclick="dis('8')"/> </td>
+          <td><input type="button" value="9" onclick="dis('9')"/> </td>
+          <td><input type="button" value="+" onclick="dis('+')"/> </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="." onclick="dis('.')"/> </td>
+          <td><input type="button" value="0" onclick="dis('0')"/> </td>
+          <td><input type="button" value="=" onclick="solve()"/> </td>
+          <td><input type="button" value="*" onclick="dis('*')"/> </td>
+        </tr>
+      </table>
+    </div>
+     </div>
+</div>
+
+    <form id="qnstfrm" onsubmit="return false;" style="display:none;">
+      <input type="submit" value="Submit"/>
+      <input id="jsonqnst" /></form>  
+  </div>
+<div id="feedback" >
+  <center><div style="margin:10px;box-shadow:0px 2px 4px 0px grey;max-width:600px;padding:40px;">
+    <img src="/images/mwalllogo.png" id="leftimg" style="width:100px;margin-bottom:20px;">
+    <h1>Thank you</h1><br>
+    <h2>Your test is completed</h2><br>
+    <h4>M A S T R O W A L L</h4><br>
+    <P style="font-weight:bold;">|| An Art of Learning ||</P>
+    <button class="btn btn-primary" id="testscore" style="font-size:20px;" onclick="checkresult();">Check Score</button>
+    <div id="crtans" style="display: none;padding-top:20px;"></div>
+  </div>
+    <div id="loader-res" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
+  </center>
+</div>
+<section>
+  <div id="textcomp"><center>
+    <div id="loader-w" class="spinner-border text-light" style="display: block;margin-top:300px;"></div>
+  </center></div>
+</section>
+ </body>
+ <script src="/js/tt-one.js"></script>
+ <script src="/js/timer.js"></script>
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</html>
