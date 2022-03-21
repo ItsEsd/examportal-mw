@@ -1,0 +1,122 @@
+
+    <section>
+    <div id="createid" class="otserviceinfo"><div class="otservprp">
+      <span class="closeot" style="float:right;" title="Close">X</span>
+      <h4>Create Exam ID</h4><hr style="border-width: 2px;border-color:#ffffff;">
+    <form id="cridone" target="hdnfrm" autocomplete="off">
+      <div id="crtestone">
+      <label>Name:</label>
+      <input type="text" class="form-control" id="eduname" placeholder="Full name" required/><br/>
+      <label>Title:</label>
+      <input type="text" class="form-control" id="extitle" placeholder="(e.g. Mathematics - Class 10)" required/><br/>
+      <label>Test Description:</label>
+      <input type="text" class="form-control" id="exdescp" placeholder="(e.g. Permutation & Combination)" required/><br/>
+      <label>Test Duration:</label><br/>
+     <div>
+       <select class="form-control tdur" id="timedurhr" class='timedur' required><option value="0">0</option>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option></select><span style='padding:4px;font-size: 14px;'>Hour</span>
+      <select type="number" class="form-control tdur" id="timedurmin" class='timedur' required>
+        <option value="00">00</option>
+        <option value="05">05</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+        <option value="40">40</option>
+        <option value="45">45</option>
+        <option value="50">50</option>
+        <option value="55">55</option>
+        <option value="60">60</option></select><span style='padding:4px;font-size: 14px;'>Minutes</span></div><br/>
+      <label>Email:</label>
+      <input type="email" class="form-control" id="edueid" placeholder="sample@example.xyz" required/><br/>
+      <input type="submit" class="submitform"  value="Next">
+     
+      </div></form> 
+      <form id="cridtwo" target="hdnfrm" style="display: none;" autocomplete="off">
+        <input  class="form-control" id="timestr" style="display: none;" />
+      <input class="form-control" id="totalsec" style="display: none;" />
+      <div id="crtestthree">
+    <label>Your Key</label>
+    <input type="password" class="form-control" id="createpasskey" placeholder="Your passkey (Do not share)" required/><br/>
+    <label>Confirm Key</label>
+    <span id="matched" style="float:right;color: #161616;margin-right:10px;"></span>
+    <input type="password"class="form-control"  id="confirmpasskey" placeholder="Confirm passkey"required/><br/>
+    <label>Exam Pass For Students</label>
+    <input type="password" class="form-control" id="exampass"  oninput="dateUp();" placeholder="Student Pass (Share with your students)" required/><br/>
+    <input type="submit" value="Create Exam ID" class="submitform"  id="psconfirmed" disabled/><input type="button" class="submitform"  value="Back" onclick="$('#cridone').show();$('#cridtwo').hide();" style="margin-left:6px;" />
+    <input id="examid" style="display: none;"/>
+    <input id="dateQ" style="display: none;"/>
+      </div>
+    <div id="crtestfour" style="display: none;">
+    <p id="examidFin"></p>
+    <p id="tsdur"></p>
+    <p id="edunameFin"></p>
+    <p id="examtitleFin"></p>
+    <p id="examdescpFin"></p>
+    <p id="mykeyFin"></p>
+    <p id="exampassFin"></p>
+    
+    <hr>
+    <div id="studentpassdoc" style="display:none;"></div>
+    <div id="mailsented"></div>
+    <button class="submitform" id="svprtstpass">Save / Print Student Pass</button>
+    </div>
+    </form>
+    <div class="otservicesidefoot" ><hr>
+      <p class="nbforpreq">** Students have to assign themselves before each exam</p><input type="button" class="closeot"  value="Close">
+    <!--<p class="nbforpreq"><span style="font-size: 14;font-weight: bold;">** Maximum Limit</span> of Questions in a Set is <span style="font-size: 14;font-weight: bold;">40</span> (Depends on Question Set)</p>
+    <p><span style="font-size: 14;font-weight: bold;">** Test Room</span> size is <span style="font-size: 14;font-weight: bold;">60 Students</span> (Create New Exam ID for same test/exam)</p>
+    ** <span style="font-size: 14;font-weight: bold;">Exam ID</span> and Verification Code will be sent to your Email. Once you have got the ID and Code you can create a <span style="font-size: 14;font-weight: bold;">Pass Key</span> for next process to create/ edit a Test/ Question Set 
+    <p>** Once you have got the<span style="font-size: 14;font-weight: bold;"> Exam ID</span> and Key you can <span style="font-size: 14;font-weight: bold;">create a Test/ Question Set</span></p>-->
+    <hr>
+    </div></div>
+    </div>
+    
+    <div id="prereq" class="otserviceinfo"><div class="otservprp">
+      <span class="closeot" style="float:right;" title="Close">X</span>
+      <h2>Prerequisite</h2><hr style="border-width: 2px;border-color:#ffffff;"><br>
+    <ul style="font-size:14px;">
+    <li>Uninterrupted Power Supply </li>
+    <li>Uninterrupted Internet Connection </li>
+    <li>Question Set, with options and Answers</li>
+    <li>Image Files </li></ul>
+    <div class="otservicesidefoot"><hr>
+    <p class="nbforpreq">** Question/ Test set <span style="font-weight: bold;">can not be modified</span> once it is uploaded</p>
+    <p class="nbforpreq">** <span style="font-weight: bold;">Responsibly Share Exam Pass</span> with students </p>
+    <input type="button" class="closeot"  value="Close">
+    <hr></div></div>
+    </div>
+    <div id="contactdesk" class="otserviceinfo"><div class="otservprp">
+      <span class="closeot" style="float:right;" title="Close">X</span>
+      <h2>MASTRO Desk</h2><hr style="border-width: 2px;border-color:#ffffff;">
+      <form id="mquearytest" autocomplete="off" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScArmJS4wwvPxmoG7D2g-4_YhomfkLXgDuQt7H6TyeOETfa3w/formResponse?" target="hidden_iframe" >
+        <label>Email:</label>
+        <input type="email" class="form-control" id="entry.299356062" placeholder="e.g. sample@example.xyz" name="entry.299356062" required/><br/>
+        <label>Query:</label>
+        <textarea type="text" class="form-control" id="entry.1562502638" placeholder=".." name="entry.1562502638"  required></textarea><br/>
+        <input type="submit" class="submitform"  id="submittodesk" value="Send">
+       
+      </form>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <div style="padding:20px;padding-top:60px;display: none;" id="qmsgsent"><p style="font-size:16px;color:#000000"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+      </svg> Message sent successfully</p></div>
+      <div class="otservicesidefoot"><hr>
+      <p class="nbforpreq">** <span style="font-weight: bold;">Coordinator</span> will connect you within <span style="font-weight: bold;">24 hours</span></p> <input type="button" class="closeot"  value="Close">
+      <hr></div>
+    </div>
+    </div>
+
+    
+<div id="exportalpromo"align="center"></div>
+<div id="enlrgimg" align="center">
+  <img id="emprimgenlrg" src="#">
+</div>
+      </section>
+      <div id="falsesecback"></div>
+      <script src="/js/crtest-one.js"></script>
+      <script src="/js/cexms.js"></script>
