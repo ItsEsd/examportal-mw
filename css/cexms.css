@@ -1,0 +1,437 @@
+.otservice{
+    top:120px;
+    left:0;
+    position: fixed;
+    padding:10px;
+    width:100%;
+  z-index:11;
+  display: none;
+  }
+.otservice button{
+    margin-bottom: 6px;
+}
+#ttest hr{
+    border-width:2px;
+    border-color:#d41ad469;
+}
+  #ttest{
+    max-width:600px;
+    padding:20px;
+    background-image:linear-gradient(-45deg,#141414,#8210df);
+    color:white;
+    border-radius:6px;
+  }
+  .tbtn{width:100%;
+  border:none;
+margin-bottom:10px;
+margin-top:10px;
+height:40px;
+font-size: 16px;
+cursor: pointer;
+}
+.tbtn:hover{
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}
+.tbtn:focus,.tbtn:active{outline:none;}
+
+#ttestinfo span{
+  font-size: 16px;
+cursor:pointer;
+padding-right:10px;}
+.otservprp{
+  padding:10px;
+  max-width:600px;
+  height:100%;
+  overflow-y: auto;
+  padding-right:10px;
+  border-right: 2px solid #00000044;
+}
+
+.otservprp::-webkit-scrollbar{
+    width:6px;
+  }.otservprp::-webkit-scrollbar-thumb{
+    background-color: #18181bb0;
+  }
+.otserviceinfo{
+  max-width:1040px;
+  padding:10px;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  position: fixed;
+  background-color:white;
+  z-index:11;
+  background-image: linear-gradient(-45deg,#dddbdd,#3d3e42);
+  color:white;
+  display:none;
+}
+
+#otserviceexamid{
+    display: none;
+    width: 100%;
+    top:0;
+    height: 100%;
+    position: fixed;
+    background-color: #ffffff;
+    z-index:100;
+    overflow-y: auto;
+  }
+  #falsesecback{
+    top:0px;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+  opacity: 0.9;
+  display:none;
+  z-index: 10;
+  border-bottom: 4px solid #2727ee86;
+  }
+
+  .closeotserv{
+    float:right;
+    background-color: #ffffffbe;
+    font-size: 14px;
+    padding: 2px 6px;
+    color:red;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .closeotserv:hover{
+  opacity: 0.9;
+  
+  }
+  .tdur{
+    max-width:80px;
+    display: inline-block;
+  }
+  
+  
+.closeot{
+    padding: 4px 14px;
+    background-color: #e20b0b;
+    border:0px;
+    color:white;
+    cursor: pointer;
+    }
+    .closeot:hover{
+      background-color: rgb(255, 56, 56);
+    }
+
+    #exportalpromo{
+        padding:0px;
+        top:0px;
+        right:0px;
+        position: fixed;
+        width:100%;
+        max-width:31%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #021477;
+        display: none;
+        z-index: 20;
+      }
+      #exportalpromo::-webkit-scrollbar{
+        width:6px;
+      }
+      .exmpproimg{
+      display: block;
+      max-width: 600px;
+      padding:10px;
+      width:100%;
+      cursor: pointer;
+      }
+      .exmpproimg:hover{
+       -webkit-transform: scale(1.04); 
+       transform: scale(1.04);
+       border: 2px solid white;
+      }
+      
+      #enlrgimg{
+        width: 100%;
+        height: 100%;
+        top:0px;
+        right:0px;
+        position: fixed;
+        overflow: hidden;
+      padding:0px;
+      background-color: #060e3db6;
+      display: none;z-index: 20;
+      }
+      #enlrgimg img{
+      top:0px; 
+      left:0px; 
+      position: absolute;
+      width:100%;
+      height: 100%;
+      object-fit: contain;
+      }
+      #createid label{font-size: 14px;}
+      .otservprp .form-control{
+        font-size: 14px;
+        height:40px;
+        box-shadow: none;
+        border: 0px;
+      }
+      #mquearytest textarea{
+        height:200px;
+        overflow-y: auto;
+      }
+      .otservicesidefoot{
+        font-size:12px;
+        padding-top:40px;
+        color:#000000ef;
+      }
+      #contactdesk label{font-size: 14px;}
+
+      
+#falsesecback-mq{
+  top:0px;
+  left: 0px;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color:black;
+  opacity: 0.9;
+  display:none;
+  z-index: 100;
+}
+
+#continueexamid{
+  display: none;
+  width: 100%;
+  min-height:200px;
+  top:160px;
+  left:0;
+  position: fixed;
+  z-index:100;
+  overflow-y: hidden;
+}
+.exidbtn{
+  font-size: 14px;margin-top:10px;
+}
+.exidbtn:hover{
+
+  opacity: 0.9;
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+
+}
+
+.exidbtn:active{
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+#formcontainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+#previewquestion{
+top:0px;
+right:0px;
+position: fixed;
+width:100%;
+max-width:40%;
+overflow-y: auto;
+}
+
+#previewr{
+height:300px;
+overflow-y: auto;
+border-bottom:1px solid #555;
+/*resize: vertical;*/
+}
+
+#previews{
+  height:325px;
+  overflow-y: auto;
+  /*resize: vertical;*/
+  }
+  
+#previewr::-webkit-scrollbar {
+  width: 10px;
+}
+#previews::-webkit-scrollbar {
+  width: 10px;
+}
+
+#preqsetbtn,#preqbtn{
+  font-size: 14px;
+  border-radius: 0px;
+  width:160px;
+  height:30px;
+  
+}
+
+.closeqform{
+  height:30px;
+  border-radius: 0px;
+  padding:4px 16px;
+  color:white;
+  background-color: #e02121;
+  font-size:14px;
+  cursor: pointer;
+}
+.closeqform:hover{
+  opacity: 0.9;
+  color:white;
+}
+.opbtn{
+  border:1px solid #212122;
+  color:black;
+  font-size: 14px;
+  background-color: #ededed;
+  padding:4px 6px;
+  margin-right:6px;
+  margin-bottom:6px;
+  outline:none;
+}
+.opbtn:active,.opbtn:focus{outline:none;
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);}
+.opbtn:hover{
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  }
+.preqimg{
+float:right;
+max-width:400px;
+padding-top:10px;
+max-width:400px;
+}
+.propimg{
+  float:left;
+  padding-top:10px;
+}
+.preans{
+  padding:10px;
+font-size: 16px;
+
+}
+#conq{
+  height:240px;
+  border:2px solid #6a67fa;
+  overflow-y:scroll;
+  font-size: 14px;
+  padding:6px;
+  background-color: white;
+  border-radius: 5px;
+
+}
+#conq:focus{outline:none;}
+
+#conq::-webkit-scrollbar {
+  width: 4px;
+}
+#continueeducator{
+  display: none;
+  width: 100%;
+  min-height:200px;
+  top:160px;
+  left:0;
+  position: fixed;
+  z-index:100;
+  overflow-y: auto;
+
+}
+#eduexloginform,#assignstuexform{ 
+  width: 98%;
+  max-width: 600px;
+  margin-top: 20px;;
+padding:20px;
+text-align: left;
+border-radius: 5px;
+background-image:linear-gradient(-45deg,#2222f0,#d716e9)
+}
+
+#eduexloginform .form-control{
+  font-size: 14px;
+  height:40px;
+  margin-bottom:6px;
+  text-align: center;
+}
+
+#eduexloginform label,#assignstuexform label{
+  font-size: 16px;
+  text-align: left;
+  color:white;
+}
+#assignstuexam{
+  display: none;
+  width: 100%;
+  min-height:200px;
+  top:80px;
+  left:0;
+  position: fixed;
+  z-index:100;
+  overflow-y: auto;
+
+}
+#assignstuexform .form-control{
+  font-size: 14px;
+  height:40px;
+  margin-bottom:6px;
+  text-align: left;
+}
+
+#loader-exid{
+  display: none;
+}
+#loader-qst{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+#loaderCon{
+margin-top:120px;
+display: none;
+}
+
+#qupdated{
+  display: none;
+  width:80%;
+  max-width:240px;
+  font-size: 16px;
+  padding:10px;
+  border-radius: 0px;
+  color: white;
+  background-color:#fa1850;
+  top:0px;
+  left:46%;
+  position: fixed;
+  z-index:1;
+}
+
+
+#mailsented{
+  padding:6px;
+  background-color: #fc4747;
+  color:white;
+  display:none;
+  margin-bottom:6px;
+  font-size:14px;
+}
+.submitform{
+  padding:4px 10px;
+  color: black;
+  background-color: white;
+  font-size: 14px;
+  border: 0px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.submitform:hover{
+  opacity: 0.9;
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}
+.submitform:active{
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
+}
