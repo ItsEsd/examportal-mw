@@ -1,0 +1,464 @@
+
+#crtestfour p{
+    font-size: 16px;
+  }
+  
+  #formcontainer{
+    max-width: 60%;
+    text-align: left;
+    top:0;
+    height: 100%;
+    left:0;
+    overflow-y: auto;
+  }
+  
+  #otserviceexamid{
+    display: none;
+    width: 100%;
+    top:0;
+    height: 100%;
+    position: fixed;
+    background-color: #ffffff;
+    z-index:100;
+    overflow-y: auto;
+  }
+  
+  #formcontainer .form-control{
+    font-size: 14px;
+    height:40px;
+    margin-bottom:6px;
+  }
+  
+  #formcontainer label{
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  #addQ{
+    /*border-radius:0px;
+    bottom:0px;
+    right:350px;
+    position:fixed;*/
+    font-size: 14px;
+    float:right;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-right: 10px;
+  }
+  
+   #crtnewexid{
+    font-size: 14px;
+    float:left;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: 10px;
+   } 
+  /*#addQ:hover{
+  
+    opacity: 0.9;
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+  }
+  #addQ:active{
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }*/
+  #opdiv,#stdiv,#ansdiv{
+    background-color: #e6e6e6;
+    
+  padding:20px;
+  }
+  #opsimg,#stimg{
+    font-size: 14px;
+    float:left;
+    margin-top:10px;}
+  
+  #formcontainerexid{
+    width:98%;
+    max-width: 600px;
+    margin-top: 20px;;
+  padding:20px;
+  text-align: left;
+  border-radius: 5px;
+  background-image:linear-gradient(-45deg,#2222f0,#d716e9)
+  }
+  
+  #formcontainerexid .form-control{
+    font-size: 14px;
+    height:40px;
+    margin-bottom:6px;
+    text-align: center;
+  }
+  
+  #formcontainerexid label{
+    font-size: 16px;
+    text-align: left;
+    color:white;
+  }
+  #continueexamid{
+    display: none;
+    width: 100%;
+    min-height:200px;
+    top:160px;
+    left:0;
+    position: fixed;
+    z-index:100;
+    overflow-y: hidden;
+  }
+  .exidbtn{
+    font-size: 14px;margin-top:10px;
+  }
+  .exidbtn:hover{
+  
+    opacity: 0.9;
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+  
+  }
+  
+  .exidbtn:active{
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+  
+  #formcontainer::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  #previewquestion{
+  top:0px;
+  right:0px;
+  position: fixed;
+  width:100%;
+  max-width:40%;
+  overflow-y: auto;
+  }
+  
+  #previewr{
+  height:300px;
+  overflow-y: auto;
+  border-bottom:1px solid #555;
+  /*resize: vertical;*/
+  }
+  
+  #previews{
+    height:325px;
+    overflow-y: auto;
+    /*resize: vertical;*/
+    }
+    
+  #previewr::-webkit-scrollbar {
+    width: 10px;
+  }
+  #previews::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  #preqsetbtn,#preqbtn{
+    font-size: 14px;
+    border-radius: 0px;
+    width:160px;
+    height:30px;
+    
+  }
+  
+  .closeqform{
+    height:30px;
+    border-radius: 0px;
+    padding:4px 16px;
+    color:white;
+    background-color: #e02121;
+    font-size:14px;
+    cursor: pointer;
+  }
+  .closeqform:hover{
+    opacity: 0.9;
+    color:white;
+  }
+  .opbtn{
+    border:1px solid #212122;
+    color:black;
+    font-size: 14px;
+    background-color: #ededed;
+    padding:4px 6px;
+    margin-right:6px;
+    margin-bottom:6px;
+    outline:none;
+  }
+  .opbtn:active,.opbtn:focus{outline:none;
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);}
+  .opbtn:hover{
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    }
+  .preqimg{
+  float:right;
+  max-width:400px;
+  padding-top:10px;
+  max-width:400px;
+  }
+  .propimg{
+    float:left;
+    padding-top:10px;
+  }
+  .preans{
+    padding:10px;
+  font-size: 16px;
+  
+  }
+  #conq{
+    height:240px;
+    border:2px solid #6a67fa;
+    overflow-y:scroll;
+    font-size: 14px;
+    padding:6px;
+    background-color: white;
+    border-radius: 5px;
+  
+  }
+  #conq:focus{outline:none;}
+  
+  #conq::-webkit-scrollbar {
+    width: 4px;
+  }
+  #continueeducator{
+    display: none;
+    width: 100%;
+    min-height:200px;
+    top:160px;
+    left:0;
+    position: fixed;
+    z-index:100;
+    overflow-y: hidden;
+  
+  }
+  #eduexloginform,#assignstuexform{ 
+    width: 98%;
+    max-width: 600px;
+    margin-top: 20px;;
+  padding:20px;
+  text-align: left;
+  border-radius: 5px;
+  background-image:linear-gradient(-45deg,#2222f0,#d716e9)
+  }
+  
+  #eduexloginform .form-control{
+    font-size: 14px;
+    height:40px;
+    margin-bottom:6px;
+    text-align: center;
+  }
+  
+  #eduexloginform label,#assignstuexform label{
+    font-size: 16px;
+    text-align: left;
+    color:white;
+  }
+  #assignstuexam{
+    display: none;
+    width: 100%;
+    min-height:200px;
+    top:80px;
+    left:0;
+    position: fixed;
+    z-index:100;
+    overflow-y: hidden;
+  
+  }
+  #assignstuexform .form-control{
+    font-size: 14px;
+    height:40px;
+    margin-bottom:6px;
+    text-align: left;
+  }
+  
+  #loader-exid{
+    display: none;
+  }
+  #loader-qst{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+  #loaderCon{
+  margin-top:120px;
+  display: none;
+  }
+  
+  #qupdated{
+    display: none;
+    width:80%;
+    max-width:240px;
+    font-size: 16px;
+    padding:10px;
+    border-radius: 0px;
+    color: white;
+    background-color:#fa1850;
+    top:0px;
+    left:46%;
+    position: fixed;
+    z-index:1;
+  }
+
+  /*////////////////////////////////*/
+
+  #chresform{
+    max-width:600px;
+    text-align: left;
+  }
+  
+  #chresult .form-control{
+  font-size: 14px;
+  height:40px;
+  }
+  #chresult{
+    font-size:16px;
+    
+  
+  }
+  #resbrd{
+    width:100%;
+    top:140px;
+    left:0px;
+    position:fixed;
+    display: none;
+    z-index: 11;
+    padding:10px;
+  
+  }
+  #chresform{
+    background-color: white;
+    padding:20px;
+    border-radius: 5px;
+  }
+  #scrbrd{
+    max-width:500px;
+    display:none;
+    margin-top: -40px;
+  }
+  
+  #chresform{
+    background-image: linear-gradient(-45deg,#cd0ca3,#2441e6);
+  }
+  
+  #chresult label{
+    color:white;}
+  
+  #clrqset{
+    margin:0px;
+    border-radius: 0px;
+    font-size:14px;
+    padding:4px 10px;
+    display: inline-block;
+    height:30px;
+  }
+  #clrqsetnotify{
+    top:160px;
+    width:100%;
+    left:0px;
+    position:fixed;
+    display:none;
+    z-index: 2;
+  }
+  #clrqsetnotify-child{
+    max-width:460px;
+    padding:20px;
+    font-size: 16px;
+    background-color: #fffdfd;
+    color:#fa2c2c;
+    
+  }
+  #falsesecback-two{
+    top:0px;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+  opacity: 0.9;
+  display:none;
+  z-index: 1;
+  }
+  .clrnotibtn{
+    margin:2px;
+    font-size: 14px;
+    padding:4px 10px;
+  }
+  
+  #falsesecback-mq{
+    top:0px;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    opacity: 0.9;
+    display:none;
+    z-index: 100;
+  }
+  
+  #stresultall::-webkit-scrollbar {
+    width: 10px;
+    color: #0a0a0a;
+  }
+  
+  #stresultall{
+    background-color:white;
+    padding:20px;
+    overflow-y: scroll;
+    max-height:300px;
+    max-width:600px;
+  }
+  
+  .exeduinfoid{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    font-style:italic;
+    color:#0821ad;
+  }
+  
+  #qststorage{
+  font-size: 16px;
+  font-weight: 600;
+  }
+  
+  #enrolledstuall{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  #troomsize{
+    font-size: 16px;
+    font-weight: 600;
+  
+  }
+  .eduinfoex{
+    margin:10px;
+    max-width:400px;
+    display:inline-block;
+    padding:10px;
+    border: 1px solid #c2c2c2;
+    background-color: #e1e1e2;
+  }
+  
+  .delqsetex{
+    float:right;
+    font-size:12px;
+    font-weight: 400;
+    padding: 4px 10px;
+    border: 1px solid #f02828;
+    color:#f02828;
+    cursor:pointer;
+    display:none;
+  }
+  .delqsetex:hover{
+    background-color: #f02828;
+    color:white;
+    transition: 0.02s;
+  }
+  
+  #previewqset hr{
+  border-color:#1b1b1b;
+  }
