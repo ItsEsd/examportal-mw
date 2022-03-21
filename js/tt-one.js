@@ -353,3 +353,34 @@ document.getElementById('crtans').innerHTML= "<p style='font-size:20px;color:gre
 });
 }
 onselectstart = (e) => {e.preventDefault()}
+
+ 
+function genenrollid(){
+  var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
+  document.getElementById('enrollid').value = k;
+}
+
+$("#conwexid").click(function() {
+  document.getElementById('continueexamid').style.display='block';
+  $('.otservice').hide();
+});
+
+
+$("#chperfexp").click(function() {
+  $('#continueeducator').show();$('.otservice').hide();
+});
+
+
+$("#assgntst").click(function() {
+  $('#assignstuexam').show();$('.otservice').hide();
+});
+
+
+$("#chresexam").click(function() {
+  document.getElementById('resbrd').style.display='block';
+  $('.otservice').hide();
+});
+
+$('#sgconwexid').click(function(){
+  window.open('https://educator.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+});
