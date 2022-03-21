@@ -483,6 +483,7 @@
   <head>
     <title>Exam Portal | MASTROWALL</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -494,9 +495,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/cexms.css">
+    <link rel="stylesheet" href="/css/experip.css">
   </head>
-  <body>
+  <body ng-app="">
    <div id="flsback"></div> 
     <div id="stuinfo" align='center' style="display: none;">
       <div><img style="width:160px;padding-top:40px;padding-bottom:40px;pointer-events: none;" src="/images/mwalllogo.png"/></div>
@@ -509,20 +513,20 @@
 <img src="/images/exam-portal.png" id="leftimg">
 </div>
     <div id="right-block" class="col-md-6">
-    <form id="expone" onsubmit="return false;">
+    <form id="expone" target="ttstnfrm">
 <label>Exam ID:</label>
-<input class="form-control" id="chexid" required/><br>
+<input class="form-control" id="chexid" placeholder="*************" required/><br>
 <label>Exam Pass:</label>
-<input class="form-control" id="chpass" required/><br>
+<input class="form-control" id="chpass" placeholder="*************" required/><br>
 
 <input type="submit" class="btn btn-warning" value="Continue" style="float:right;">
 <br><p>** Answers will be submitted automatically after allocated time</p>
     </form>
     <div id="enrollid" style="display:none;">
       <div id="expdetails"></div>
-      <form  id="exptwo" onsubmit="return false;">
+      <form  id="exptwo" target="ttstnfrm">
       <label>Enrollment ID:</label>
-      <input class="form-control" id="chenid" required /><br>
+      <input class="form-control" id="chenid" placeholder="*************" required /><br>
       <input type="submit" class="btn btn-warning" value="Go"  style="float:right;">
     </form></div>
       <div id="loader-vq" class="spinner-border text-light" style="display: none;"></div>
@@ -591,7 +595,7 @@
      </div>
 </div>
 
-    <form id="qnstfrm" onsubmit="return false;" style="display:none;">
+    <form id="qnstfrm" target="ttstnfrm" style="display:none;">
       <input type="submit" value="Submit"/>
       <input id="jsonqnst" /></form>  
   </div>
@@ -613,10 +617,144 @@
     <div id="loader-w" class="spinner-border text-light" style="display: block;margin-top:300px;"></div>
   </center></div>
 </section>
- </body>
+<iframe name="ttstnfrm" id="ttstnfrm" style="display:none;"></iframe>
+<section>
+  <div id="navicon">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+      <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+      <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+    </svg>
+  </div>
+  <div class="otservice" ><center>
+    <div id="ttest" align="left">
+    <span class="closeotserv">X</span>
+    <hr>
+    <div align="left" id="ttestinfo">
+      <span id="exmpcreatid">&#9745; Create Exam ID</span>
+      <span id="exmpprereq">&#9745; Prerequisite</span>
+      <span id="exampconmasd">&#9745; MASTRO Desk</span>
+      <!--<span style="padding-right: 0px;" onclick="$('#termuse').show();$('#contactdesk').hide();$('#prereq').hide();$('#createid').hide();">&#9745; Terms of Use</span>-->
+      </div>
+      <hr>
+    <h4>1️⃣ Educator</h4>
+    <div id="ttside" align="right">
+      <button class="btn btn-outline-warning" id="conwexid"> Continue With Exam ID</button>
+      <button class="btn btn-outline-warning" id="chperfexp"> Check Performance</button>
+      <button class="btn btn-warning" id="sgconwexid"> Sign In</button>
+    </div><hr>
+    <h4>2️⃣ Student</h4>
+    <div id="gtside" align="right">
+      <button class="btn btn-outline-warning" id="chresexam"> Check Result</button>
+      <button class="btn btn-warning" id="assgntst"> Assign for a Test</button>
+    </div>
+    <hr>
+  </div>
+  
+  </center></div>
+  </section>
+  <section>
+    <div id="assignstuexam" align="center">
+      <div id="assignstuexform">
+        <form id="stuassign" target="hdnfrm">
+          <label>Name:</label>
+          <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required /><br>
+          <label>Email Address:</label>
+          <input type="email" class="form-control" id="stueid" placeholder="Enter Email Address" required /><br>
+          <label>Exam ID:</label>
+          <input type="text" class="form-control" id="exid" placeholder="Enter Exam ID" required /><br>
+          <label>Exam Pass:</label>
+          <input type="password" class="form-control" id="expass" placeholder="Enter Student Pass" required /><br>
+          <input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#assignstuexam').hide();" value="Back">
+          <input id="enrollid" style="display:none;" />
+        </form>
+        <div id="enrolledinfo"></div>
+        <div id="actionbtnenroll" style="display:none;" align="right">
+          <button class="btn btn-primary" id="dwenrollinfo" style="font-size:14px;" onclick="enrollmentinfo();">Save / Print</button><button id="closeenrollidcr" class="btn btn-outline-primary" style="display:inline-block;font-size:14px;margin-left: 6px;" onclick="$('.otservice').show();$('#assignstuexam').hide();">Close</button></div>
+  
+      </div>
+      <div id="loader-enst" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
+    </div>
+  </section>
+  
+  <section>
+    <div id="resbrd" align='center'>
+      <div id="chresform">
+        <form id="chresult" target="hdnfrm">
+          <label>Exam ID:</label>
+          <input class="form-control" type="text" id="checkexamid" style="text-align:center;" placeholder="Enter Exam ID" required /><br>
+          <label>Enrollment ID:</label>
+          <input class="form-control" type="text" id="chechenid" style="
+    text-align:center;" placeholder="Enter Enrollment ID" required /><br>
+          <input type="submit" value="Check Result">
+          <input type="button" value="Back" onclick="$('#resbrd').hide();$('.otservice').show();">
+        </form>
+      </div>
+      <div id="scrbrd">
+        <center>
+          <div style="box-shadow:0px 2px 4px 0px grey;max-width:600px;padding:40px;background-color: white;">
+            <img src="images/mwalllogo.png" id="leftimg" style="width:100px;margin-bottom:20px;">
+            <div id="stunamek"></div>
+            <!--<h4 id="sturegid"></h4><br>-->
+            <div id="crtans" style="display: none;padding-top:0px;"></div>
+            <h4 style="color:#656566;background-color: white;">M A S T R O W A L L</h4>
+            <P style="font-weight:bold;color:#656566;">|| An Art of Learning ||</P>
+  
+            <input type="button" value="Close" style="margin-top:20px;font-size: 14px;" onclick="$('#resbrd').hide();$('#falsesecback').hide();">
+          </div>
+        </center>
+      </div>
+      <div id="loader-resch" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
+    </div>
+  </section>
+   
+  <section>
+    <div id="continueeducator" align="center">
+      <div id="eduexloginform">
+        <form id="conexeducator" target="hdnfrm">
+          <label>Exam ID:</label>
+          <input type="text" class="form-control" id="cpexid" placeholder="Enter Exam ID" required /><br>
+          <label>Exam Pass:</label>
+          <input type="password" class="form-control" id="cppass" placeholder="*************" required /><br>
+          <input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueeducator').hide();" value="Back">
+        </form>
+      </div><br>
+      <div id="loader-cp" class="spinner-border text-primary" style="display: none;"></div>
+  
+      <div align="center" id="loadercp" style="display: none;">
+        <div id="stresultall"></div><br>
+        <div style="max-width:146px;" align="center"><span style="float:left;"><button type="button" class="btn btn-primary" style="font-size:14px;padding:4px 10px;" onclick="examresultpdf();">Download</button></span><span style="float:right;"><button type="button" class="btn btn-primary" id="backcp" style="margin-left:4px;font-size:14px;padding:4px 10px;" onclick="document.getElementById('eduexloginform').style.display = 'block';document.getElementById('loadercp').style.display = 'none'">Back</button></span></div>
+      </div>
+  
+    </div>
+  </section>
+  <section>
+    <div id="continueexamid" align="center">
+      <div id="formcontainerexid">
+        <form id="checkexid" target="hdnfrm">
+          <label>Exam ID:</label>
+          <input type="text" class="form-control" id="chexamidedu" placeholder="Enter Exam ID" required /><br>
+          <label>Key:</label>
+          <input type="password" class="form-control" id="chkey" placeholder="**************" required /><br>
+          <input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueexamid').hide();" value="Back">
+  
+        </form>
+      </div>
+      <div align="center"><br>
+        <div id="loader-exid" class="spinner-border text-primary"></div>
+      </div>
+    </div>
+  </section>
+  
+  <div ng-include="'divsec/create-examid.html'"></div>
+  <div ng-include="'divsec/exam-periph.html'"></div>
+  <iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
+  
  <script src="/js/tt-one.js"></script>
  <script src="/js/timer.js"></script>
-<script>
+ <script src="/js/crtest-one.js"></script>
+ </body>
+<!--<script>
   document.addEventListener('contextmenu', event => event.preventDefault());
-</script>
+</script>-->
 </html>
