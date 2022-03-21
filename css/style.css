@@ -268,3 +268,32 @@ transform: scale(0.98);
         text-decoration: none;
         cursor: pointer;
     }
+
+    #navicon{
+        top:20px;
+        left:20px;
+        position: absolute;
+        background-color: #0914b4;
+        padding:6px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    #navicon svg{
+        width:40px;
+        height:40px;
+        color:#d6d6d6;
+    }
+
+    #navicon:hover{
+        background-color: #0d1dfc;
+    }
+    .signedu{
+        float:right;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+
+    }
+    #ttside,#gtside{
+     padding-top: 10px;
+    }
