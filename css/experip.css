@@ -311,6 +311,7 @@
   /*////////////////////////////////*/
 
   #chresform{
+    margin-top:70px;
     max-width:600px;
     text-align: left;
   }
@@ -326,7 +327,7 @@
   }
   #resbrd{
     width:100%;
-    top:140px;
+    top:100px;
     left:0px;
     position:fixed;
     display: none;
