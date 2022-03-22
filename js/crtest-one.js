@@ -1,13 +1,12 @@
 
 
-  checkexid.addEventListener('submit', (event) => {
+   checkexid.addEventListener('submit', (event) => {
     var exid =$("#chexamidedu").val();
     var pkey =JSON.stringify($("#chkey").val());
-    
-    document.getElementById('loader-exid').style.display = "block";
     var url1 = "https://script.google.com/macros/s/";
     var url2 = "AKfycbyk5-v8saRtU7SACQGMem9tV-msnLr1eiHqxYNpsjTQuCS5UA2bzwhazxMeiN46cxL3";
-    var url = url1+url2+"/exec"+"?callback=ctrlqexeditin&chexamidedu=" +exid+"&chkey="+pkey+"&action=chexamidedu";
+    var url = url1+url2+"/exec"+"?callback=ctrlqexeditin&chexid=" +exid+"&chkey="+pkey+"&action=chexid";
+    document.getElementById('loader-exid').style.display = "block";
     var request = jQuery.ajax({
       crossDomain: true,
       url: url,
@@ -37,10 +36,10 @@ var expass=JSON.stringify($("#cppass").val());
 document.getElementById('loader-cp').style.display = "block";
 var url1 = "https://script.google.com/macros/s/";
 var url2 = "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
-var url = url1+url2+"/exec"+ "?action=gentestrd";
-$.getJSON(url, function(json) { 
+var urlr = url1+url2+"/exec"+ "?action=gentestrd";
+$.getJSON(urlr, function(json) { 
 
-//console.log(json);
+console.log(json);
 for (var i = 0; i < json.records.length - 1; i++) {
 if (exid === json.records[i].ExamID && expass === json.records[i].ExamPass) {
  var restren = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
