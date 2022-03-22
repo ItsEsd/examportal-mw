@@ -1,3 +1,21 @@
+$(window).on('selectstart', function (evt) {
+  return (evt.target.contentEditable === 'true');
+});
+$("#addQ").click(function() {
+  $('#qtstfalse').show();
+  if(document.getElementById('qst').value ==''){
+    document.getElementById('qtstfalse').innerHTML='** Required';
+    document.getElementById('conq').style.border='2px solid #f75858';
+  }
+  else{
+    $('#qtstfalse').hide();
+    document.getElementById('conq').style.border='2px solid #6a67fa';
+  }
+  document.getElementById('formcontainer').scrollTop = '0px';
+});
+qst.addEventListener('input',(event) =>{
+  $('#qtstfalse').hide();
+});
 conq.addEventListener('input',(event) =>{
     $('#qtstfalse').hide();
   document.getElementById('conq').style.border='2px solid #6a67fa';
@@ -11,9 +29,6 @@ conq.addEventListener('input',(event) =>{
     });
   });
   
-  
-  
- 
   
     function readImage(input) {
       if ( input.files) {
@@ -33,7 +48,7 @@ conq.addEventListener('input',(event) =>{
       $("#opsimg").change(function(){
               readImage( this );
           });
-   $('document').ready(function () {
+      $('document').ready(function () {
             $('#stimg').on('change', function () {
               var $files = $(this).get(0).files;
                 
@@ -160,11 +175,11 @@ conq.addEventListener('input',(event) =>{
   var ANQST=escape(JSON.stringify($("#anqs").val().toUpperCase()+"{qfin}"));
   var url1="https://script.google.com/macros/s/";
   var url2 ="AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
-  var url = url1+ url2+"/exec"+"?callback=ctrlqs&chexamidedu=" +exid+"&chkey="+ekey+"&qst="+quST+"&qstimg="+quSTimg+"&opa="+OPA+"&opb="+OPB+"&opc="+OPC+"&opd="+OPD+"&opimg="+OPImg+"&anqs="+ANQST+"&action=gentestup";
+  var urlgt = url1+ url2+"/exec"+"?callback=ctrlqs&chexid=" +exid+"&chkey="+ekey+"&qst="+quST+"&qstimg="+quSTimg+"&opa="+OPA+"&opb="+OPB+"&opc="+OPC+"&opd="+OPD+"&opimg="+OPImg+"&anqs="+ANQST+"&action=gentestup";
   
   var request = jQuery.ajax({
     crossDomain: true,
-    url: url,
+    url: urlgt,
     method: "GET",
     dataType: "jsonp"
   });
@@ -429,7 +444,7 @@ conq.addEventListener('input',(event) =>{
     var ekey=JSON.stringify($("#chkey").val());
     var url1 = "https://script.google.com/macros/s/";
     var url2 = "AKfycbxJZFh-0N3FP-As6_VgzYixNNx_oM0ik6C2m3fqCDXyHVB3K1AITuqrNKV0JSdZjgiv";
-    var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexamidedu=" +exid+"&chkey="+ekey+"&action=clrqdata";
+    var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexid=" +exid+"&chkey="+ekey+"&action=clrqdata";
    
     var request = jQuery.ajax({
       crossDomain: true,
@@ -503,7 +518,7 @@ conq.addEventListener('input',(event) =>{
       "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
       "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
             
-      var url = url1+ url3+"/exec"+"?callback=ctrlcrtexid&chexamidedu=" +exid+ "&examid="+newid+"&dateQ="+timecrtex+"&action=crtexid";
+      var url = url1+ url3+"/exec"+"?callback=ctrlcrtexid&chexid=" +exid+ "&examid="+newid+"&dateQ="+timecrtex+"&action=crtexid";
           var request = jQuery.ajax({
             crossDomain: true,
             url: url,
