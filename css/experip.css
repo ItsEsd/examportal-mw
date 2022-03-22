@@ -12,6 +12,10 @@
     overflow-y: auto;
   }
   
+#formcontainer::-webkit-scrollbar {
+    width: 10px;
+  }
+  
   #otserviceexamid{
     display: none;
     width: 100%;
@@ -135,14 +139,14 @@
   }
   
   #previewr{
-  height:300px;
+  height:340px;
   overflow-y: auto;
   border-bottom:1px solid #555;
   /*resize: vertical;*/
   }
   
   #previews{
-    height:325px;
+    height:380px;
     overflow-y: auto;
     /*resize: vertical;*/
     }
@@ -207,15 +211,18 @@
   font-size: 16px;
   
   }
+  #qtstfalse{
+    display:none;color:#f75858;font-size: 14px;float:right;
+}
   #conq{
     height:240px;
     border:2px solid #6a67fa;
-    overflow-y:scroll;
+    overflow-y:auto;
     font-size: 14px;
     padding:6px;
     background-color: white;
     border-radius: 5px;
-  
+    display:none;
   }
   #conq:focus{outline:none;}
   
