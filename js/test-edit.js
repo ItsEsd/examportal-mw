@@ -538,14 +538,7 @@ conq.addEventListener('input',(event) =>{
   }
   
   
-  function examresultpdf() {
-    var elem = document.getElementById("stresultall");
-    var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
-        oPrntWin.document.open();
-        oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:2px solid grey;\">" + elem.innerHTML + "<\/div><\/div><\/body><\/html>");
-        oPrntWin.document.close();
-   }
-  
+
    function downloadqset() {
     var elem1 = document.getElementById("previews");
     var elem2 = document.getElementById("eduinfofordqset");
