@@ -443,7 +443,7 @@ conq.addEventListener('input',(event) =>{
     var exid=$("#chexamidedu").val();
     var ekey=JSON.stringify($("#chkey").val());
     var url1 = "https://script.google.com/macros/s/";
-    var url2 = "AKfycbxJZFh-0N3FP-As6_VgzYixNNx_oM0ik6C2m3fqCDXyHVB3K1AITuqrNKV0JSdZjgiv";
+    var url2 = "AKfycbxyFbMMoJ4NS4igBYEeJbyjf2naNY1pGyUx4YW2H-9YjttE8vxMww8tsDoqd0v1RHb0";
     var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexid=" +exid+"&chkey="+ekey+"&action=clrqdata";
    
     var request = jQuery.ajax({
