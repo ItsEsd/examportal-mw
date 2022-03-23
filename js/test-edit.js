@@ -462,7 +462,9 @@ conq.addEventListener('input',(event) =>{
     document.getElementById('loader-clrq').style.display = "none";
    }
   
- 
+   $("#crtnewexid").click(function() {
+    createnewexid();
+  });
   
   function createnewexid(){
     document.getElementById("crtnewexid").disabled = true;
@@ -494,12 +496,13 @@ conq.addEventListener('input',(event) =>{
       var ttmstr = json.records[i].TDuration;
       //console.log(ttmstr);
       document.getElementById('createid').style.zIndex = "4000";
+      document.getElementById('exportalpromo').style.zIndex = "4000";
       $("#createid").show();
       $("#cridone").hide();
       $("#crtestthree").hide();
       $("#cridtwo").show();
       $("#crtestfour").show();
-    
+      $('#exportalpromo').show();
       document.getElementById("examidFin").innerHTML="Exam ID: "+"<span style='background-color:#0c29cd;padding:4px 6px;font-style:italic;'>"+newid+"</span>";
       document.getElementById("edunameFin").innerHTML="Name: " + "<span style='padding:4px 6px;font-style:italic;'>"+name+"</span>";
       document.getElementById("examtitleFin").innerHTML="Title: "+"<span style='padding:4px 6px;font-style:italic;'>"+title+"</span>";
@@ -507,7 +510,7 @@ conq.addEventListener('input',(event) =>{
       document.getElementById("mykeyFin").innerHTML="Your Key: "+"<span style='padding:4px 6px;font-style:italic;'>"+youkey+"</span>";
       document.getElementById("exampassFin").innerHTML="Exam Pass For Students: "+"<span style='padding:4px 6px;font-style:italic;'>"+examp+"</span>";
       document.getElementById("tsdur").innerHTML = "Test Duration: "+"<span style='padding:4px 6px;font-style:italic;'>"+ttmstr+"</span>";  
-      document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"+"Exam ID: "+"<span style='color:blue;font-style:italic;'>"+examid +"</span>"+
+      document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"+"Exam ID: "+"<span style='color:blue;font-style:italic;'>"+newid +"</span>"+
       "<span style='float:right;margin-left:10px;'>Test Duration: "+ttmstr+"</span>"+
       "<hr>"+"Name: " +"<span style='font-size:20px;'>"+ name+
       "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
@@ -544,6 +547,6 @@ conq.addEventListener('input',(event) =>{
     var elem2 = document.getElementById("eduinfofordqset");
     var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
         oPrntWin.document.open();
-        oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;\">" + elem2.innerHTML + "<\/div><hr><\/div><\/center><\/body><\/html>");
+        oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;\">" + elem2.innerHTML + "<\/div><hr><\/div><\/center><\/body><\/html>");
         oPrntWin.document.close();
    }
