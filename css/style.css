@@ -342,3 +342,14 @@ transform: scale(0.98);
     background-color: white;
     border-radius: 50%;
 }
+
+#mailsentstu{
+    top:20px;
+    right:20px;
+    padding:10px;
+    position: fixed;
+    display: none;
+    background-color: white;
+    color:#f72b2b;
+    font-size: 16px;
+}
