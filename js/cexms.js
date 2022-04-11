@@ -118,7 +118,7 @@ document.getElementById('timestr').value= str;
       Email.send({
         SecureToken : "cc4823c2-6012-4e3c-b375-9fa519b23754",
         To: mailat,
-        From: "examportal@mastrowall.com",
+        From: "MASTROWALL<examportal@mastrowall.com>",
           Subject: "Exam Portal - MASTROWALL",
           Body:  elemed+"<p style='text-align:right;margin:10px;font-size:14px;'>Your Key/Password: "+passk+"</p><br><span style='float:left;font-size:14px;'>N.B. Do not reply to this email</span>",
       })
