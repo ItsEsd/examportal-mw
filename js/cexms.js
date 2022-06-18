@@ -123,12 +123,16 @@ document.getElementById('timestr').value= str;
           Body:  elemed+"<p style='text-align:right;margin:10px;font-size:14px;'>Your Key/Password: "+passk+"</p><br><span style='float:left;font-size:14px;'>N.B. Do not reply to this email</span>",
       })
           .then(function (message) {
-        document.getElementById('mailsented').style.display= 'block';
-        document.getElementById('mailsented').innerHTML= 'Credentials sent to your email.';
-        setTimeout(function() {
-          jQuery('#mailsented').fadeOut('fast');
-        }, 10000);
-          
+            if(message =="OK"){
+              document.getElementById('mailsented').style.display= 'block';
+              document.getElementById('mailsented').innerHTML= 'Credentials sent to your email.';
+              setTimeout(function() {
+                jQuery('#mailsented').fadeOut('fast');
+              }, 10000);
+            }
+           else{
+              document.getElementById('mailsented').style.display= 'none';
+             }
           });
       }
 
