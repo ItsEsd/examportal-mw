@@ -279,10 +279,6 @@ return false;
         oPrntWin.document.write("<!doctype html><html><head><title>Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\">" + elem.innerHTML + "<\/body><\/html>");
         oPrntWin.document.close();
    }
-
-
-  
-     
    function sendStmail() {
     var elemed = document.getElementById("enrolledinfo").innerHTML;
     var mailat = $('#stueid').val(); 
