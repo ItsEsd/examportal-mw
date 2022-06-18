@@ -650,19 +650,17 @@
     </div>
     <hr>
   </div>
-  
   </center></div>
   </section>
-  
   <section>
     <div id="otserviceexamid">
       <div id="formcontainer">
         <form target="hdnfrm" id="quesfrm" autocomplete="off">
           <div id="stdiv">
             <label>Question Statement:</label>
-            <div  id="conq" contenteditable="true"></div>
+            <textarea class="form-control" id="qst" required></textarea>
+            <div contenteditable="true" id="conq" onclick='$(this).focus();'></div>
             <p id="qtstfalse"></p>
-            <textarea class="form-control" style="height:240px;display:block;" id="qst" required></textarea>
             <input type="file" accept="image/png, image/gif, image/jpeg" id="stimg" /><input id="qstimg" value="null" style="display:none;" /><br><br>
           </div>
           <hr>
