@@ -295,11 +295,15 @@ return false;
           Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
       })
           .then(function (message) {
-        document.getElementById('mailsentstu').style.display= 'block';
-        document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
-        setTimeout(function() {
-          jQuery('#mailsentstu').fadeOut('fast');
-        }, 10000);
-          
+            if(message="OK"){
+              document.getElementById('mailsentstu').style.display= 'block';
+              document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
+              setTimeout(function() {
+                jQuery('#mailsentstu').fadeOut('fast');
+              }, 10000);
+            }
+       else{
+        document.getElementById('mailsentstu').style.display= 'none';
+       }
           });
       }
