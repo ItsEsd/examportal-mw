@@ -214,6 +214,10 @@
   #qtstfalse{
     display:none;color:#f75858;font-size: 14px;float:right;
 }
+
+#qst{
+  display:none;
+}
   #conq{
     height:240px;
     border:2px solid #6a67fa;
@@ -222,7 +226,6 @@
     padding:6px;
     background-color: white;
     border-radius: 5px;
-    display:none;
   }
   #conq:focus{outline:none;}
   
