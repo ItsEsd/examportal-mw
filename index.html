@@ -518,7 +518,6 @@
 <input class="form-control" id="chexid" placeholder="*************" required/><br>
 <label>Exam Pass:</label>
 <input class="form-control" id="chpass" placeholder="*************" required/><br>
-
 <input type="submit" class="btn btn-warning" value="Continue" style="float:right;">
 <br><p>** Answers will be submitted automatically after allocated time</p>
     </form>
@@ -555,7 +554,6 @@
     <div id="boxexp-two" class="boxexp">
      <div id="quesindex"></div>
     </div>
-
     <div id="boxexp-three" class="boxexp">
     <div id="calculatorbtn">
       <button class="btn btn-success" onclick="$('#calculator').toggle();">Calculator</button>
@@ -594,7 +592,6 @@
     </div>
      </div>
 </div>
-
     <form id="qnstfrm" target="ttstnfrm" style="display:none;">
       <input type="submit" value="Submit"/>
       <input id="jsonqnst" /></form>  
@@ -699,9 +696,8 @@
                   <p style="color:#1612f0;">Test Room Size Occupied: <span id="troomsize">....</span></p>
                   <button class="btn btn-dark" type="button" onclick="downloadqset();" style="padding:6px 10px;">Download/ Print Question Set</button>
                 </div>
-  
+                <div id="qsetanst"></div>
               </div>
-  
             </div>
           </div>
           <div id="qupdated">Question added successfully</div>
@@ -719,7 +715,6 @@
           <br>
         </form>
         <div id='falsesecback-two'></div>
-  
       </div>
       <div id="previewquestion">
         <div id="previewr">
@@ -729,9 +724,7 @@
                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
               </svg>
             </div>
-  
           </div>
-  
         </div>
         <div id="previews" align="center">
           <div id="previewqset" style="text-align: left;">
@@ -740,13 +733,11 @@
                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
               </svg>
             </div>
-  
           </div>
           <div align="center" id="loaderCon">
             <div id="loader-qst" class="spinner-border text-primary"></div>
           </div>
         </div>
-  
       </div>
       <div style="bottom:0px;right:0px;position:fixed;">
         <button class="btn btn-dark" id="clrqset" onclick='$("#clrqsetnotify").show();$("#falsesecback-two").show();'>Clear All</button>
@@ -754,7 +745,6 @@
         <button class="btn btn-warning" onclick="previewqset();" id="preqsetbtn">Preview Question Set</button>
         <button class="closeqform btn" onclick="$('#otserviceexamid').slideUp('fast');$('#falsesecback').slideUp('fast');$('.otserviceinfo').slideUp('fast');" title="Close">X</button>
       </div>
-  
     </div>
   </section>
   <section>
@@ -762,10 +752,8 @@
       <center>
         <div id="loader-qdd" class="spinner-border text-primary" style="display: block;margin-top:300px;"></div>
       </center>
-  
     </div>
   </section>
-
   <section>
     <div id="assignstuexam" align="center">
       <div id="assignstuexform">
@@ -784,13 +772,11 @@
         <div id="enrolledinfo"></div>
         <div id="actionbtnenroll" style="display:none;" align="right">
           <button class="btn btn-primary" id="dwenrollinfo" style="font-size:14px;" onclick="enrollmentinfo();">Save / Print</button><button id="closeenrollidcr" class="btn btn-outline-primary" style="display:inline-block;font-size:14px;margin-left: 6px;" onclick="$('.otservice').show();$('#assignstuexam').hide();">Close</button></div>
-  
       </div>
       <div id="loader-enst" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
       <div id="mailsentstu"></div>
     </div>
   </section>
-  
   <section>
     <div id="resbrd" align='center'>
       <div id="chresform">
@@ -821,7 +807,6 @@
       <div id="loader-resch" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
     </div>
   </section>
-   
   <section>
     <div id="continueeducator" align="center">
       <div id="eduexloginform">
@@ -834,12 +819,10 @@
         </form>
       </div><br>
       <div id="loader-cp" class="spinner-border text-primary" style="display: none;"></div>
-  
       <div align="center" id="loadercp" style="display: none;">
         <div id="stresultall"></div><br>
         <div style="max-width:146px;" align="center"><span style="float:left;"><button type="button" class="btn btn-primary" style="font-size:14px;padding:4px 10px;" onclick="examresultpdf();">Download</button></span><span style="float:right;"><button type="button" class="btn btn-primary" id="backcp" style="margin-left:4px;font-size:14px;padding:4px 10px;" onclick="document.getElementById('eduexloginform').style.display = 'block';document.getElementById('loadercp').style.display = 'none'">Back</button></span></div>
       </div>
-  
     </div>
   </section>
   <section>
@@ -851,7 +834,6 @@
           <label>Key:</label>
           <input type="password" class="form-control" id="chkey" placeholder="**************" required /><br>
           <input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueexamid').hide();" value="Back">
-  
         </form>
       </div>
       <div align="center"><br>
@@ -859,16 +841,14 @@
       </div>
     </div>
   </section>
-
   <div ng-include="'divsec/create-examid.html'"></div>
   <iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
-  
  <script src="/js/tt-one.js"></script>
  <script src="/js/timer.js"></script>
  <script src="/js/crtest-one.js"></script>
  <script src="/js/test-edit.js"></script>
  </body>
-<!--<script>
+<script>
   document.addEventListener('contextmenu', event => event.preventDefault());
-</script>-->
+</script>
 </html>
