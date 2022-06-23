@@ -39,23 +39,18 @@
    var url = url1+url2+"/exec"+ "?action=gentestrd";
    document.getElementById('loader-cp').style.display = "block";
    $.getJSON(url, function(json) { 
-   
-   //console.log(json);
    for (var i = 0; i < json.records.length - 1; i++) {
      if (exid === json.records[i].ExamID && expass === json.records[i].ExamPass) {
        var restren = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
        var sprestren = restren.split(',');
        var lenstren = sprestren.length;
-   
        var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
        var sprestr = restr.split('{anst},');
        var lenstr = sprestr.length;
        var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
        var anskey = ansk.split('{qfin}",');
        var lenstrkey = anskey.length;
-       //console.log(sprestr);
        for(var k =0; k<lenstr-1;k+=2){
-         
          var stenid = JSON.parse(sprestr[k]);
          var res = sprestr[k+1];
          var resone = JSON.parse(res);
@@ -78,14 +73,7 @@
        document.getElementById('stresultall').innerHTML += "<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>"  ;   
        document.getElementById('backcp').style.display = "block";
        document.getElementById('loader-cp').style.display = "none";
-         
-       }
-           
-     }
-   }
-   });
-   });
-
+       }}}});});
    function examresultpdf() {
     var elem = document.getElementById("stresultall");
     var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
@@ -93,10 +81,7 @@
         oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:2px solid grey;\">" + elem.innerHTML + "<\/div><\/div><\/body><\/html>");
         oPrntWin.document.close();
    }
-  
-
 /////////////////////////////////////////////////////////////////////
-
 chresult.addEventListener('submit', (event) => { 
   var exid=$("#checkexamid").val();
   var enid=JSON.stringify($("#chechenid").val());
@@ -110,7 +95,6 @@ $.getJSON(url, function(json) {
     if (exid === json.records[i].ExamID) {
       var stustring = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
       var sstring = stustring.split(',');
-    //  console.log(sstring);
       var lenstrk = sstring.length;
     var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
     var sprestr = restr.split('{anst},');
@@ -118,12 +102,10 @@ $.getJSON(url, function(json) {
     var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
     var anskey = ansk.split('{qfin}",');
     var lenstrkey = anskey.length;
-    //console.log(anskey[0].substring(1));
 for(var k =0; k<lenstr;k+=2){
 if(enid==sprestr[k]){ 
 var res = sprestr[k+1];
 var resone = JSON.parse(res);
-// console.log(resone.qnst[5]);
 var count = 0;
 for(var j=0; j<lenstrkey-1;j++){
 if(resone.qnst[j] === anskey[j].substring(1)){
@@ -143,14 +125,12 @@ document.getElementById('crtans2').innerHTML= "<div><p style='text-align:left;fo
   }
   for(var h =0; h<lenstrk;h++){
   if(enid==sstring[h]){
-  //  console.log(JSON.parse(sstring[h-2]));
     document.getElementById('stunamek').style.display = "block";
   document.getElementById('stunamek').innerHTML="<p style='color:black;font-size:20px;'>Name: <span style='color:blue;font-style:italic;'>"+JSON.parse(sstring[h-2])+"</span></p>";
 }
   }
     }
   }
-  
   document.getElementById('loader-resch').style.display = "none";
 });
 });
@@ -249,9 +229,7 @@ return false;
   var eid  =$('#stueid').val();
   var examid  =$('#exid').val();
   var enid  =$('#enrollid').val();
-    //console.log(e);
   var cat = e.result;
-  //console.log(cat);
   if(cat === "Value updated successfully!"){
     document.getElementById('stuassign').style.display ="none";
     document.getElementById('assignstuexform').style.backgroundImage="linear-gradient(0deg,white,white)";
@@ -270,8 +248,6 @@ return false;
   }
   return false;
   }
-
-    
   function enrollmentinfo() {
     var elem = document.getElementById("enrolledinfo");
     var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
@@ -282,7 +258,6 @@ return false;
    function sendStmail() {
     var elemed = document.getElementById("enrolledinfo").innerHTML;
     var mailat = $('#stueid').val(); 
-   // console.log(elemed);
       Email.send({
         SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
         To: mailat,
