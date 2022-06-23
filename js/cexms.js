@@ -3,37 +3,30 @@ $(".closeotserv").click(function() {
     $('#falsesecback').hide();
     $('.otserviceinfo').hide('fast');
   });
-
-  
   $("#exmpcreatid").click(function() {
     $('#contactdesk').hide();
     $('#exportalpromo').show();
     $('#prereq').hide();$('#createid').show('fast');
   });
-
   $("#exmpprereq").click(function() {
     $('#contactdesk').hide();
     $('#exportalpromo').show();
     $('#prereq').show('fast');$('#createid').hide();
   });
-
   $("#exampconmasd").click(function() {
     $('#contactdesk').show('fast');
     $('#exportalpromo').show();
     $('#prereq').hide();$('#createid').hide();
   });
-
   $('.closeot').on('click', function() {
     $('.otserviceinfo').hide("fast");
     $('#exportalpromo').fadeOut("fast");
     $('#exportalpromo').fadeOut("fast");
     });
-
     $("#navicon").click(function() {
         $('.otservice').slideDown('fast');
-        $('#falsesecback').show();
-      });
-$(document).ready(function(){
+        $('#falsesecback').show();});
+  $(document).ready(function(){
         var exptimg =["../images/examportal/exmpt-1.jpg",
         "../images/examportal/exmpt-2.jpg",
         "../images/examportal/exmpt-3.jpg",
@@ -47,9 +40,7 @@ $(document).ready(function(){
         var exmplen =exptimg.length;
         for(var k=0;k<=exmplen-1;k++){
           document.getElementById('exportalpromo').innerHTML +="<img class='exmpproimg' src='"+exptimg[k]+"' onclick='enlargeempimg(this)'>";
-        }
- });
- 
+        }});
 function enlargeempimg(label){
     var list=document.getElementsByClassName("exmpproimg");
     list = [].slice.call(list); 
@@ -59,12 +50,7 @@ function enlargeempimg(label){
     document.getElementById('emprimgenlrg').src= srcimg;
   }
   $("#enlrgimg").click(function() {
-    $('#enlrgimg').hide();
-    
-  });
-
-///////////////// CREATE EXAM ID /////////////////////////
-
+    $('#enlrgimg').hide();});
 cridone.addEventListener('submit', (event) => {
   $("#cridtwo").show();
   $("#cridone").hide();
@@ -73,11 +59,7 @@ var min = $('#timedurmin').val();
 var tmsec = ((hr*3600) + (min*60))*1000;
 var str = hr+" "+"Hour"+" "+min+" "+"Minutes";
 document.getElementById('totalsec').value= tmsec;
-document.getElementById('timestr').value= str;
-//console.log(tmsec);console.log(str);
- 
- });
-
+document.getElementById('timestr').value= str; });
  cridtwo.addEventListener('submit', (event) => {
   var examid = $("#examid").val();
   var name = $("#eduname").val();
@@ -86,7 +68,6 @@ document.getElementById('timestr').value= str;
   var youkey = $("#confirmpasskey").val();
   var examp = $("#exampass").val();
   var ttmstr = $("#timestr").val();
-  //console.log(ttmstr);
       $("#crtestfour").show();
       $("#crtestthree").hide();
   document.getElementById("examidFin").innerHTML="Exam ID: "+"<span style='background-color:#0c29cd;padding:4px 6px;font-style:italic;'>"+examid+"</span>";
@@ -106,15 +87,10 @@ document.getElementById('timestr').value= str;
   "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
   "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
   "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
-  sendEdmail();
-  
-     });
-
-     
+  sendEdmail();});
    function sendEdmail() {
     var elemed = document.getElementById("studentpassdoc").innerHTML;
     var mailat = $('#edueid').val(); var passk = $('#confirmpasskey').val();
-   // console.log(elemed);
       Email.send({
         SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
         To: mailat,
@@ -135,7 +111,6 @@ document.getElementById('timestr').value= str;
              }
           });
       }
-
    cridtwo.addEventListener('submit', (event) => {
     var name =$('#eduname').val();
     var title =$('#extitle').val();
@@ -154,21 +129,13 @@ document.getElementById('timestr').value= str;
       var url = url3 + "?callback=ctrlq&examid=" + examid + "&eduname=" + name + "&extitle=" + title + "&exdescp=" + descp + "&edueid=" + emid + 
       "&confirmpasskey=" + epass +  "&exampass=" + spass + "&dateQ=" + time +
       "&totalsec=" + tmilisec + "&timestr=" + tmstr +"&action=gentestin";
-   
       var request = jQuery.ajax({
         crossDomain: true,
         url: url,
         method: "GET",
         dataType: "jsonp"
-      });
-    }
-      else {
-        return false;
-      }
-
-
-   });
-
+      });}
+      else {return false;}});
    function dateUp() {
     var d = new Date();
     var day = d.getDate();
@@ -177,30 +144,17 @@ document.getElementById('timestr').value= str;
     var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
     document.getElementById('dateQ').value = currentTime;
   }
-
-  
   $("#svprtstpass").click(function() {
-    infoexampdf();
-  });
-  
+    infoexampdf();});
    function infoexampdf() {
     var elem = document.getElementById("studentpassdoc");
     var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
         oPrntWin.document.open();
         oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\">" + elem.innerHTML + "<\/body><\/html>");
-        oPrntWin.document.close();
-   }
-
-   
-
+        oPrntWin.document.close();}
    mquearytest.addEventListener('submit', (event) => {
     $("#qmsgsent").show();
-    $("#mquearytest").hide();
-    
-   
-   });
-
-   
+    $("#mquearytest").hide();});
   jQuery('#confirmpasskey').on('keyup', function() {
     if (jQuery('#createpasskey').val() == jQuery('#confirmpasskey').val()) {
       jQuery('#matched').html('Matching').css('font-size', '12px');
@@ -212,6 +166,3 @@ document.getElementById('timestr').value= str;
     var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
     document.getElementById('examid').value = k;
   });
-
- //////////////////////////////
- 
