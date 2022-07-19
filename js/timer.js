@@ -25,7 +25,6 @@ function countdown() {
      var minss = secs/60;
      var hours = Math.floor(minss/60);
      var mins = Math.round(((minss/60) - hours)*60);
-  //   console.log( hours);  console.log( mins); 
    var totaldur = minss*60;
     display = document.querySelector('#timeleft');
     startTimer(totaldur, display);
