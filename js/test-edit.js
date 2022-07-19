@@ -132,7 +132,7 @@ conq.addEventListener('input',(event) =>{
   var OPImg=escape(JSON.stringify($("#opimg").val()+"{qfin}"));
   var ANQST=escape(JSON.stringify($("#anqs").val().toUpperCase()+"{qfin}"));
   var url1="https://script.google.com/macros/s/";
-  var url2 ="AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
+  var url2 ="AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
   var urlgt = url1+ url2+"/exec"+"?callback=ctrlqs&chexid=" +exid+"&chkey="+ekey+"&qst="+quST+"&qstimg="+quSTimg+"&opa="+OPA+"&opb="+OPB+"&opc="+OPC+"&opd="+OPD+"&opimg="+OPImg+"&anqs="+ANQST+"&action=gentestup";
   
   var request = jQuery.ajax({
@@ -226,154 +226,167 @@ conq.addEventListener('input',(event) =>{
     var exid=$("#chexamidedu").val();
   var ekey=JSON.stringify($("#chkey").val());
   var url1 = "https://script.google.com/macros/s/";
-  var url2 = "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
-  var url = url1+url2+"/exec"+ "?action=gentestrd";
+  var url2 = "AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
   document.getElementById('loaderCon').style.display = "block";
-  $.getJSON(url, function(json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (exid === json.records[i].ExamID && ekey === json.records[i].PKey) {
-        document.getElementById('loaderCon').style.display = "none";
-        document.getElementById("eduexname").innerHTML = json.records[i].EducatorName;
-        document.getElementById("eduextitle").innerHTML =json.records[i].ExamTitle;
-        document.getElementById("eduexdescp").innerHTML =json.records[i].ExamDescp;
-        document.getElementById("eduextimedur").innerHTML =json.records[i].TDuration;
-  var qststr = json.records[i].QuesSTFinal;
-  var qststrlen =qststr.length;
-  if(qststr != ""){
-  var qstoreused = (qststrlen/46000)*100;
-  document.getElementById("qststorage").innerHTML = qstoreused.toFixed(2)+"%";
+  var urlcp = url1+url2+"/exec"+ "?callback=prevqset&chexid="+exid+"&chkey="+ekey+"&action=chexid";
+   var request = jQuery.ajax({
+    crossDomain: true,
+    url: urlcp,
+    method: "GET",
+    dataType: "jsonp"
+  });}
+
+
+function prevqset(e){
+  var reslt = e.records;
+  if(reslt != "ID not found!"){
+    document.getElementById('loaderCon').style.display = "none";
+    document.getElementById("eduexname").innerHTML = reslt[0].EducatorName;
+    document.getElementById("eduextitle").innerHTML =reslt[0].ExamTitle;
+    document.getElementById("eduexdescp").innerHTML =reslt[0].ExamDescp;
+    document.getElementById("eduextimedur").innerHTML =reslt[0].TDuration;
+var qststr = reslt[0].QuesSTFinal;
+var qststrlen =qststr.length;
+if(qststr != ""){
+var qstoreused = (qststrlen/46000)*100;
+document.getElementById("qststorage").innerHTML = qstoreused.toFixed(2)+"%";
+}
+else{document.getElementById("qststorage").innerHTML = "0%";}
+if(qststrlen>46000){
+document.getElementById("qststorage").innerHTML = "100%";
+document.getElementById("addQ").disabled = true;
+}
+var enststr = reslt[0].EnrolledStuFinal;
+var enstlimit = enststr.length;
+var enstustr = JSON.parse(JSON.stringify(reslt[0].EnrolledStuFinal));
+var enstusingle = enstustr.split(',');
+var enstustrlen =enstusingle.length;
+if(enststr != ""){
+var numofstu = (enstustrlen-1)/3;
+document.getElementById("enrolledstuall").innerHTML = numofstu;
+}
+else{document.getElementById("enrolledstuall").innerHTML = "0";}
+var stuansstr = JSON.parse(JSON.stringify(reslt[0].StuAnsFinal));
+var stuansstrlen =stuansstr.length;
+if(stuansstr != "" && stuansstrlen<46000 ){
+var troomsize = (stuansstrlen/46000)*100;
+document.getElementById("troomsize").innerHTML = troomsize.toFixed(2)+"%";
+}
+else{document.getElementById("troomsize").innerHTML = "0%";}
+if(stuansstrlen>46000){
+document.getElementById("crtnewexid").value = "Create Another Exam ID";
+document.getElementById("crtnewexid").disabled = false;
+$("#crtnewexid").removeClass("btn-outline-primary");
+$("#crtnewexid").addClass("btn-outline-warning");
+document.getElementById("troomsize").innerHTML ="100%";
+}
+else{
+document.getElementById("crtnewexid").value = "Test Room Size Health: GOOD!";
+document.getElementById("crtnewexid").disabled = true;
+}
+    var qstate = JSON.parse(JSON.stringify(reslt[0].QuesSTFinal));
+    var qstateimg = JSON.parse(JSON.stringify(reslt[0].QSTimgFinal));
+    var qstateops = JSON.parse(JSON.stringify(reslt[0].OPfinal));
+    var qstateopimg = JSON.parse(JSON.stringify(reslt[0].OPimgfinal));
+    var qstateanst = JSON.parse(JSON.stringify(reslt[0].AnsSTfinal));
+    var qstate2 = qstate.split('{qfin}"');
+    var qstateimg2 = qstateimg.split('{qfin}"');
+    var qstateops2 = qstateops.split('{qfin}"');
+    var qstateopimg2 = qstateopimg.split('{qfin}"');
+    var qstateanst2 = qstateanst.split('{qfin}"');
+    var qstateanstprev = qstateanst.split('{qfin}",');
+    var len = qstate2.length;
+    var oplen = qstateops2.length;
+    var opq= 4;
+if(qstate ==""){
+document.getElementById('loaderCon').style.display = "none";
+document.getElementById('previewqset').innerHTML = '<div align="center" style="color:#d9d8db;margin-top:120px;">'+
+'<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">'+
+'<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>'+
+'</svg></div>';
+document.getElementById('qsetanst').innerHTML = "";
+}
+else{
+$('#qsetanst').empty();
+for(var ast=0;ast<qstateanstprev.length-1;ast++){
+  document.getElementById('qsetanst').innerHTML += "Question No."+(ast+1)+": <b>"+qstateanstprev[ast].substring(1)+"</b> | ";
+}
+    for(var i = 0; i<len-2;i++){
+      if(i == 0){
+      var qs =qstate2[i].substring(1);
+      var qsimg =qstateimg2[i].substring(1);
+      var qsopsimg =qstateopimg2[i].substring(1);
+      var qsanst =qstateanst2[i].substring(1);
+if(qsopsimg =="null"){
+var i1 = i+1;
+       document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
+       "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+i1+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
+       "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+       "<div><p>A. "+qstateops2[i].substring(1)+"</p></div>"+
+       "<div><p>B. "+qstateops2[i+1].substring(2)+"</p></div>"+
+       "<div><p>C. "+qstateops2[i+2].substring(2)+"</p></div>"+
+       "<div><p>D. "+qstateops2[i+3].substring(2)+"</p></div>"+
+       "<br><div id='showqstimg'><img style='pointer-events:none;' "+
+       "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+       "<hr></div>";
+}
+else{
+var i1 = i+1;
+document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
+"<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+i1+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
+"src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+"<br><div id='showqstimg'><img style='pointer-events:none;' "+
+"src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+"<hr></div>";
+}
+      }
+       else{
+        var iq = i +1;
+        var qs = qstate2[i].substring(2);       
+        var qsimg =qstateimg2[i].substring(2);
+        var qsopsimg =qstateopimg2[i].substring(2);
+        var qsanst =qstateanst2[i].substring(2);
+        if(qsopsimg =="null"){
+        document.getElementById("previewqset").innerHTML += "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
+        "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+iq+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
+        "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+        "<div><p>A. "+qstateops2[opq].substring(2)+"</p></div>"+
+        "<div><p>B. "+qstateops2[opq+1].substring(2)+"</p></div>"+
+        "<div><p>C. "+qstateops2[opq+2].substring(2)+"</p></div>"+
+        "<div><p>D. "+qstateops2[opq+3].substring(2)+"</p></div>"+
+        "<br><div id='showqstimg'><img style='pointer-events:none;' "+
+        "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+        "<hr></div>";
+         opq= opq +4;
+        }
+      else{
+        document.getElementById("previewqset").innerHTML += "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
+        "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+iq+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
+        "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+        "<br><div id='showqstimg'><img style='pointer-events:none;' "+
+        "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+        "<hr></div>";
+         opq= opq +4;
+      } }}
   }
-  else{document.getElementById("qststorage").innerHTML = "0%";}
-  if(qststrlen>46000){
-    document.getElementById("qststorage").innerHTML = "100%";
-    document.getElementById("addQ").disabled = true;
-  }
-  var enststr = json.records[i].EnrolledStuFinal;
-  var enstlimit = enststr.length;
-  var enstustr = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
-  var enstusingle = enstustr.split(',');
-  var enstustrlen =enstusingle.length;
-  if(enststr != ""){
-    var numofstu = (enstustrlen-1)/3;
-  document.getElementById("enrolledstuall").innerHTML = numofstu;
-  }
-  else{document.getElementById("enrolledstuall").innerHTML = "0";}
-  var stuansstr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
-  var stuansstrlen =stuansstr.length;
-  if(stuansstr != "" && stuansstrlen<46000 ){
-  var troomsize = (stuansstrlen/46000)*100;
-  document.getElementById("troomsize").innerHTML = troomsize.toFixed(2)+"%";
-  }
-  else{document.getElementById("troomsize").innerHTML = "0%";}
-  if(stuansstrlen>46000){
-    document.getElementById("crtnewexid").value = "Create Another Exam ID";
-    document.getElementById("crtnewexid").disabled = false;
-    $("#crtnewexid").removeClass("btn-outline-primary");
-    $("#crtnewexid").addClass("btn-outline-warning");
-    document.getElementById("troomsize").innerHTML ="100%";
+
   }
   else{
-    document.getElementById("crtnewexid").value = "Test Room Size Health: GOOD!";
-    document.getElementById("crtnewexid").disabled = true;
-  }
-        var qstate = JSON.parse(JSON.stringify(json.records[i].QuesSTFinal));
-        var qstateimg = JSON.parse(JSON.stringify(json.records[i].QSTimgFinal));
-        var qstateops = JSON.parse(JSON.stringify(json.records[i].OPfinal));
-        var qstateopimg = JSON.parse(JSON.stringify(json.records[i].OPimgfinal));
-        var qstateanst = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
-        var qstate2 = qstate.split('{qfin}"');
-        var qstateimg2 = qstateimg.split('{qfin}"');
-        var qstateops2 = qstateops.split('{qfin}"');
-        var qstateopimg2 = qstateopimg.split('{qfin}"');
-        var qstateanst2 = qstateanst.split('{qfin}"');
-        var qstateanstprev = qstateanst.split('{qfin}",');
-        var len = qstate2.length;
-        var oplen = qstateops2.length;
-        var opq= 4;
-  if(qstate ==""){
     document.getElementById('loaderCon').style.display = "none";
     document.getElementById('previewqset').innerHTML = '<div align="center" style="color:#d9d8db;margin-top:120px;">'+
     '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">'+
     '<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>'+
     '</svg></div>';
-    document.getElementById('qsetanst').innerHTML = "";
   }
-  else{
-    $('#qsetanst').empty();
-    for(var ast=0;ast<qstateanstprev.length-1;ast++){
-      document.getElementById('qsetanst').innerHTML += "Question No."+(ast+1)+": <b>"+qstateanstprev[ast].substring(1)+"</b> | ";
-    }
-        for(var i = 0; i<len-2;i++){
-          if(i == 0){
-          var qs =qstate2[i].substring(1);
-          var qsimg =qstateimg2[i].substring(1);
-          var qsopsimg =qstateopimg2[i].substring(1);
-          var qsanst =qstateanst2[i].substring(1);
-  if(qsopsimg =="null"){
-    var i1 = i+1;
-           document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
-           "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+i1+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-           "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-           "<div><p>A. "+qstateops2[i].substring(1)+"</p></div>"+
-           "<div><p>B. "+qstateops2[i+1].substring(2)+"</p></div>"+
-           "<div><p>C. "+qstateops2[i+2].substring(2)+"</p></div>"+
-           "<div><p>D. "+qstateops2[i+3].substring(2)+"</p></div>"+
-           "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-           "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-           "<hr></div>";
-  }
-  else{
-    var i1 = i+1;
-    document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
-    "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+i1+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-    "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-    "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-    "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-    "<hr></div>";
-  }
-          }
-           else{
-            var iq = i +1;
-            var qs = qstate2[i].substring(2);       
-            var qsimg =qstateimg2[i].substring(2);
-            var qsopsimg =qstateopimg2[i].substring(2);
-            var qsanst =qstateanst2[i].substring(2);
-            if(qsopsimg =="null"){
-            document.getElementById("previewqset").innerHTML += "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
-            "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+iq+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-            "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-            "<div><p>A. "+qstateops2[opq].substring(2)+"</p></div>"+
-            "<div><p>B. "+qstateops2[opq+1].substring(2)+"</p></div>"+
-            "<div><p>C. "+qstateops2[opq+2].substring(2)+"</p></div>"+
-            "<div><p>D. "+qstateops2[opq+3].substring(2)+"</p></div>"+
-            "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-            "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-            "<hr></div>";
-             opq= opq +4;
-            }
-          else{
-            document.getElementById("previewqset").innerHTML += "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
-            "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+iq+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-            "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-            "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-            "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
-            "<hr></div>";
-             opq= opq +4;
-          } }}
-        break;}}
-  else{
-    document.getElementById('loaderCon').style.display = "none";
-    document.getElementById('previewqset').innerHTML = '<div align="center" style="color:#d9d8db;margin-top:120px;">'+
-    '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">'+
-    '<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>'+
-    '</svg></div>';
-  }}});}
+
+}
+
    function clrqsetcomplete(){
     document.getElementById('loader-clrq').style.display = "block";
     var exid=$("#chexamidedu").val();
     var ekey=JSON.stringify($("#chkey").val());
     var url1 = "https://script.google.com/macros/s/";
-    var url2 = "AKfycbxyFbMMoJ4NS4igBYEeJbyjf2naNY1pGyUx4YW2H-9YjttE8vxMww8tsDoqd0v1RHb0";
+    var url2 = "AKfycbw65_6YtN5R7hahQB03D2J4pCbczCvcvLILqlxY-EISIfFbjDApoIqGcoTvCVkx-GPbXw";
     var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexid=" +exid+"&chkey="+ekey+"&action=clrqdata";
     var request = jQuery.ajax({
       crossDomain: true,
@@ -394,74 +407,79 @@ conq.addEventListener('input',(event) =>{
   
   function createnewexid(){
     document.getElementById("crtnewexid").disabled = true;
-    var d = new Date();
-    var day = d.getDate();
-    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
-    document.getElementById('dateQ').value = currentTime;
     var exid=$("#chexamidedu").val();
     var ekey=JSON.stringify($("#chkey").val());
-    var timecrtex = $('#dateQ').val();
     var url1 = "https://script.google.com/macros/s/";
-    var url2 = "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
-    var url3 = "AKfycbwhAhuet3qAdjJcXFkMcUmvqcW5tBtc5SdKjpl1xycysG4DjbjN2j76deSClGyZ4Tgi";
-    var url = url1+url2+"/exec"+ "?action=gentestrd";
-    //document.getElementById('loaderCon').style.display = "block";
-    $.getJSON(url, function(json) {
-      for (var i = 0; i < json.records.length - 1; i++) {
-        if (exid === json.records[i].ExamID && ekey === json.records[i].PKey) {      
-      var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
-      document.getElementById('examid').value = k;
-      var newid = $('#examid').val();
-      var name = json.records[i].EducatorName;
-      var title = json.records[i].ExamTitle;
-      var descp = json.records[i].ExamDescp;
-      var youkey = JSON.parse(json.records[i].PKey);
-      var examp = JSON.parse(json.records[i].ExamPass);
-      var ttmstr = json.records[i].TDuration;
-      document.getElementById('createid').style.zIndex = "4000";
-      document.getElementById('exportalpromo').style.zIndex = "4000";
-      $("#createid").show();
-      $("#cridone").hide();
-      $("#crtestthree").hide();
-      $("#cridtwo").show();
-      $("#crtestfour").show();
-      $('#exportalpromo').show();
-      document.getElementById("examidFin").innerHTML="Exam ID: "+"<span style='background-color:#0c29cd;padding:4px 6px;font-style:italic;'>"+newid+"</span>";
-      document.getElementById("edunameFin").innerHTML="Name: " + "<span style='padding:4px 6px;font-style:italic;'>"+name+"</span>";
-      document.getElementById("examtitleFin").innerHTML="Title: "+"<span style='padding:4px 6px;font-style:italic;'>"+title+"</span>";
-      document.getElementById("examdescpFin").innerHTML="Description: "+"<span style='padding:4px 6px;font-style:italic;'>"+descp+"</span>";
-      document.getElementById("mykeyFin").innerHTML="Your Key: "+"<span style='padding:4px 6px;font-style:italic;'>"+youkey+"</span>";
-      document.getElementById("exampassFin").innerHTML="Exam Pass For Students: "+"<span style='padding:4px 6px;font-style:italic;'>"+examp+"</span>";
-      document.getElementById("tsdur").innerHTML = "Test Duration: "+"<span style='padding:4px 6px;font-style:italic;'>"+ttmstr+"</span>";  
-      document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"+"Exam ID: "+"<span style='color:blue;font-style:italic;'>"+newid +"</span>"+
-      "<span style='float:right;margin-left:10px;'>Test Duration: "+ttmstr+"</span>"+
-      "<hr>"+"Name: " +"<span style='font-size:20px;'>"+ name+
-      "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
-      "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
-      "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-      "<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Exam Portal</a></span>"+
-      "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
-      "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
-      "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
-      var url = url1+ url3+"/exec"+"?callback=ctrlcrtexid&chexid=" +exid+ "&examid="+newid+"&dateQ="+timecrtex+"&action=crtexid";
-          var request = jQuery.ajax({
-            crossDomain: true,
-            url: url,
-            method: "GET",
-            dataType: "jsonp"
-          });
-    document.getElementById("crtnewexid").value = "New Exam ID: "+ newid;
-    $("#crtnewexid").removeClass("btn-outline-warning");
-    $("#crtnewexid").addClass("btn-outline-primary");
-        }
-      }
-    });
+    var url2 = "AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
+    var urlcr = url1+url2+"/exec"+ "?callback=crnwexid&chexid="+exid+"&chkey="+ekey+"&action=chexid";
+   var request = jQuery.ajax({
+    crossDomain: true,
+    url: urlcr,
+    method: "GET",
+    dataType: "jsonp"
+  });}
+
+function crnwexid(e){
+  var reslt = e.records;
+  var d = new Date();
+  var day = d.getDate();
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
+  document.getElementById('dateQ').value = currentTime;
+  var timecrtex = $('#dateQ').val();
+  var exid=$("#chexamidedu").val();
+  var url1 = "https://script.google.com/macros/s/";
+  var url3 = "AKfycbxO8NaomCMfuxi-gDCXZDPKZ-BdwNG241GHeqkxLGXWOgCj_CQE3GySZp9Nz_ffqrYFFQ";
+  if(reslt != "ID not found!"){
+    var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
+    document.getElementById('examid').value = k;
+    var newid = $('#examid').val();
+    var name = reslt[0].EducatorName;
+    var title = reslt[0].ExamTitle;
+    var descp = reslt[0].ExamDescp;
+    var youkey = JSON.parse(reslt[0].PKey);
+    var examp = JSON.parse(reslt[0].ExamPass);
+    var ttmstr = reslt[0].TDuration;
+    document.getElementById('createid').style.zIndex = "4000";
+    document.getElementById('exportalpromo').style.zIndex = "4000";
+    $("#createid").show();
+    $("#cridone").hide();
+    $("#crtestthree").hide();
+    $("#cridtwo").show();
+    $("#crtestfour").show();
+    $('#exportalpromo').show();
+    document.getElementById("examidFin").innerHTML="Exam ID: "+"<span style='background-color:#0c29cd;padding:4px 6px;font-style:italic;'>"+newid+"</span>";
+    document.getElementById("edunameFin").innerHTML="Name: " + "<span style='padding:4px 6px;font-style:italic;'>"+name+"</span>";
+    document.getElementById("examtitleFin").innerHTML="Title: "+"<span style='padding:4px 6px;font-style:italic;'>"+title+"</span>";
+    document.getElementById("examdescpFin").innerHTML="Description: "+"<span style='padding:4px 6px;font-style:italic;'>"+descp+"</span>";
+    document.getElementById("mykeyFin").innerHTML="Your Key: "+"<span style='padding:4px 6px;font-style:italic;'>"+youkey+"</span>";
+    document.getElementById("exampassFin").innerHTML="Exam Pass For Students: "+"<span style='padding:4px 6px;font-style:italic;'>"+examp+"</span>";
+    document.getElementById("tsdur").innerHTML = "Test Duration: "+"<span style='padding:4px 6px;font-style:italic;'>"+ttmstr+"</span>";  
+    document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"+"Exam ID: "+"<span style='color:blue;font-style:italic;'>"+newid +"</span>"+
+    "<span style='float:right;margin-left:10px;'>Test Duration: "+ttmstr+"</span>"+
+    "<hr>"+"Name: " +"<span style='font-size:20px;'>"+ name+
+    "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
+    "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
+    "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
+    "<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Exam Portal</a></span>"+
+    "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
+    "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
+    "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
+    var url = url1+ url3+"/exec"+"?callback=ctrlcrtexid&chexid=" +exid+ "&examid="+newid+"&dateQ="+timecrtex+"&action=crtexid";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+  document.getElementById("crtnewexid").value = "New Exam ID: "+ newid;
+  $("#crtnewexid").removeClass("btn-outline-warning");
+  $("#crtnewexid").addClass("btn-outline-primary");
   }
-  function ctrlcrtexid(e){
-   // console.log(e.result);
-  }
+}
+
+  function ctrlcrtexid(e){}
    function downloadqset() {
     var elem1 = document.getElementById("previews");
     var elem2 = document.getElementById("eduinfofordqset");
