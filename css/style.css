@@ -5,6 +5,8 @@ body{
     background-image:-webkit-linear-gradient(-45deg,rgba(0,0,0,.2) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.2) 75%,transparent 75%,transparent);
     -moz-background-size:4px 4px;
     background-size:6px 6px;
+    -webkit-user-select: auto;
+    user-select: auto;
 
 }
 html{
@@ -42,7 +44,7 @@ height:100%;
     }
 #qcontainer{
     padding-top:40px;
-    padding-bottom:40px;
+    padding-bottom:60px;
     background-color: #f0eaea;
 }
 
@@ -248,15 +250,17 @@ background-size:6px 6px;
       display: inline-block;
   }
 #boxexp-two{
-    bottom:40px;
+    bottom:20px;
     position: fixed;
     right:0px;
     text-align: left;
-    max-width:200px;
+    max-width:240px;
 }
   .qstindex{
       border:none;
-      padding:6px 16px;
+      /* padding:6px 16px; */
+      width:50px;
+      height:40px;
       margin:2px;
       background-color: #f5cc14;
   }
