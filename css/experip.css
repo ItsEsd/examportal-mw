@@ -350,7 +350,7 @@
   #scrbrd{
     max-width:500px;
     display:none;
-    margin-top: -40px;
+    /* margin-top: -40px; */
   }
   
   #chresform{
