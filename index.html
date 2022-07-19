@@ -494,6 +494,7 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/cexms.css">
     <link rel="stylesheet" href="/css/experip.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="js/assets/jQuery-1.11.1.min.js"></script> 
     <!-- <script>document.addEventListener('contextmenu', event => event.preventDefault());</script> -->
   </head>
@@ -594,12 +595,17 @@
       <input id="jsonqnst" /></form>  
   </div>
 <div id="feedback" >
-  <center><div id="checkresmain">
+  <center>
+    <div id="anrprt2"><div><span id="clsanrpt2">Close</span><canvas id="anchartans2"></canvas>
+      </div>
+    </div>
+    <div id="checkresmain">
     <img src="/images/mwalllogo.png" class="leftimg" style="width:100px;margin-bottom:20px;">
     <h2>THANK YOU</h2><br>
     <h2>Your test is completed!</h2><br>
     <h4>M A S T R O W A L L</h4><br>
     <P style="font-weight:bold;">|| An Art of Learning ||</P>
+    <button class="btn btn-primary" id="opanrpt2">Show Details</button>
     <button class="btn btn-primary" id="testscore" onclick="checkresult();">Check Score</button>
     <div id="crtans" style="display: none;padding-top:20px;"></div>
   </div>
@@ -756,7 +762,7 @@
       <div id="assignstuexform">
         <form id="stuassign" target="hdnfrm">
           <label>Name:</label>
-          <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required /><br>
+          <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();idelem.donotdowrd();" required /><br>
           <label>Email Address:</label>
           <input type="email" class="form-control" id="stueid" placeholder="Enter Email Address" required /><br>
           <label>Exam ID:</label>
@@ -789,6 +795,9 @@
       </div>
       <div id="scrbrd">
         <center>
+      <div id="anrprt"><div><span id="clsanrpt">Close</span><canvas id="anchartans"></canvas>
+        <!-- <canvas id="anchartcrt"></canvas> --></div>
+      </div>
           <div style="box-shadow:0px 2px 4px 0px grey;max-width:600px;padding:40px;background-color: white;">
             <img src="images/mwalllogo.png" class="leftimg" style="width:100px;margin-bottom:20px;">
             <div id="stunamek"></div>
@@ -796,8 +805,8 @@
             <div id="crtans2" style="display: none;padding-top:0px;"></div>
             <h4 style="color:#656566;background-color: white;">M A S T R O W A L L</h4>
             <P style="font-weight:bold;color:#656566;">|| An Art of Learning ||</P>
-  
-            <input type="button" value="Close" style="margin-top:20px;font-size: 14px;" onclick="$('#scrbrd').hide();$('#chresform').show();">
+             <input type="button" value="Show Analysis" class="rsltbrdbtn" id="opanrpt">
+            <input type="button" value="Close" class="rsltbrdbtn" onclick="$('#scrbrd').hide();$('#chresform').show();">
           </div>
         </center>
       </div>
