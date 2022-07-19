@@ -481,24 +481,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Exam Portal | MASTROWALL</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Exam Portal | MASTROWALL</title>
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="icon" href="/images/mwalllogo.png" type="image/png" sizes="16x16">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="js/assets/jQuery v3.5.1.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/cexms.css">
     <link rel="stylesheet" href="/css/experip.css">
+    <script src="js/assets/jQuery-1.11.1.min.js"></script> 
+    <!-- <script>document.addEventListener('contextmenu', event => event.preventDefault());</script> -->
   </head>
   <body ng-app="">
    <div id="flsback"></div> 
@@ -520,10 +517,10 @@
 <input class="form-control" id="chpass" placeholder="*************" required/><br>
 <input type="submit" class="btn btn-warning" value="Continue" style="float:right;">
 <br><p>** Answers will be submitted automatically after allocated time</p>
-    </form>
+    </form><input id="empinf" style="display:none;"/>
     <div id="enrollid" style="display:none;">
       <div id="expdetails"></div>
-      <form  id="exptwo" target="ttstnfrm">
+      <form  id="exptwo" target="ttstnfrm" onsubmit="return false;">
       <label>Enrollment ID:</label>
       <input class="form-control" id="chenid" placeholder="*************" required /><br>
       <input type="submit" class="btn btn-warning" value="Go"  style="float:right;">
@@ -630,7 +627,7 @@
     <div align="left" id="ttestinfo">
       <span id="exmpcreatid">&#9745; Create Exam ID</span>
       <span id="exmpprereq">&#9745; Prerequisite</span>
-      <span id="exampconmasd">&#9745; MASTRO Desk</span>
+      <!-- <span id="exampconmasd">&#9745; MASTRO Desk</span> -->
       <!--<span style="padding-right: 0px;" onclick="$('#termuse').show();$('#contactdesk').hide();$('#prereq').hide();$('#createid').hide();">&#9745; Terms of Use</span>-->
       </div>
       <hr>
@@ -655,9 +652,9 @@
         <form target="hdnfrm" id="quesfrm" autocomplete="off">
           <div id="stdiv">
             <label>Question Statement:</label>
-            <textarea class="form-control" id="qst" required></textarea>
-            <div contenteditable="true" id="conq" onclick='$(this).focus();'></div>
+            <div id="conq" contenteditable="true" onclick="$(this).focus();"></div>
             <p id="qtstfalse"></p>
+            <textarea class="form-control" id="qst" required></textarea>
             <input type="file" accept="image/png, image/gif, image/jpeg" id="stimg" /><input id="qstimg" value="null" style="display:none;" /><br><br>
           </div>
           <hr>
@@ -810,18 +807,18 @@
   <section>
     <div id="continueeducator" align="center">
       <div id="eduexloginform">
-        <form id="conexeducator" target="hdnfrm" autocomplete="off">
+        <form id="conexeducator" onsubmit="return false;" autocomplete="off">
           <label>Exam ID:</label>
           <input type="text" class="form-control" id="cpexid" placeholder="Enter Exam ID" required /><br>
           <label>Exam Pass:</label>
           <input type="password" class="form-control" id="cppass" placeholder="*************" required /><br>
-          <input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueeducator').hide();" value="Back">
+          <input type="submit" class="exidbtn" id="sbmtchprm" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueeducator').hide();" value="Back">
         </form>
       </div><br>
       <div id="loader-cp" class="spinner-border text-primary" style="display: none;"></div>
       <div align="center" id="loadercp" style="display: none;">
         <div id="stresultall"></div><br>
-        <div style="max-width:146px;" align="center"><span style="float:left;"><button type="button" class="btn btn-primary" style="font-size:14px;padding:4px 10px;" onclick="examresultpdf();">Download</button></span><span style="float:right;"><button type="button" class="btn btn-primary" id="backcp" style="margin-left:4px;font-size:14px;padding:4px 10px;" onclick="document.getElementById('eduexloginform').style.display = 'block';document.getElementById('loadercp').style.display = 'none'">Back</button></span></div>
+        <div style="max-width:146px;height: 40px;" align="center"><span style="float:left;"><button type="button" class="btn btn-primary" style="font-size:14px;padding:4px 10px;" onclick="examresultpdf();">Download</button></span><span style="float:right;"><button type="button" class="btn btn-primary" id="backcp" style="margin-left:4px;font-size:14px;padding:4px 10px;" onclick="document.getElementById('eduexloginform').style.display = 'block';document.getElementById('loadercp').style.display = 'none'">Back</button></span></div>
       </div>
     </div>
   </section>
@@ -848,7 +845,4 @@
  <script src="/js/crtest-one.js"></script>
  <script src="/js/test-edit.js"></script>
  </body>
-<script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
-</script>
 </html>
