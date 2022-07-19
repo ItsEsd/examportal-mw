@@ -101,6 +101,7 @@ function ldalrslt(e){
         oPrntWin.document.close();
    }
 /////////////////////////////////////////////////////////////////////
+
 chresult.addEventListener('submit', (event) => { 
   var exid=$("#checkexamid").val();
   var enid=JSON.stringify($("#chechenid").val());
@@ -132,22 +133,91 @@ for(var k =0; k<lenstr;k+=2){
 if(enid==sprestr[k]){ 
 var res = sprestr[k+1];
 var resone = JSON.parse(res);
-var count = 0;
+var count = 0;var ntansd =0;var wrng =0;
 for(var j=0; j<lenstrkey-1;j++){
 if(resone.qnst[j] === anskey[j].substring(1)){
-count = count+1;}else{count = count;}}}}
+count = count+1;
+
+}else{
+  
+  count = count;
+}
+
+
+ if(resone.qnst[j] =="Not Answered"){ntansd=ntansd+1;}else{ntansd=ntansd}
+ if(resone.qnst[j] !="Not Answered" && resone.qnst[j] !=anskey[j].substring(1)){
+  wrng = wrng +1;}else{wrng = wrng}
+
+}
+}}
 for(var h =0; h<lenstrk;h++){
 if(enid==sstring[h]){
-  document.getElementById('stunamek').style.display = "block";
-document.getElementById('stunamek').innerHTML="<p style='color:black;font-size:20px;'>Name: <span style='color:blue;font-style:italic;'>"+JSON.parse(sstring[h-2])+"</span></p>";
-}}
 document.getElementById('chresform').style.display = "none";
 document.getElementById('scrbrd').style.display = "block";
 document.getElementById('crtans2').style.display = "block";
 document.getElementById('crtans2').innerHTML= "<div><p style='text-align:left;font-size:14px;'>Educator: "+reslt[0].EducatorName+
 "<br>Exam Title: "+reslt[0].ExamTitle+"<br>Description: "+reslt[0].ExamDescp+"</p></div>"+
 "<p style='font-size:20px;color:green;'>Correct Answer: "+ count+"</p>";
-document.getElementById('loader-resch').style.display = "none";}
+  document.getElementById('stunamek').style.display = "block";
+document.getElementById('stunamek').innerHTML="<p style='color:black;font-size:20px;'>Name: <span style='color:blue;font-style:italic;'>"+JSON.parse(sstring[h-2])+"</span></p>";
+break;
+}
+else{
+  document.getElementById('stunamek').style.display = "none";
+}
+}
+
+var xValues = ["Correct", "Not Answered","Wrong"];
+var yValues = [count, ntansd,wrng];
+var barColors = [
+  "#1e7145",
+  "#e8c3b9",
+  "#b91d47"
+];
+
+new Chart("anchartans", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Overall Performance"
+    }
+  }
+});
+// var xValues2 = ["Correct", "Wrong"];
+// var yValues2 = [5, 49];
+// var barColors2 = [
+//   "#2b5797",
+//   "#b91d47"
+// ];
+// new Chart("anchartcrt", {
+//   type: "pie",
+//   data: {
+//     labels: xValues2,
+//     datasets: [{
+//       backgroundColor: barColors2,
+//       data: yValues2
+//     }]
+//   },
+//   options: {
+//     title: {
+//       display: true,
+//       text: "Correct"
+//     }
+//   }
+// });
+
+
+
+document.getElementById('loader-resch').style.display = "none";
+}
   else{
     document.getElementById('loader-resch').style.display = "none";
   }
