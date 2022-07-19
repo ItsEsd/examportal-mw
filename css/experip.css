@@ -10,6 +10,7 @@
     height: 100%;
     left:0;
     overflow-y: auto;
+    z-index: 100;
   }
   
 #formcontainer::-webkit-scrollbar {
@@ -69,8 +70,7 @@
   }*/
   #opdiv,#stdiv,#ansdiv{
     background-color: #e6e6e6;
-    
-  padding:20px;
+    padding:20px;
   }
   #opsimg,#stimg{
     font-size: 14px;
@@ -219,15 +219,19 @@
   display:none;
 }
   #conq{
+    width:100%;
     height:240px;
     border:2px solid #6a67fa;
-    overflow-y:auto;
+    overflow-y:scroll;
     font-size: 14px;
     padding:6px;
     background-color: white;
     border-radius: 5px;
+    display:block;
   }
-  #conq:focus{outline:none;}
+  #conq:focus{
+    outline:none;
+  }
   
   #conq::-webkit-scrollbar {
     width: 4px;
@@ -418,7 +422,7 @@
     background-color:white;
     padding:20px;
     overflow-y: scroll;
-    max-height:300px;
+    max-height:310px;
     max-width:600px;
   }
   
