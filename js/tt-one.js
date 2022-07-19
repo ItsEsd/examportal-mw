@@ -301,15 +301,44 @@ for(var k =0; k<lenstr;k+=2){
 if(enid==sprestr[k]){
 var res = sprestr[k+1];
 var resone = JSON.parse(res);
-var count = 0;
+var count = 0;var ntansd =0;var wrng =0;
 for(var j=0; j<lenstrkey-1;j++){
 if(resone.qnst[j] === anskey[j].substring(1)){
 count = count+1;}
-else{count = count;}}
+else{count = count;}
+if(resone.qnst[j] =="Not Answered"){ntansd=ntansd+1;}else{ntansd=ntansd}
+if(resone.qnst[j] !="Not Answered" && resone.qnst[j] !=anskey[j].substring(1)){
+ wrng = wrng +1;}else{wrng = wrng}
+}
 document.getElementById('crtans').style.display = "block";
 document.getElementById('crtans').innerHTML= "<p style='font-size:20px;color:green;'>Correct Answer: "+ count+"</p>"
 }
   }
+  
+var xValues = ["Correct", "Not Answered","Wrong"];
+var yValues = [count, ntansd,wrng];
+var barColors = [
+  "#1e7145",
+  "#e8c3b9",
+  "#b91d47"
+];
+
+new Chart("anchartans2", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Overall Performance"
+    }
+  }
+});
   document.getElementById('loader-res').style.display = "none";
   }
   else{
@@ -318,7 +347,20 @@ document.getElementById('crtans').innerHTML= "<p style='font-size:20px;color:gre
 }
 
 onselectstart = (e) => {e.preventDefault()}
- 
+
+const idelem = {"id":["stuname","stueid"]}
+idelem.donotdowrd = function(){
+  for(var ion=0;ion<idelem.id.length;ion++){
+  var nam = '#'+this.id[ion];
+  var inp = $(nam).val();
+  var dndw = inp.indexOf(",");
+  var funelem = document.getElementById(this.id[ion]);
+      if(dndw >= 0){
+        funelem.value = inp.split(',')[0];
+      }
+  }
+}
+
 function genenrollid(){
   var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
   document.getElementById('enrollid').value = k;
@@ -347,4 +389,23 @@ $("#chresexam").click(function() {
 
 $('#sgconwexid').click(function(){
   window.open('https://educator.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+});
+
+
+$("#clsanrpt").click(function() {
+  $('#anrprt').hide();
+});
+
+
+$("#opanrpt").click(function() {
+  $('#anrprt').show();
+});
+
+$("#clsanrpt2").click(function() {
+  $('#anrprt2').hide();
+});
+
+$("#opanrpt2").click(function() {
+  checkresult();
+  $('#anrprt2').show();
 });
