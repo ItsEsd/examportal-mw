@@ -123,7 +123,7 @@ document.getElementById('timestr').value= str; });
     var examid =$('#examid').val();
     var time =$('#dateQ').val();
     var url1="https://script.google.com/macros/s/";
-    var url2 ="AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
+    var url2 ="AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
     var url3 =url1+url2+"/exec";
     if (name != 0 && title != 0 && descp != 0 && emid != 0 && epass != 0 && examid != 0 && time != 0 && spass != 0 ) {
       var url = url3 + "?callback=ctrlq&examid=" + examid + "&eduname=" + name + "&extitle=" + title + "&exdescp=" + descp + "&edueid=" + emid + 
@@ -152,9 +152,12 @@ document.getElementById('timestr').value= str; });
         oPrntWin.document.open();
         oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\">" + elem.innerHTML + "<\/body><\/html>");
         oPrntWin.document.close();}
-   mquearytest.addEventListener('submit', (event) => {
-    $("#qmsgsent").show();
-    $("#mquearytest").hide();});
+
+  //  mquearytest.addEventListener('submit', (event) => {
+  //   $("#qmsgsent").show();
+  //   $("#mquearytest").hide();});
+
+
   jQuery('#confirmpasskey').on('keyup', function() {
     if (jQuery('#createpasskey').val() == jQuery('#confirmpasskey').val()) {
       jQuery('#matched').html('Matching').css('font-size', '12px');
