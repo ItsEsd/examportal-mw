@@ -17,7 +17,7 @@ html{
 #flsback{
 height:100%;
 width: 100%;
-background-color: #d940ff;
+background-color: #2d4ddb;
 top: 0px;
 left: 0px;
 position: fixed;
@@ -35,9 +35,10 @@ height:100%;
     margin-top:160px;
     padding:40px;
     height:100%;
+    border-right:40px solid #f0f1fc;
     background-color: #2d4ddb;
     
-    box-shadow: 0px 2px 20px 0 #ffffff;
+    /* box-shadow: 0px 2px 20px 0 #ffffff; */
     }
     #right-block form{max-width:600px;
     color:white;
