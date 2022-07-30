@@ -16,7 +16,8 @@
 }
   #ttest{
     max-width:600px;
-    padding:20px;background-color:#464646;
+    padding:20px;
+    background-color:#12026d;
     background-image:-moz-linear-gradient(-45deg,rgba(0,0,0,.2) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.2) 75%,transparent 75%,transparent);
     background-image:-webkit-linear-gradient(-45deg,rgba(0,0,0,.2) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.2) 75%,transparent 75%,transparent);
     -moz-background-size:4px 4px;
@@ -96,7 +97,7 @@ padding-right:10px;}
 
   .closeotserv{
     float:right;
-    background-color: #ffffffbe;
+    background-color: #ffffff;
     font-size: 14px;
     padding: 2px 6px;
     color:red;
@@ -325,15 +326,16 @@ font-size: 16px;
   overflow-y: auto;
 
 }
-#eduexloginform,#assignstuexform{ 
-  width: 98%;
-  max-width: 600px;
-  margin-top: 20px;;
-padding:20px;
-text-align: left;
-border-radius: 5px;
-background-image:linear-gradient(-45deg,#2222f0,#d716e9)
-}
+ #eduexloginform,#assignstuexform{ 
+    width: 98%;
+    max-width: 600px;
+    margin-top: 20px;;
+  padding:20px;
+  text-align: left;
+  /* border-radius: 5px; */ 
+  background-image:linear-gradient(-45deg,#a8b8ff,#0749c4)
+  }
+  
 
 #eduexloginform .form-control{
   font-size: 14px;
