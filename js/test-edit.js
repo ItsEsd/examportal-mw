@@ -432,7 +432,7 @@ function crnwexid(e){
   var url1 = "https://script.google.com/macros/s/";
   var url3 = "AKfycbxO8NaomCMfuxi-gDCXZDPKZ-BdwNG241GHeqkxLGXWOgCj_CQE3GySZp9Nz_ffqrYFFQ";
   if(reslt != "ID not found!"){
-    var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
+    var k ="ep/"+Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
     document.getElementById('examid').value = k;
     var newid = $('#examid').val();
     var name = reslt[0].EducatorName;
