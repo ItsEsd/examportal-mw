@@ -362,7 +362,7 @@ idelem.donotdowrd = function(){
 }
 
 function genenrollid(){
-  var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
+  var k ="ep/"+Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
   document.getElementById('enrollid').value = k;
 }
 
