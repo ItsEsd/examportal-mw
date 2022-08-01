@@ -166,6 +166,6 @@ document.getElementById('timestr').value= str; });
       jQuery('#matched').html('Not Matching').css('font-size', '12px');
       document.getElementById('psconfirmed').disabled = true;
     }
-    var k =Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
+    var k ="ep/"+Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
     document.getElementById('examid').value = k;
   });
