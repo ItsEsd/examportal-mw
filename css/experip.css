@@ -26,6 +26,7 @@
     background-color: #ffffff;
     z-index:100;
     overflow-y: auto;
+    pointer-events: all;
   }
   
   #formcontainer .form-control{
@@ -212,13 +213,18 @@
   
   }
   #qtstfalse{
-    display:none;color:#f75858;font-size: 14px;float:right;
+    margin-top:5px;
+    display:none;
+    color:#f75858;
+    font-size: 14px;
+    float:right;
 }
 
 #qst{
   display:none;
 }
   #conq{
+    margin-top:10px;
     width:100%;
     height:240px;
     border:2px solid #6a67fa;
@@ -228,6 +234,9 @@
     background-color: white;
     border-radius: 5px;
     display:block;
+    cursor:auto;
+    z-index: 10;
+    pointer-events: all;
   }
   #conq:focus{
     outline:none;
