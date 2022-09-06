@@ -496,7 +496,7 @@
     <link rel="stylesheet" href="/css/experip.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="js/assets/jQuery-1.11.1.min.js"></script> 
-    <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+    <!-- <script>document.addEventListener('contextmenu', event => event.preventDefault());</script> -->
   </head>
   <body ng-app="">
    <div id="flsback"></div> 
@@ -658,9 +658,11 @@
         <form target="hdnfrm" id="quesfrm" autocomplete="off">
           <div id="stdiv">
             <label>Question Statement:</label>
-            <div id="conq" contenteditable="true" onclick="$(this).focus();"></div>
+            <!-- <div id="conq" contenteditable="true">
+            </div> -->
+            <textarea id="conq" required></textarea>
+            <input class="form-control" id="qst">
             <p id="qtstfalse"></p>
-            <textarea class="form-control" id="qst" required></textarea>
             <input type="file" accept="image/png, image/gif, image/jpeg" id="stimg" /><input id="qstimg" value="null" style="display:none;" /><br><br>
           </div>
           <hr>
