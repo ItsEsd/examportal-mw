@@ -317,6 +317,7 @@ transform: scale(0.98);
     #info a {
         text-decoration: none;
         cursor: pointer;
+        color:#041563;
     }
 
     #navicon{
