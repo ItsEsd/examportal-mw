@@ -16,18 +16,31 @@ $("#addQ").click(function() {
 qst.addEventListener('input',(event) =>{
   $('#qtstfalse').hide();
 });
+
 conq.addEventListener('input',(event) =>{
     $('#qtstfalse').hide();
   document.getElementById('conq').style.border='2px solid #6a67fa';
-  var innerh = document.getElementById('conq').innerHTML;
+  // var innerh = document.getElementById('conq').innerHTML;
+  var innerh = $('#conq').val();
+
   document.getElementById('qst').value = innerh;
   });
-  $(document).ready(function(){
-    document.querySelector('[contenteditable]').addEventListener('paste', function(event) {
-      event.preventDefault();
-      document.execCommand('inserttext', false, event.clipboardData.getData('text/plain'));
-    });
-  });
+
+  document.querySelector('#conq').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      console.log('Listening')
+      var innerh = $('#qst').val() + "<br>";
+      console.log(innerh)
+  document.getElementById('conq').value = innerh;
+    }
+});
+
+  // $(document).ready(function(){
+  //   document.querySelector('[contenteditable]').addEventListener('paste', function(event) {
+  //     event.preventDefault();
+  //     document.execCommand('inserttext', false, event.clipboardData.getData('text/plain'));
+  //   });
+  // });
   
   
     function readImage(input) {
