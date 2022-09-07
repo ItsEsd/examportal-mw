@@ -364,3 +364,56 @@ return false;
        }
           });
       }
+
+var optionsS = {
+  "key": "rzp_live_LTmvi7swL9EliZ",
+  "amount": "10000",
+  "currency": "INR",
+  "name": "M A S T R O W A L L",
+  "image": "https://cdn.razorpay.com/logos/KEwE9wPPBouRjf_original.png",
+  "handler": function(response) {
+    
+      var rzres = response;
+      var exid = $('#chexamidedu').val();
+      var rzpid= response.razorpay_payment_id;
+      var refid = "emp"+Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 10);
+      var d = new Date(); var currentTime = d.toLocaleString();
+      var ur1='https://script.google.com/macros/s/';
+var ur2='AKfycbwiMGrFt3H2KToEovdGPDoMURbjuvpuHIks-6Lv9l-TEaaUq9PuiL2_Jbazz44KUtHDqw';
+var url= ur1+ur2+'/exec'+'?callback=ctrlqpcheck&tostamp='+currentTime+ '&torzres='+rzres+  '&toexid='+exid+ 
+'&torzpid='+rzpid+ '&torfid='+refid+  '&action=paycheck';
+var request = jQuery.ajax({
+crossDomain: true,
+url: url,
+method: "GET",
+dataType: "jsonp"
+});
+  },
+  "notes": {
+    "address": "Razorpay Corporate Office"
+  },
+  "theme": {
+    "color": "#ffffff"
+  }
+};
+var rzp4 = new Razorpay(optionsS);
+rzp4.on('payment.failed', function(response) {
+  alert(response.error.code);
+  alert(response.error.description);
+  alert(response.error.source);
+  alert(response.error.step);
+  alert(response.error.reason);
+  alert(response.error.metadata.order_id);
+  alert(response.error.metadata.payment_id);
+});
+
+$('#cmpltpay').click(function(e) {
+  rzp4.open();
+  e.preventDefault();
+});
+
+function ctrlqpcheck(e){
+if(e.result=="active"){
+  previewqset();
+}
+}
