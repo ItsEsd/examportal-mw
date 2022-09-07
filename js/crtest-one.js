@@ -1,4 +1,4 @@
-
+ /* M A S T R O W A L L */
 
    checkexid.addEventListener('submit', (event) => {
     var exid =$("#chexamidedu").val();
@@ -100,7 +100,6 @@ function ldalrslt(e){
         oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:2px solid grey;\">" + elem.innerHTML + "<\/div><\/div><\/body><\/html>");
         oPrntWin.document.close();
    }
-/////////////////////////////////////////////////////////////////////
 
 chresult.addEventListener('submit', (event) => { 
   var exid=$("#checkexamid").val();
@@ -214,8 +213,6 @@ new Chart("anchartans", {
 //   }
 // });
 
-
-
 document.getElementById('loader-resch').style.display = "none";
 }
   else{
@@ -223,67 +220,6 @@ document.getElementById('loader-resch').style.display = "none";
   }
 }
 
-
-////////////////////////////////////////////////////////////
-/*
- 
-stuassign.addEventListener('submit', (event) => { 
-  document.getElementById('loader-enst').style.display="block";
-var namestu = escape(JSON.stringify($('#stuname').val()));
-var eid  =escape(JSON.stringify($('#stueid').val()));
-var examid  =$('#exid').val();
-var epass  =JSON.stringify($('#expass').val());
-var enid  =escape(JSON.stringify($('#enrollid').val()));
-var url1 = "https://script.google.com/macros/s/";
-var url2 = "AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
-var url = url1+url2+"/exec"+"?callback=ctrlq&exid=" +examid+"&expass="+epass+"&stuname="+namestu+"&stueid="+eid+"&enrollid="+enid+"&action=gentestenroll";
-
-var request = jQuery.ajax({
-  crossDomain: true,
-  url: url,
-  method: "GET",
-  dataType: "jsonp"
-});
-
-});
-
-function ctrlq(e) {
-  document.getElementById('loader-enst').style.display="none";
-  var d = new Date();
-  var day = d.getDate();
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
-  var namestu = $('#stuname').val();
-var eid  =$('#stueid').val();
-var examid  =$('#exid').val();
-var enid  =$('#enrollid').val();
-  //console.log(e);
-var cat = e.result;
-//console.log(cat);
-if(cat === "Value updated successfully!"){
-  document.getElementById('stuassign').style.display ="none";
-  document.getElementById('assignstuexform').style.backgroundImage="linear-gradient(0deg,white,white)";
-  document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;' align='center'><div style='max-width:1000px;text-align:left;'>"+
-  "<hr><p style='font-size:16px;'>MASTROWALL Exam Portal <span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
-  "<br><p style='font-size:16px;'>Enrollment ID: <span style='color:blue;'>" +enid+"</span></p>" +
-  "<p style='font-size:16px;'>Name: " +namestu+"</p>" +
-  "<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
-  "<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-  "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Exam Portal >></a></p>"+
-  "<hr></div></div>";
-  document.getElementById('actionbtnenroll').style.display="block";
-}
-else{
-}
-return false;
-}
-*/
-
-/////////////////////////////////////////////////
-
-
- 
   stuassign.addEventListener('submit', (event) => { 
     document.getElementById('loader-enst').style.display="block";
   var namestu = escape(JSON.stringify($('#stuname').val()));
