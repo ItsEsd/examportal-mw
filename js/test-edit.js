@@ -1,43 +1,43 @@
-$(window).on('selectstart', function (evt) {
-  return (evt.target.contentEditable === 'true');
-});
-$("#addQ").click(function() {
-  $('#qtstfalse').show();
-  if(document.getElementById('qst').value ==''){
-    document.getElementById('qtstfalse').innerHTML='** Required';
-    document.getElementById('conq').style.border='2px solid #f75858';
-  }
-  else{
+ /* M A S T R O W A L L */
+  $(window).on('selectstart', function (evt) {
+    return (evt.target.contentEditable === 'true');
+  });
+  $("#addQ").click(function() {
+    $('#qtstfalse').show();
+    if(document.getElementById('qst').value ==''){
+      document.getElementById('qtstfalse').innerHTML='** Required';
+      document.getElementById('conq').style.border='2px solid #f75858';
+    }
+    else{
+      $('#qtstfalse').hide();
+      document.getElementById('conq').style.border='2px solid #6a67fa';
+    }
+    document.getElementById('formcontainer').scrollTop = '0px';
+  });
+  qst.addEventListener('input',(event) =>{
     $('#qtstfalse').hide();
-    document.getElementById('conq').style.border='2px solid #6a67fa';
-  }
-  document.getElementById('formcontainer').scrollTop = '0px';
-});
-qst.addEventListener('input',(event) =>{
-  $('#qtstfalse').hide();
-});
-
-conq.addEventListener('input',(event) =>{
-    $('#qtstfalse').hide();
-  document.getElementById('conq').style.border='2px solid #6a67fa';
-  // var innerh = document.getElementById('conq').innerHTML;
-  var innerh = $('#conq').val();
-
-  document.getElementById('qst').value = innerh;
   });
 
-  document.querySelector('#conq').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      console.log('Listening')
-      var innerh = $('#qst').val() + "<br>";
-      console.log(innerh)
-  document.getElementById('conq').value = innerh;
-    }
-});
+  conq.addEventListener('input',(event) =>{
+      $('#qtstfalse').hide();
+    document.getElementById('conq').style.border='2px solid #6a67fa';
+    // var innerh = document.getElementById('conq').innerHTML;
+    var innerh = $('#conq').val();
+    document.getElementById('qst').value = innerh;
+    });
 
-  // $(document).ready(function(){
-  //   document.querySelector('[contenteditable]').addEventListener('paste', function(event) {
-  //     event.preventDefault();
+    document.querySelector('#conq').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        console.log('Listening')
+        var innerh = $('#qst').val() + "<br>";
+        console.log(innerh)
+    document.getElementById('conq').value = innerh;
+      }
+  });
+
+    // $(document).ready(function(){
+    //   document.querySelector('[contenteditable]').addEventListener('paste', function(event) {
+    //     event.preventDefault();
   //     document.execCommand('inserttext', false, event.clipboardData.getData('text/plain'));
   //   });
   // });
@@ -68,7 +68,6 @@ conq.addEventListener('input',(event) =>{
               if ($files.length) {
                 // Reject big files
                 if ($files[0].size > $(this).data('max-size') * 1024) {
-                 // console.log('Please select a smaller file');
                   return false;
                 }
                 var apiUrl = 'https://api.imgur.com/3/image';
@@ -105,7 +104,6 @@ conq.addEventListener('input',(event) =>{
       if ($files.length) {
         // Reject big files
         if ($files[0].size > $(this).data('max-size') * 1024) {
-         // console.log('Please select a smaller file');
           return false;
         }
         var apiUrl = 'https://api.imgur.com/3/image';
