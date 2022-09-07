@@ -260,6 +260,9 @@ function prevqset(e){
     document.getElementById("eduextimedur").innerHTML =reslt[0].TDuration;
 var qststr = reslt[0].QuesSTFinal;
 var qststrlen =qststr.length;
+if(reslt[0].SubValue !="Active"){
+$("#notifypay").show();
+}else{$("#notifypay").hide();}
 if(qststr != ""){
 var qstoreused = (qststrlen/46000)*100;
 document.getElementById("qststorage").innerHTML = qstoreused.toFixed(2)+"%";
