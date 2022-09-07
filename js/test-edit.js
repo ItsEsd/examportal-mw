@@ -261,7 +261,7 @@ function prevqset(e){
 var qststr = reslt[0].QuesSTFinal;
 var qststrlen =qststr.length;
 if(reslt[0].SubValue !="Active"){
-$("#notifypay").show();
+$("#notifypay").fadeIn();
 }else{$("#notifypay").hide();}
 if(qststr != ""){
 var qstoreused = (qststrlen/46000)*100;
