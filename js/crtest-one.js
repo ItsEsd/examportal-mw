@@ -308,8 +308,7 @@ var optionsS = {
   "name": "M A S T R O W A L L",
   "image": "https://cdn.razorpay.com/logos/KEwE9wPPBouRjf_original.png",
   "handler": function(response) {
-    console.log(response);
-      var rzres = response;
+      var rzres = JSON.stringify(response);
       var exid = $('#chexamidedu').val();
       var rzpid= response.razorpay_payment_id;
       var refid = "emp"+Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 10);
