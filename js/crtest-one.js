@@ -323,7 +323,7 @@ crossDomain: true,
 url: url,
 method: "GET",
 dataType: "jsonp"
-});
+}); console.log(url);
   },
   "notes": {
     "address": "Razorpay Corporate Office"
@@ -349,6 +349,7 @@ $('#cmpltpay').click(function(e) {
 });
 
 function ctrlqpcheck(e){
+  console.log(e);
 if(e.result=="active"){
   previewqset();
 }
