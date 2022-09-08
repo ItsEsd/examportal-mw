@@ -28,10 +28,8 @@
 
     document.querySelector('#conq').addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
-        console.log('Listening')
         var innerh = $('#qst').val() + "<br>";
-        console.log(innerh)
-    document.getElementById('conq').value = innerh;
+        document.getElementById('conq').value = innerh;
       }
   });
 
