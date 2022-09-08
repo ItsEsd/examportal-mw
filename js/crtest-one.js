@@ -314,9 +314,10 @@ var optionsS = {
       var refid = "emp"+Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 10);
       var d = new Date(); var currentTime = d.toLocaleString();
       var ur1='https://script.google.com/macros/s/';
-var ur2='AKfycbxBwBsQAg8L9gTHuHoDQsYgFRkNzIlnwLAZr5T9N4be5q3tax5738f53be5DDO_x_8-aw';
+var ur2='AKfycbyvK0suI8zVNXbjkE-5EqaZVIAA53DnDQBmz1fxba5_TViMta8tRk0XdqgEthn19zillw';
 var url= ur1+ur2+'/exec'+'?callback=ctrlqpcheck&tostamp='+currentTime+ '&torzres='+rzres+  '&toexid='+exid+ 
 '&torzpid='+rzpid+ '&torfid='+refid+  '&action=paycheckexm';
+// https://script.google.com/macros/s/AKfycbyvK0suI8zVNXbjkE-5EqaZVIAA53DnDQBmz1fxba5_TViMta8tRk0XdqgEthn19zillw/exec?callback=ctrlqpcheck&tostamp=gfdsfgd&torzres=hgfds&toexid=hgfhgfhfghfgh&torzpid=sdfsdfsdfsdf&torfid=fgdfgdfgdfg&action=paycheckexm
 var request = jQuery.ajax({
 crossDomain: true,
 url: url,
