@@ -239,67 +239,67 @@ document.getElementById('loader-resch').style.display = "none";
   });
   
   });
-  
-  function ctrlqstex(e) {
-    document.getElementById('loader-enst').style.display="none";
-    var d = new Date();
-    var day = d.getDate();
-    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
-    var namestu = $('#stuname').val();
-  var eid  =$('#stueid').val();
-  var examid  =$('#exid').val();
-  var enid  =$('#enrollid').val();
-  var cat = e.result;
-  if(cat === "Value updated successfully!"){
-    document.getElementById('stuassign').style.display ="none";
-    document.getElementById('assignstuexform').style.backgroundImage="linear-gradient(0deg,white,white)";
-    document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;' align='center'><div style='max-width:1000px;text-align:left;'>"+
-    "<hr><p style='font-size:16px;'>MASTROWALL Exam Portal <span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
-    "<br><p style='font-size:16px;'>Enrollment ID: <span style='color:blue;'>" +enid+"</span></p>" +
-    "<p style='font-size:16px;'>Name: " +namestu+"</p>" +
-    "<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
-    "<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-    "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Exam Portal >></a></p>"+
-    "<hr></div></div>";
-    document.getElementById('actionbtnenroll').style.display="block";
-    sendStmail();
-  }
-  else{
-  }
-  return false;
-  }
-  function enrollmentinfo() {
-    var elem = document.getElementById("enrolledinfo");
-    var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
-        oPrntWin.document.open();
-        oPrntWin.document.write("<!doctype html><html><head><title>Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\">" + elem.innerHTML + "<\/body><\/html>");
-        oPrntWin.document.close();
-   }
-   function sendStmail() {
-    var elemed = document.getElementById("enrolledinfo").innerHTML;
-    var mailat = $('#stueid').val(); 
-      Email.send({
-        SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
-        To: mailat,
-        From: "MASTROWALL<examportal@mastrowall.com>",
-          Subject: "Exam Portal - MASTROWALL",
-          Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
-      })
-          .then(function (message) {
-            if(message="OK"){
-              document.getElementById('mailsentstu').style.display= 'block';
-              document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
-              setTimeout(function() {
-                jQuery('#mailsentstu').fadeOut('fast');
-              }, 10000);
-            }
-       else{
-        document.getElementById('mailsentstu').style.display= 'none';
-       }
-          });
-      }
+
+function ctrlqstex(e) {
+document.getElementById('loader-enst').style.display="none";
+var d = new Date();
+var day = d.getDate();
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
+var namestu = $('#stuname').val();
+var eid  =$('#stueid').val();
+var examid  =$('#exid').val();
+var enid  =$('#enrollid').val();
+var cat = e.result;
+if(cat === "Value updated successfully!"){
+document.getElementById('stuassign').style.display ="none";
+document.getElementById('assignstuexform').style.backgroundImage="linear-gradient(0deg,white,white)";
+document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;' align='center'><div style='max-width:1000px;text-align:left;'>"+
+"<hr><p style='font-size:16px;'>MASTROWALL Exam Portal <span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
+"<br><p style='font-size:16px;'>Enrollment ID: <span style='color:blue;'>" +enid+"</span></p>" +
+"<p style='font-size:16px;'>Name: " +namestu+"</p>" +
+"<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
+"<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
+"<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Exam Portal >></a></p>"+
+"<hr></div></div>";
+document.getElementById('actionbtnenroll').style.display="block";
+sendStmail();
+}
+else{
+}
+return false;
+}
+function enrollmentinfo() {
+var elem = document.getElementById("enrolledinfo");
+var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
+    oPrntWin.document.open();
+    oPrntWin.document.write("<!doctype html><html><head><title>Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\">" + elem.innerHTML + "<\/body><\/html>");
+    oPrntWin.document.close();
+}
+function sendStmail() {
+var elemed = document.getElementById("enrolledinfo").innerHTML;
+var mailat = $('#stueid').val(); 
+Email.send({
+SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
+To: mailat,
+From: "MASTROWALL<examportal@mastrowall.com>",
+  Subject: "Exam Portal - MASTROWALL",
+  Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
+})
+  .then(function (message) {
+    if(message="OK"){
+      document.getElementById('mailsentstu').style.display= 'block';
+      document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
+      setTimeout(function() {
+        jQuery('#mailsentstu').fadeOut('fast');
+      }, 10000);
+    }
+else{
+document.getElementById('mailsentstu').style.display= 'none';
+}
+  });
+}
 
 var optionsS = {
   "key": "rzp_live_LTmvi7swL9EliZ",
@@ -314,7 +314,7 @@ var optionsS = {
       var refid = "emp"+Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 10);
       var d = new Date(); var currentTime = d.toLocaleString();
       var ur1='https://script.google.com/macros/s/';
-var ur2='AKfycbwiMGrFt3H2KToEovdGPDoMURbjuvpuHIks-6Lv9l-TEaaUq9PuiL2_Jbazz44KUtHDqw';
+var ur2='AKfycbxBwBsQAg8L9gTHuHoDQsYgFRkNzIlnwLAZr5T9N4be5q3tax5738f53be5DDO_x_8-aw';
 var url= ur1+ur2+'/exec'+'?callback=ctrlqpcheck&tostamp='+currentTime+ '&torzres='+rzres+  '&toexid='+exid+ 
 '&torzpid='+rzpid+ '&torfid='+refid+  '&action=paycheckexm';
 var request = jQuery.ajax({
