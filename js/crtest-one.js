@@ -303,7 +303,7 @@ document.getElementById('loader-resch').style.display = "none";
 
 var optionsS = {
   "key": "rzp_live_LTmvi7swL9EliZ",
-  "amount": "10000",
+  "amount": "1000",
   "currency": "INR",
   "name": "M A S T R O W A L L",
   "image": "https://cdn.razorpay.com/logos/KEwE9wPPBouRjf_original.png",
