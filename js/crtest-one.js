@@ -308,7 +308,7 @@ var optionsS = {
   "name": "M A S T R O W A L L",
   "image": "https://cdn.razorpay.com/logos/KEwE9wPPBouRjf_original.png",
   "handler": function(response) {
-    
+    console.log(response);
       var rzres = JSON.parse(response);
       var exid = $('#chexamidedu').val();
       var rzpid= response.razorpay_payment_id;
@@ -317,7 +317,7 @@ var optionsS = {
       var ur1='https://script.google.com/macros/s/';
 var ur2='AKfycbwiMGrFt3H2KToEovdGPDoMURbjuvpuHIks-6Lv9l-TEaaUq9PuiL2_Jbazz44KUtHDqw';
 var url= ur1+ur2+'/exec'+'?callback=ctrlqpcheck&tostamp='+currentTime+ '&torzres='+rzres+  '&toexid='+exid+ 
-'&torzpid='+rzpid+ '&torfid='+refid+  '&action=paycheck';
+'&torzpid='+rzpid+ '&torfid='+refid+  '&action=paycheckexm';
 var request = jQuery.ajax({
 crossDomain: true,
 url: url,
