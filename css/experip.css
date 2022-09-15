@@ -198,10 +198,10 @@
     transform: scale(1.02);
     }
   .preqimg{
-  float:right;
-  max-width:400px;
+  /* float:right; */
+  width:100%;
   padding-top:10px;
-  max-width:400px;
+  /* max-width:400px; */
   }
   .propimg{
     width:100%;
