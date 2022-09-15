@@ -300,10 +300,9 @@ border-bottom:1px solid #555;
   transform: scale(1.02);
   }
 .preqimg{
-/* float:right; */
 width:100%;
 padding-top:10px;
-/* max-width:400px; */
+padding-bottom:10px;
 }
 .propimg{
   width:100%;
