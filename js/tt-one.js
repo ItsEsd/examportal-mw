@@ -72,12 +72,12 @@ function ldalqset(e){
       "<br><div align='right'><form>"+
       "<input type='text' name='qnst' id='ops"+k1+"' value='Not Answered' style='display:none;'/>"+
       "<input type='text' class='opch' id='opchoice"+k1+"' value='Not Answered' disabled/>"+
-      "<input type='button' class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`A`;document.getElementById(`opchoice"+k1+"`).value=`A`;' value='A'/>"+
-      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`B`;document.getElementById(`opchoice"+k1+"`).value=`B`;' value='B'/>"+
-      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`C`;document.getElementById(`opchoice"+k1+"`).value=`C`;' value='C'/>"+
-      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`D`;document.getElementById(`opchoice"+k1+"`).value=`D`;' value='D'/>"+
-      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`Not Answered`;document.getElementById(`opchoice"+k1+"`).value=`Not Answered`;' value='Clear'/>"+
-      "</form></div></div><hr></div>";
+      "<input type='button' class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`A`;document.getElementById(`opchoice"+k1+"`).value=`A`;ansrdclrch(this);' value='A'/>"+
+      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`B`;document.getElementById(`opchoice"+k1+"`).value=`B`;ansrdclrch(this);' value='B'/>"+
+      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`C`;document.getElementById(`opchoice"+k1+"`).value=`C`;ansrdclrch(this);' value='C'/>"+
+      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`D`;document.getElementById(`opchoice"+k1+"`).value=`D`;ansrdclrch(this);' value='D'/>"+
+      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`Not Answered`;document.getElementById(`opchoice"+k1+"`).value=`Not Answered`;ansrdclrch(this);' value='Clear'/>"+
+      "</form></div><p class='newpmrk'><button class='btn btn-dark mrkbtn' onclick='mrkfrrev(this)'>Mark for review</button></p></div><hr></div>";
 
       document.getElementById("quesindex").innerHTML ="<button class='qstindex' onclick='showqsec(this);'>"+k1+"</button>";
     }
@@ -92,12 +92,12 @@ function ldalqset(e){
       "<br><div align='right'><form>"+
       "<input type='text' name='qnst' id='ops"+k1+"' value='Not Answered' style='display:none;'/>"+
       "<input type='text' class='opch' id='opchoice"+k1+"' value='Not Answered' disabled/>"+
-      "<input type='button' class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`A`;document.getElementById(`opchoice"+k1+"`).value=`A`;' value='A'/>"+
-      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`B`;document.getElementById(`opchoice"+k1+"`).value=`B`;' value='B'/>"+
-      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`C`;document.getElementById(`opchoice"+k1+"`).value=`C`;' value='C'/>"+
-      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`D`;document.getElementById(`opchoice"+k1+"`).value=`D`;' value='D'/>"+
-      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`Not Answered`;document.getElementById(`opchoice"+k1+"`).value=`Not Answered`;' value='Clear'/>"+
-      "</form></div></div><hr></div>";
+      "<input type='button' class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`A`;document.getElementById(`opchoice"+k1+"`).value=`A`;ansrdclrch(this);' value='A'/>"+
+      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`B`;document.getElementById(`opchoice"+k1+"`).value=`B`;ansrdclrch(this);' value='B'/>"+
+      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`C`;document.getElementById(`opchoice"+k1+"`).value=`C`;ansrdclrch(this);' value='C'/>"+
+      "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+k1+"`).value=`D`;document.getElementById(`opchoice"+k1+"`).value=`D`;ansrdclrch(this);' value='D'/>"+
+      "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+k1+"`).value=`Not Answered`;document.getElementById(`opchoice"+k1+"`).value=`Not Answered`;ansrdclrch(this);' value='Clear'/>"+
+      "</form></div><p class='newpmrk'><button class='btn btn-dark mrkbtn' onclick='mrkfrrev(this)'>Mark for review</button></p></div><hr></div>";
       document.getElementById("quesindex").innerHTML ="<button class='qstindex' onclick='showqsec(this);'>"+k1+"</button>";
      }
       
@@ -121,12 +121,12 @@ function ldalqset(e){
      "<br><div align='right'><form>"+
      "<input type='text' name='qnst' id='ops"+kq+"' value='Not Answered' style='display:none;'/>"+
      "<input type='text' class='opch' id='opchoice"+kq+"' value='Not Answered' disabled/>"+
-     "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`A`;document.getElementById(`opchoice"+kq+"`).value=`A`;' value='A'/>"+
-    "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`B`;document.getElementById(`opchoice"+kq+"`).value=`B`;' value='B'/>"+
-    "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`C`;document.getElementById(`opchoice"+kq+"`).value=`C`;' value='C'/>"+
-    "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`D`;document.getElementById(`opchoice"+kq+"`).value=`D`;' value='D'/>"+
-     "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`Not Answered`;document.getElementById(`opchoice"+kq+"`).value=`Not Answered`;' value='Clear'/>"+
-     "</form></div></div><hr></div>";
+     "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`A`;document.getElementById(`opchoice"+kq+"`).value=`A`;ansrdclrch(this);' value='A'/>"+
+    "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`B`;document.getElementById(`opchoice"+kq+"`).value=`B`;ansrdclrch(this);' value='B'/>"+
+    "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`C`;document.getElementById(`opchoice"+kq+"`).value=`C`;ansrdclrch(this);' value='C'/>"+
+    "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`D`;document.getElementById(`opchoice"+kq+"`).value=`D`;ansrdclrch(this);' value='D'/>"+
+     "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`Not Answered`;document.getElementById(`opchoice"+kq+"`).value=`Not Answered`;ansrdclrch(this);' value='Clear'/>"+
+     "</form></div><p class='newpmrk'><button class='btn btn-dark mrkbtn' onclick='mrkfrrev(this)'>Mark for review</button></p></div><hr></div>";
      document.getElementById("quesindex").innerHTML +="<button class='qstindex' onclick='showqsec(this);'>"+kq+"</button>";
       opq= opq +4;}
       else{
@@ -139,12 +139,12 @@ function ldalqset(e){
         "<br><div align='right'><form>"+
         "<input type='text' name='qnst' id='ops"+kq+"' value='Not Answered' style='display:none;'/>"+
         "<input type='text' class='opch' id='opchoice"+kq+"' value='Not Answered' disabled/>"+
-        "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`A`;document.getElementById(`opchoice"+kq+"`).value=`A`;' value='A'/>"+
-       "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`B`;document.getElementById(`opchoice"+kq+"`).value=`B`;' value='B'/>"+
-       "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`C`;document.getElementById(`opchoice"+kq+"`).value=`C`;' value='C'/>"+
-       "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`D`;document.getElementById(`opchoice"+kq+"`).value=`D`;' value='D'/>"+
-        "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`Not Answered`;document.getElementById(`opchoice"+kq+"`).value=`Not Answered`;' value='Clear'/>"+
-        "</form></div></div><hr></div>";
+        "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`A`;document.getElementById(`opchoice"+kq+"`).value=`A`;ansrdclrch(this);' value='A'/>"+
+       "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`B`;document.getElementById(`opchoice"+kq+"`).value=`B`;ansrdclrch(this);' value='B'/>"+
+       "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`C`;document.getElementById(`opchoice"+kq+"`).value=`C`;ansrdclrch(this);' value='C'/>"+
+       "<input type='button'  class='opoptions' onclick='document.getElementById(`ops"+kq+"`).value=`D`;document.getElementById(`opchoice"+kq+"`).value=`D`;ansrdclrch(this);' value='D'/>"+
+        "<input type='button' class='opoptions'  onclick='document.getElementById(`ops"+kq+"`).value=`Not Answered`;document.getElementById(`opchoice"+kq+"`).value=`Not Answered`;ansrdclrch(this);' value='Clear'/>"+
+        "</form></div><p class='newpmrk'><button class='btn btn-dark mrkbtn' onclick='mrkfrrev(this)'>Mark for review</button></p></div><hr></div>";
         document.getElementById("quesindex").innerHTML +="<button class='qstindex' onclick='showqsec(this);'>"+kq+"</button>";
          opq= opq +4;
       }
@@ -160,8 +160,29 @@ document.getElementById('loader-vq').style.display = "none";
 
 }
 
+function mrkfrrev(label){
+  var list=document.getElementsByClassName("mrkbtn");
+  list = [].slice.call(list); 
+  var posofq = list.indexOf(label);
+  console.log(posofq);
+  document.getElementsByClassName("qstindex")[posofq].style.backgroundColor = "red";
 
+}
 
+function ansrdclrch(label){
+  var list=document.getElementsByClassName("opoptions");
+  list = [].slice.call(list); 
+  var posofq = list.indexOf(label);
+  var position = posofq/5;
+  var pos = Math.floor(position);
+  var val = document.getElementsByClassName("opch")[pos].value;
+  if(val != 'Not Answered'){
+    document.getElementsByClassName("qstindex")[pos].style.backgroundColor = "green";
+  }
+  else{
+    document.getElementsByClassName("qstindex")[pos].style.backgroundColor = "#f5cc14";
+  }
+}
 
 function showqsec(label){
   document.body.scrollTop = 0;
