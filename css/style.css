@@ -473,3 +473,134 @@ text-align: left;
     margin:10px;
     
 }
+
+/* Sample Exams */
+
+.smprtlOne{
+    top:0px;
+    left:0px;
+    position: fixed;
+    width:100%;
+    height:100%;
+    background-color: #6161618e;
+    z-index:100;
+    display: none;
+}
+.smprtlTwo{
+    width:100%;
+    margin-top:60px;
+}
+
+.smprtlThr{
+    background-color: #bcb6f8;
+    text-align: left;
+    min-height:100px;
+    padding:10px;
+    border-bottom: 1px solid #ffffff;
+}
+.smprtlThr .row{
+    width:100%;
+}
+.tksmpexm{
+    float:right;
+    font-size: 14px;
+}
+.condata{
+    width:100%;
+    max-width: 800px;
+    height:500px;
+    overflow-y: scroll;
+    margin:auto;
+}
+.closesmprtl{
+    background-color: #e04747;
+    color:white;
+    padding:0px 10px;
+    float:right;
+    cursor:pointer;
+}
+
+#takesmexm{
+    float:left;
+    cursor:pointer;
+    color:#f7c82f;
+}
+#takesmexm:hover{
+    color:#2f6ef7;
+}
+#srchsamtest{
+    float: left;
+    width:100%;
+    max-width: 70%;
+    background-color: #e0e0e4;
+    border-radius: 0px;
+    margin-right:6px;
+}
+
+#srchsamtest:active,#srchsamtest:focus,#srchsamtest:invalid{
+    box-shadow: none;
+    border: 0px solid rgb(62, 62, 63);
+    background-color: #ececec;
+}
+
+#submtsmptst{
+    /* max-width:80%; */
+}
+.headsmptst{
+    width:100%;
+    max-width:800px;
+    font-size: 20px;
+}
+.headsmptst form{
+    /* width:80%; */
+}
+#submtbtnsmp{
+    /* display: inline-block; */
+    float: left;
+    color:#3a3a3a;
+}
+
+.tdton{
+font-size: 18px;
+font-weight: 600;
+color:#3a3a3a;
+}
+.tdttw{
+color:#218a0d;
+font-size: 16px;
+}
+
+.tdtth{
+color:#dd4a4a;
+}
+
+.tdtfr{
+
+    color:#0b1caf;
+}
+
+.tdton span{
+font-style: italic;
+font-size: 14px;
+font-weight: 400;
+}
+.tdttw span{
+    font-style: italic;
+    font-size: 14px;
+    color:#353535;
+    font-size: 14px
+}
+
+.tdtth span{
+    font-style: italic;
+    font-size: 14px;
+    color:#353535;
+    font-size: 14px
+}
+
+.tdtfr span{
+    font-style: italic;
+    font-size: 14px;
+    color:#353535;
+    font-size: 14px
+} 
