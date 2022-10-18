@@ -51,7 +51,7 @@ var userSetCookie = function(exdays,uid) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
-        document.cookie = "_mwallemp="+uid+"; expires=" + expires + ";path=/;domain=127.0.0.1";
+        document.cookie = "_mwallemp="+uid+"; expires=" + expires + ";path=/;domain=mastrowall.com";
         setTimeout(function(){
             window.location.reload();
         }, 1000);
