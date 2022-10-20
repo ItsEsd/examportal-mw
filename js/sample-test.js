@@ -118,7 +118,6 @@ function startsmpexm(label){
 function loadqsetall(pos,eid,eps){
      var samdt = JSON.parse(document.getElementById('smdt').value);
      var samlen = Object.keys(samdt).length;
-     console.log(pos,eid,eps);
      var getdtpos = "TestExam"+(samlen-pos);
     var res = samdt[getdtpos];
 
