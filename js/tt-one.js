@@ -226,7 +226,6 @@ exptwo.addEventListener('submit', (event)=> {
       var res = JSON.parse($('#empinf').val());
       var enid=$("#chenid").val();
       document.getElementById('loader-vq').style.display = "block";
-      // document.getElementById('loader-vq').style.display = "none";
       var timedurmili = res[0].TDurMili;
       document.getElementById('tmili').value = timedurmili;
       var stustring = JSON.parse(JSON.stringify(res[0].EnrolledStuFinal));
@@ -261,7 +260,13 @@ var h1 = document.getElementById('timer'),
 function timer() {
     var ttime =parseInt($("#tmili").val());
     countdown();
-setTimeout(submitans,ttime);
+    setTimeout(submitans,ttime);
+}
+
+function timersmp() {
+  var ttime =parseInt($("#tmili").val());
+  countdown();
+  setTimeout(sbmtsmpans,ttime);
 }
 
 function showTimeleft(){
@@ -429,4 +434,13 @@ $("#clsanrpt2").click(function() {
 $("#opanrpt2").click(function() {
   checkresult();
   $('#anrprt2').show();
+});
+
+$("#opanrpt2smp").click(function() {
+  checkresultsmp();
+  $('#anrprt2smp').show();
+});
+
+$("#clsanrpt2smp").click(function() {
+  $('#anrprt2smp').hide();
 });
