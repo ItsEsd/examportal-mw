@@ -594,7 +594,7 @@
       <input type="submit" value="Submit"/>
       <input id="jsonqnst" /></form>  
   </div>
-<div id="feedback" >
+<div id="feedback">
   <center>
     <div id="anrprt2"><div><span id="clsanrpt2">Close</span><canvas id="anchartans2"></canvas>
       </div>
@@ -610,6 +610,24 @@
     <div id="crtans" style="display: none;padding-top:20px;"></div>
   </div>
     <div id="loader-res" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
+  </center>
+</div>
+<div id="feedbacksmp" >
+  <center>
+    <div id="anrprt2smp"><div><span id="clsanrpt2smp">Close</span><canvas id="anchartans2smp"></canvas>
+      </div>
+    </div>
+    <div id="checkresmainsmp">
+    <img src="/images/mwalllogo.png" class="leftimg" style="width:100px;margin-bottom:20px;">
+    <h2>THANK YOU</h2><br>
+    <h2>Your test is completed!</h2><br>
+    <h4>M A S T R O W A L L</h4><br>
+    <P style="font-weight:bold;">|| An Art of Learning ||</P>
+    <button class="btn btn-primary" id="opanrpt2smp">Check Score</button>
+    <!-- <button class="btn btn-primary" id="testscoresmp" onclick="checkresultsmp();">Check Score</button> -->
+    <div id="crtanssmp" style="display: none;padding-top:20px;"></div>
+  </div>
+    <div id="loader-ressmp" class="spinner-border text-primary" style="display: none;margin-top:20px;"></div>
   </center>
 </div>
 <section>
@@ -648,8 +666,8 @@
       <button class="btn btn-warning" id="assgntst"> Assign for a Test</button>
     </div>
     <hr>
-    <!-- <span id="takesmexm" onclick="$('.smprtlOne').slideDown();">📚 Sample Exams</span> -->
-    <span id="takesmexm" style="cursor: not-allowed;">📚 Sample Exams <span style="font-size:12px">(Coming Soon)</span></span>
+    <span id="takesmexm" onclick="$('.smprtlOne').slideDown();">📚 Sample Exams</span>
+    <!-- <span id="takesmexm" style="cursor: not-allowed;">📚 Sample Exams <span style="font-size:12px">(Coming Soon)</span></span> -->
     <div align="right" style="width:100%;display:inline-block;"><img src="images/mwalllogo.png" style="padding:6px;width:46px;">M A S T R O W A L L</div>
   </div>
   </center></div>
@@ -849,6 +867,21 @@
       <div align="center"><br>
         <div id="loader-exid" class="spinner-border text-primary"></div>
       </div>
+    </div>
+  </section>
+  <section>
+    <div id="exmscrn" class="exmscrnone">
+      <center>
+      <div class='exmscrntwo'>
+          <img src="images/mwalllogo.png"><br>
+          <button class="btn btn-danger" id='strtmexmfin'>Start</button>
+      </div>
+    <p class="exmscrnnote">**Press Start when you are Ready</p>
+    <span class='clsexmscrn'>Close</span>
+    <div class="exmscrnthr">
+      <p>© M A S T R O W A L L</p>
+    </div>
+    </center>
     </div>
   </section>
   <div ng-include="'divsec/create-examid.html'"></div>
