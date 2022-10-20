@@ -24,7 +24,7 @@ function countdown() {
     startTimer(totaldur, display);
 };
 
-//////////// CALCULATOR
+//////////// CALCULATOR 
 	//function that display value
     function dis(val)
     {
