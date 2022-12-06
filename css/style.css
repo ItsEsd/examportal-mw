@@ -37,8 +37,6 @@ height:100%;
     height:100%;
     border-right:40px solid #f0f1fc;
     background-color: #2d4ddb;
-    
-    /* box-shadow: 0px 2px 20px 0 #ffffff; */
     }
     #right-block form{max-width:600px;
     color:white;
@@ -48,7 +46,9 @@ height:100%;
     padding-bottom:60px;
     background-color: #f0eaea;
 }
-
+#boxexp-one{
+    width:100%;
+}
 
 #viewqset{
     margin-top:20px;
@@ -58,7 +58,10 @@ height:100%;
     max-width:900px;
     text-align: left;
 }
-#viewqset img{
+/* #viewqset img{
+    width:100%;
+} */
+.showqstimg {
     width:100%;
 }
 #qsetanst{
