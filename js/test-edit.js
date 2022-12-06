@@ -398,7 +398,7 @@ document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;p
     var exid=$("#chexamidedu").val();
     var ekey=JSON.stringify($("#chkey").val());
     var url1 = "https://script.google.com/macros/s/";
-    var url2 = "AKfycbw65_6YtN5R7hahQB03D2J4pCbczCvcvLILqlxY-EISIfFbjDApoIqGcoTvCVkx-GPbXw";
+    var url2 = "AKfycbxhdIIbyouBHotFiilIgs9OzsP7RPuJbjRAyGsyNxDNkNgZqXDnK3__-H9DphKltxxq-g";
     var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexid=" +exid+"&chkey="+ekey+"&action=clrqdata";
     var request = jQuery.ajax({
       crossDomain: true,
