@@ -56,11 +56,10 @@ height:100%;
     padding-right: 20px;
     width:98%;
     max-width:900px;
+    min-width:350px;
     text-align: left;
 }
-/* #viewqset img{
-    width:100%;
-} */
+
 .showqstimg {
     width:100%;
 }
@@ -381,7 +380,9 @@ transform: scale(0.98);
 @media screen and (max-width: 600px){
     #boxexp-one{
         margin-top:40px;
-
+    }
+    #viewqset img{
+        width:100%;
     }
 }
 .rsltbrdbtn{
