@@ -130,7 +130,7 @@
     width: 10px;
   }
   
-  #previewquestion{
+  /* #previewquestion{
   top:0px;
   right:0px;
   position: fixed;
@@ -143,14 +143,14 @@
   height:340px;
   overflow-y: auto;
   border-bottom:1px solid #555;
-  /*resize: vertical;*/
+  resize: vertical;
   }
   
   #previews{
     height:380px;
     overflow-y: auto;
-    /*resize: vertical;*/
-    }
+    resize: vertical;
+    } */
     
   #previewr::-webkit-scrollbar {
     width: 10px;
