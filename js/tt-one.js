@@ -52,6 +52,7 @@ function ldalqset(e){
     var len = qstate2.length;
     var oplen = qstateops2.length;
     var opq= 4;
+    document.getElementById("responqsindx").innerHTML = "1 - "+ (len-2);
     for(var k = 0; k<len-2;k++){
 
       if(k == 0){
@@ -442,4 +443,9 @@ $("#opanrpt2smp").click(function() {
 
 $("#clsanrpt2smp").click(function() {
   $('#anrprt2smp').hide();
+});
+
+$("#responqsindx,#upndd").click(function() {
+  $('#quesindex,#uparw,#updwn').toggle();
+  
 });
