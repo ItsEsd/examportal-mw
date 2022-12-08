@@ -257,9 +257,9 @@ background-size:6px 6px;
       display: inline-block;
   }
 #boxexp-two{
-    bottom:20px;
-    position: fixed;
+    bottom:40px;
     right:0px;
+    position: fixed;
     text-align: left;
     max-width:240px;
 }
@@ -274,12 +274,19 @@ background-size:6px 6px;
 
   /*CALCULATOR*/
   #calculatorbtn{
-    bottom:40px;
+    bottom:0px;
     left:20px;
     position: fixed;
   }
+  #calculatorbtn button{
+    border-radius: 0px;
+    padding:4px 10px;
+  }
+  #calculatorbtn svg{
+margin-top:-4px;
+  }
    #calculator{
-       bottom:100px;
+       bottom:50px;
        left:20px;
        position: fixed;
        display:none;
@@ -373,15 +380,39 @@ transform: scale(0.98);
     color:#f72b2b;
     font-size: 16px;
 }
-
-@media screen and (max-width: 600px){
-    #boxexp-one{
-        margin-top:40px;
-    }
-    #viewqset img{
-        width:100%;
-    }
+#responqsindx{
+    bottom:0px;
+    right:30px;
+    position: fixed;
+    background-color: #fa6f6b;
+    padding:5px;
+    font-size:15px;
+    cursor: pointer;
 }
+#upndd{
+    bottom:0px;
+    right:0px;
+    position: fixed;
+    cursor: pointer;
+    background-color: #f5cc14;
+    padding-top:2px;
+}
+#upndd svg{
+    width:30px;
+    height:30px;
+    padding:2px;
+    color:#2e2e2e;
+
+}
+#updwn{
+display: block;
+
+}
+#uparw{
+    display: none;
+   
+    }
+
 .rsltbrdbtn{
     margin-top:20px;font-size: 14px;
     display:inline-block;
@@ -693,4 +724,38 @@ font-weight: 400;
         font-size: 14px;
         padding:4px 6px;
     }
+}
+
+
+@media screen and (max-width: 600px){
+    #boxexp-one{
+        margin-top:40px;
+    }
+    #viewqset img{
+        width:100%;
+    }
+
+#timeleft{
+    font-size:20px;
+}
+
+#testtimer{
+    top:5px;
+    right:5px;
+    position: fixed;
+}
+#enrmail{
+width:100%;
+}
+#quesindex{
+    display: block;
+    bottom:40px;
+    right:0px;
+    position: fixed;
+}
+
+.tdton{
+    font-size: 16px;
+}
+
 }
