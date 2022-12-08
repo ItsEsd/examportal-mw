@@ -143,6 +143,7 @@ function loadqsetall(pos,eid,eps){
      document.getElementById('enrmail').innerHTML = "<span style='font-size:14px;'>"+res[0].ExamTitle+" - "+res[0].ExamDescp+"</span>";
      var timedurmili = res[0].TDurMili;
      document.getElementById('tmili').value = timedurmili;
+     document.getElementById("responqsindx").innerHTML = "Q.1 - Q."+ (len-2);
      for(var k = 0; k<len-2;k++){
  
        if(k == 0){
