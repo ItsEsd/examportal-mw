@@ -578,11 +578,12 @@ text-align: left;
     background-color: #e0e0e4;
     border-radius: 0px;
     margin-right:6px;
+    cursor:not-allowed;
 }
 
 #srchsamtest:active,#srchsamtest:focus,#srchsamtest:invalid{
     box-shadow: none;
-    border: 0px solid rgb(62, 62, 63);
+    /* border: 0px solid rgb(62, 62, 63); */
     background-color: #ececec;
 }
 
@@ -595,6 +596,7 @@ text-align: left;
 #submtbtnsmp{
     float: left;
     color:#3a3a3a;
+    cursor:not-allowed;
 }
 
 .tdton{
