@@ -496,7 +496,7 @@ padding:10px;
 /* NewEdit */
 
 #showqstimg img{
-    width:100%;
+    width:800px;
 }
 .newpmrk{
 width:100%;
@@ -759,6 +759,6 @@ width:100%;
     font-size: 16px;
 }
 #showqstimg img{
-    width: 800px;
+    width: 100%;
 }
 }
