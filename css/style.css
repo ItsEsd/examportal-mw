@@ -497,7 +497,6 @@ padding:10px;
 
 #showqstimg img{
     width:100%;
-    max-width: 800px;
 }
 .newpmrk{
 width:100%;
@@ -759,5 +758,7 @@ width:100%;
 .tdton{
     font-size: 16px;
 }
-
+#showqstimg img{
+    width: 800px;
+}
 }
