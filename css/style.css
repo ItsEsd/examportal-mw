@@ -262,16 +262,29 @@ background-size:6px 6px;
     position: fixed;
     text-align: left;
     max-width:240px;
+    max-height:400px;
+    overflow-y: auto;
 }
   .qstindex{
       border:none;
-      /* padding:6px 16px; */
       width:50px;
       height:40px;
       margin:2px;
       background-color: #f5cc14;
   }
-
+  #boxexp-two::-webkit-scrollbar{
+width:8px;
+  }
+  #boxexp-two::-webkit-scrollbar-thumb{
+    width:6px;
+    background-color: #fa6f6b;
+  }
+  #boxexp-two::-webkit-scrollbar-track{
+    background-color: #c4c4c4d0;
+  }
+  #boxexp-two::-webkit-scrollbar-corner{
+    border-radius: 10px; 
+  }
   /*CALCULATOR*/
   #calculatorbtn{
     bottom:0px;
