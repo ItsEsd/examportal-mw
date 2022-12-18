@@ -87,12 +87,12 @@ function userGetCookie(cname) {
         var elm = 'TestExam'+k;
         var exdt = samdata[elm];
         var tsdt = exdt[0];
-       var htm = n2Elem.innerHTML+="<div style='width:100%;' align='center'><div class='smprtlThr'><div class='row'><div class='col-md-6'>"+
+       var htm = n2Elem.innerHTML+="<div style='width:100%;' align='center'><div class='smprtlThr'><div class='row'><div class='col-sm-8'>"+
         "<div class='tdton'><span>Exam Title : </span>"+ tsdt.ExamTitle+"</div>"+
         "<div class='tdttw'><span>Exam Description : </span>"+ tsdt.ExamDescp+"</div>"+
         "<div class='tdtth'><span>Duration : </span>"+ tsdt.TDuration+"</div>"+
         "<div class='tdtfr'><span>Educator Name : </span>"+ tsdt.EducatorName+"</div></div>"+
-        "<div class='col-md-6'><button class='btn btn-primary tksmpexm' onclick='startsmpexm(this)'>Start Exam</button>"+
+        "<div class='col-sm-4'><button class='btn btn-primary tksmpexm' onclick='startsmpexm(this)'>Start Exam</button>"+
         "<input value='"+tsdt.ExamID+"' class='smexmid' style='display:none;'>"+
         "<input value='"+tsdt.PKey+"' class='smexmpk' style='display:none;'>"+
         "<input value='"+tsdt.ExamPass+"' class='smexmps' style='display:none;'>"+
