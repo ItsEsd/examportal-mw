@@ -229,12 +229,12 @@ background-size:6px 6px;
   .enrhead{
       display:inline-block;
       padding:4px 10px;
-      max-width:400px;
+      max-width:600px;
       border-left:2px solid #cfcdcd;
   }
   .enrhead_right{
     padding:4px;
-    max-width:400px;
+    max-width:240px;
     float:right;
   }
 
