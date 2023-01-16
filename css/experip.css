@@ -457,7 +457,17 @@
     border: 1px solid #c2c2c2;
     background-color: #e1e1e2;
   }
-  
+  #examstate{
+    padding:10px;
+    text-align: right;
+    background-color: #e1e1e2;
+    border-radius: 5px;
+    display:none;
+  }
+  #examstate .form-check{margin-bottom:10px;}
+  .form-check-input{
+    color: red;
+  }
   .delqsetex{
     float:right;
     font-size:12px;
@@ -476,4 +486,16 @@
   
   #previewqset hr{
   border-color:#1b1b1b;
+  }
+  #notifyact{
+    z-index:2000000;
+    top:0px;
+    left:0px;
+    width: 100%;
+    position: fixed;
+    padding:10px;
+    color:rgb(255, 255, 255);
+    background-color: #d33e3e;  
+    text-align: center;
+    font-size: 16px;
   }
