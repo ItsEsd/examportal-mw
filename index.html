@@ -733,7 +733,18 @@
                   <p style="color:#1612f0;">Test Room Size Occupied: <span id="troomsize">....</span></p>
                   <button class="btn btn-dark" type="button" onclick="downloadqset();" style="padding:6px 10px;">Download/ Print Question Set</button>
                 </div>
-                <div id="qsetanst"></div>
+                <div id="qsetanst"></div><br>
+               <div id="examstate"> <div class="form-check form-switch" style="display:inline-block;">
+                  <input class="form-check-input" type="checkbox" id="exlvnt" onclick="lvexnt()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">LIVE</label>
+                </div>
+                <div class="form-check form-switch" style="display:inline-block;">
+                  <input class="form-check-input" type="checkbox" id="excalnt" onclick="calexnt()">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">CALCULATOR</label>
+                </div>
+                <div>** To have Calculator or to make the Exam Live please check as per requirement. Students will not be able to take Exam if not LIVE.</div>
+              
+              </div>
               </div>
             </div>
           </div>
