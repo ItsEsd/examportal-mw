@@ -254,6 +254,7 @@ if(reslt != "ID not found!"){
   document.getElementById("eduextitle").innerHTML =reslt[0].ExamTitle;
   document.getElementById("eduexdescp").innerHTML =reslt[0].ExamDescp;
   document.getElementById("eduextimedur").innerHTML =reslt[0].TDuration;
+  document.getElementById("eduexmpss").innerHTML =JSON.parse(reslt[0].ExamPass);
 var qststr = reslt[0].QuesSTFinal;
 var qststrlen =qststr.length;
 if(reslt[0].SubValue !="Active"){
@@ -268,6 +269,13 @@ if(qststrlen>46000){
 document.getElementById("qststorage").innerHTML = "100%";
 document.getElementById("addQ").disabled = true;
 }
+if(reslt[0].Live == "LIVE"){
+document.getElementById('exlvnt').checked="true";
+}
+if(reslt[0].Calculator == "Enabled"){
+  document.getElementById('excalnt').checked="true";
+}
+
 var enststr = reslt[0].EnrolledStuFinal;
 var enstlimit = enststr.length;
 var enstustr = JSON.parse(JSON.stringify(reslt[0].EnrolledStuFinal));
