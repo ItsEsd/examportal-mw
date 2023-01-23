@@ -496,7 +496,7 @@
     <link rel="stylesheet" href="/css/experip.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="js/assets/jQuery-1.11.1.min.js"></script> 
-    <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+    <script>document.addEventListener('contextmenu', event => event.preventDefault());setInterval(function(){console.clear();},500);</script>
   </head>
   <body ng-app="">
    <div id="flsback"></div> 
@@ -563,7 +563,7 @@
     </div>
     <div id="boxexp-three" class="boxexp">
     <div id="calculatorbtn">
-      <button class="btn btn-success" onclick="$('#calculator').toggle();"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+      <button class="btn btn-success" onclick="$('#calculator').toggle();" id="calbtnex"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
         <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
         <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
       </svg> Calculator</button>
@@ -726,6 +726,7 @@
                   <p>Exam Title: <span id="eduextitle" class="exeduinfoid">......</span></p>
                   <p>Description: <span id="eduexdescp" class="exeduinfoid">......</span></p>
                   <p>Test Duration: <span id="eduextimedur" class="exeduinfoid">......</span></p>
+                  <p>Exam Pass: <span id="eduexmpss" class="exeduinfoid">......</span></p>
                 </div>
                 <div class='eduinfoex'>
                   <p style="color:#f75858;">Question Set Storage Used: <span id="qststorage">....</span></p>
