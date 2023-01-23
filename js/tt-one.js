@@ -36,7 +36,17 @@ function ldalqset(e){
     "<p style='font-size:16px;'>Exam Title: <span style='font-style: italic;font-size:18px;'>"+res[0].ExamTitle+"</span></p>"+
     "<p style='font-size:16px;'>Description: <span style='font-style: italic;font-size:18px;'>"+res[0].ExamDescp+"</span></p>"+
     "<p style='font-size:16px;'>Test Duration: <span style='font-style: italic;font-size:18px;'>"+res[0].TDuration+"</span></p>"+
-    "</div>"
+    "</div>";
+    if(res[0].Live != "LIVE"){
+$('#exptwo').hide();
+var nwlm = document.createElement('div');
+nwlm.id="notlvnf";
+nwlm.innerHTML ="The Exam is not LIVE. Please contact the Educator."
+$('#expdetails').append(nwlm);
+    }
+    if(res[0].Calculator != "Enabled"){
+      document.getElementById('calbtnex').disabled="true";
+    }
     var qstate = JSON.parse(JSON.stringify(res[0].QuesSTFinal));
     var qstateimg = JSON.parse(JSON.stringify(res[0].QSTimgFinal));
     var qstateops = JSON.parse(JSON.stringify(res[0].OPfinal));
