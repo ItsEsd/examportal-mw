@@ -433,7 +433,10 @@
     font-style:italic;
     color:#0821ad;
   }
-  
+  #eduinfofordqset p{
+    padding:0px;
+    line-height: 15px;
+  }
   #qststorage{
   font-size: 16px;
   font-weight: 600;
@@ -458,11 +461,11 @@
     background-color: #e1e1e2;
   }
   #examstate{
+    margin-top:10px;
     padding:10px;
     text-align: right;
-    background-color: #e1e1e2;
+    background-color: #ffb9b9a1;
     border-radius: 5px;
-    display:none;
   }
   #examstate .form-check{margin-bottom:10px;}
   .form-check-input{
@@ -498,4 +501,11 @@
     background-color: #d33e3e;  
     text-align: center;
     font-size: 16px;
+  }
+  #notlvnf{
+    margin-top:30px;
+    background-color: #d33e3e;
+    color:white;
+    padding:10px;
+    border:2px solid #ffffff;
   }
