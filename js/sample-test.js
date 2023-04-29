@@ -101,7 +101,7 @@ function ctrlqexms(e){
       n1Elem.innerHTML="<center><div style='max-width:800px;'>"+htm+"</div></center>";
     var dtelm = document.createElement('input');
     dtelm.id="smdt";dtelm.value = JSON.stringify(samdata); 
-   $("body").append(dtelm); 
+   $("body").append(dtelm); $('.smprtlTwo').show();
     
 }
 
