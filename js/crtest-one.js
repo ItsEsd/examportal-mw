@@ -303,9 +303,9 @@ document.getElementById('mailsentstu').style.display= 'none';
 
 var optionsS = {
   "key": "rzp_live_LTmvi7swL9EliZ",
-  "amount": "10000",
+  "amount": "1000",
   "currency": "INR",
-  "name": "M A S T R O W A L L",
+  "name": "MASTROWALL",
   "image": "https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@77f1e6b1852364b586c8c3eca51ef492fbc259c6/images/favicon-logos/logoRecBW.png",
   "handler": function(response) {
       var rzres = JSON.stringify(response);
@@ -314,7 +314,7 @@ var optionsS = {
       var refid = "emp"+Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 10);
       var d = new Date(); var currentTime = d.toLocaleString();
       var ur1='https://script.google.com/macros/s/';
-var ur2='AKfycbyvK0suI8zVNXbjkE-5EqaZVIAA53DnDQBmz1fxba5_TViMta8tRk0XdqgEthn19zillw';
+var ur2='AKfycbwdJvI9tIbOZH6dzaSUjzot2NBIwYb0y_cM1iNAPYiMTJB6yIn7L7N2T0H7uBCruG5YQg';
 var url= ur1+ur2+'/exec'+'?callback=ctrlqpcheck&tostamp='+currentTime+ '&torzres='+rzres+  '&toexid='+exid+ 
 '&torzpid='+rzpid+ '&torfid='+refid+  '&action=paycheckexm';
 var request = jQuery.ajax({
