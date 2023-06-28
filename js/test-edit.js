@@ -404,7 +404,7 @@ else{
   var exid=$("#chexamidedu").val();
   var ekey=JSON.stringify($("#chkey").val());
   var url1 = "https://script.google.com/macros/s/";
-  var url2 = "AKfycbxhdIIbyouBHotFiilIgs9OzsP7RPuJbjRAyGsyNxDNkNgZqXDnK3__-H9DphKltxxq-g";
+  var url2 = "AKfycbwoJm4kSsAtJ5bkERkhFwQuWHnK_wpnuaOkv5fLux6fop_F8EHHajnPkFoIKU0HVCS4";
   var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexid=" +exid+"&chkey="+ekey+"&action=clrqdata";
   var request = jQuery.ajax({
     crossDomain: true,
