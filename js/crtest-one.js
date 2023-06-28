@@ -303,7 +303,7 @@ document.getElementById('mailsentstu').style.display= 'none';
 
 var optionsS = {
   "key": "rzp_live_LTmvi7swL9EliZ",
-  "amount": "100",
+  "amount": "10000",
   "currency": "INR",
   "name": "MASTROWALL",
   "image": "https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@77f1e6b1852364b586c8c3eca51ef492fbc259c6/images/favicon-logos/logoRecBW.png",
