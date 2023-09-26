@@ -205,7 +205,7 @@ function showqsec(label){
   var $scrollTo = $('.qsecdiv-'+posofdiv);
   
   $container.animate({
-    scrollTop: $scrollTo.offset().top-60},0000); 
+    scrollTop: $scrollTo.offset().top-60},0); 
 
 }
 
