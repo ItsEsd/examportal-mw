@@ -404,6 +404,8 @@ display: none;
   display:none;
   margin-bottom:6px;
   font-size:14px;
+  max-width:300px;
+  text-align: left;
 }
 .submitform{
   padding:4px 10px;

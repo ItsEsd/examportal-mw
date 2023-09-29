@@ -255,14 +255,13 @@ var cat = e.result;
 if(cat === "Value updated successfully!"){
 document.getElementById('stuassign').style.display ="none";
 document.getElementById('assignstuexform').style.backgroundImage="linear-gradient(0deg,white,white)";
-document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;' align='center'><div style='max-width:1000px;text-align:left;'>"+
-"<hr><p style='font-size:16px;'>MASTROWALL Exam Portal <span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
-"<br><p style='font-size:16px;'>Enrollment ID: <span style='color:blue;'>" +enid+"</span></p>" +
-"<p style='font-size:16px;'>Name: " +namestu+"</p>" +
-"<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
-"<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-"<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Exam Portal >></a></p>"+
-"<hr></div></div>";
+document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;font-family: verdana;' align='center'><div style='max-width:1000px;text-align:left;'>"+
+"<hr><p><span style='float:left;'><img src='https://mastrowall.com/images/logoRecBWsvg.svg' style='width:25px;'></span><span style='margin-left:5px;font-size:16px;color:#666666;'><b>M A S T R O W A L L | <a target='_blank' href='https://exam-portal.mastrowall.com/' style='text-decoration:none;color:#0c29cd;'>Exam Portal</a></b></a></span><span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
+"<br><p style='font-size:16px;'>Enrollment ID: <span style='color:#0c29cd;'><b>" +enid+"</b></span></p>" +
+"<p style='font-size:16px;'>Name: <b>" +namestu+"</b></p>" +
+"<p style='font-size:16px;'>Exam ID: <b>" +examid+"</b></p>" +
+"<p style='font-size:16px;'>Registered Email ID: <em>" +eid+"</em></p><br><hr>"+
+"<div><p style='font-size:14px;width:100%;line-height:160%;display:block;'><span style='float:left;line-height:160%;display:block;'>©️ M A S T R O W A L L</span><a style='font-size:16px;color:#0c29cd;text-decoration:none;float:right;line-height:160%;display:block;' target='_blank' href='https://exam-portal.mastrowall.com/'>Go to Portal >></a></p></div><br></div></div>";
 document.getElementById('actionbtnenroll').style.display="block";
 sendStmail();
 }
@@ -285,15 +284,15 @@ SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
 To: mailat,
 From: "MASTROWALL<examportal@mastrowall.com>",
   Subject: "Exam Portal - MASTROWALL",
-  Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
+  Body:  elemed+"<br><p style='text-align:center;font-size:14px;'>N.B. Do not reply to this email</p>",
 })
   .then(function (message) {
     if(message="OK"){
       document.getElementById('mailsentstu').style.display= 'block';
-      document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
+      document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.';
       setTimeout(function() {
         jQuery('#mailsentstu').fadeOut('fast');
-      }, 10000);
+      }, 20000);
     }
 else{
 document.getElementById('mailsentstu').style.display= 'none';

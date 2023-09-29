@@ -391,9 +391,11 @@ transform: scale(0.98);
     padding:10px;
     position: fixed;
     display: none;
-    background-color: white;
-    color:#f72b2b;
+    background-color: #f72b2b;
+    color:#ffffff;
     font-size: 16px;
+    max-width:300px;
+    text-align: left;
 }
 #responqsindx{
     bottom:0px;
