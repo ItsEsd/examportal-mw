@@ -341,22 +341,22 @@ if(qsopsimg =="null"){
 var i1 = i+1;
      document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
      "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+i1+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-     "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+     "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
      "<div><p>A. "+qstateops2[i].substring(1)+"</p></div>"+
      "<div><p>B. "+qstateops2[i+1].substring(2)+"</p></div>"+
      "<div><p>C. "+qstateops2[i+2].substring(2)+"</p></div>"+
      "<div><p>D. "+qstateops2[i+3].substring(2)+"</p></div>"+
      "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-     "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+     "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
      "<hr></div>";
 }
 else{
 var i1 = i+1;
 document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
 "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+i1+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-"src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+"src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
 "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-"src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+"src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
 "<hr></div>";
 }
     }
@@ -369,22 +369,22 @@ document.getElementById("previewqset").innerHTML = "<div style='font-size:16px;p
       if(qsopsimg =="null"){
       document.getElementById("previewqset").innerHTML += "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
       "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+iq+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-      "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+      "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;this.style.display=`none`;'></div>"+
       "<div><p>A. "+qstateops2[opq].substring(2)+"</p></div>"+
       "<div><p>B. "+qstateops2[opq+1].substring(2)+"</p></div>"+
       "<div><p>C. "+qstateops2[opq+2].substring(2)+"</p></div>"+
       "<div><p>D. "+qstateops2[opq+3].substring(2)+"</p></div>"+
       "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-      "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+      "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
       "<hr></div>";
        opq= opq +4;
       }
     else{
       document.getElementById("previewqset").innerHTML += "<div style='font-size:16px;padding-top:20px;padding:10px;'>"+
       "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No."+iq+"</p><p>"+qs +"</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' "+
-      "src='"+qsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+      "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
       "<br><div id='showqstimg'><img style='pointer-events:none;' "+
-      "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `images/fakefu.png`;'></div>"+
+      "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
       "<hr></div>";
        opq= opq +4;
     } }}
