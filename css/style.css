@@ -229,7 +229,7 @@ background-size:6px 6px;
   .enrhead{
       display:inline-block;
       padding:4px 10px;
-      max-width:600px;
+      max-width:70%;
       border-left:2px solid #cfcdcd;
   }
   .enrhead_right{
