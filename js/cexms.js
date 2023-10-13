@@ -53,14 +53,17 @@
     $("#enlrgimg").click(function() {
     $('#enlrgimg').hide();});
     cridone.addEventListener('submit', (event) => {
-    $("#cridtwo").show();
-    $("#cridone").hide();
-    var hr = $('#timedurhr').val();
-    var min = $('#timedurmin').val();
-    var tmsec = ((hr*3600) + (min*60))*1000;
-    var str = hr+" "+"Hour"+" "+min+" "+"Minutes";
-    document.getElementById('totalsec').value= tmsec;
-    document.getElementById('timestr').value= str; });
+      var hr = $('#timedurhr').val();
+      var min = $('#timedurmin').val();
+      var tmsec = ((hr*3600) + (min*60))*1000;
+      if(tmsec!==0){
+        $("#cridtwo").show();
+        $("#cridone").hide();
+        var str = hr+" "+"Hour"+" "+min+" "+"Minutes";
+        document.getElementById('totalsec').value= tmsec;
+        document.getElementById('timestr').value= str;
+      }
+     });
     cridtwo.addEventListener('submit', (event) => {
     var examid = $("#examid").val();
     var name = $("#eduname").val();
