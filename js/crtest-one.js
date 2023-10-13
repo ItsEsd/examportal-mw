@@ -136,19 +136,12 @@ var count = 0;var ntansd =0;var wrng =0;
 for(var j=0; j<lenstrkey-1;j++){
 if(resone.qnst[j] === anskey[j].substring(1)){
 count = count+1;
-
 }else{
-  
-  count = count;
-}
-
-
+  count = count;}
  if(resone.qnst[j] =="Not Answered"){ntansd=ntansd+1;}else{ntansd=ntansd}
  if(resone.qnst[j] !="Not Answered" && resone.qnst[j] !=anskey[j].substring(1)){
   wrng = wrng +1;}else{wrng = wrng}
-
-}
-}}
+}}}
 for(var h =0; h<lenstrk;h++){
 if(enid==sstring[h]){
 document.getElementById('chresform').style.display = "none";
@@ -159,12 +152,9 @@ document.getElementById('crtans2').innerHTML= "<div><p style='text-align:left;fo
 "<p style='font-size:20px;color:green;'>Correct Answer: "+ count+"</p>";
   document.getElementById('stunamek').style.display = "block";
 document.getElementById('stunamek').innerHTML="<p style='color:black;font-size:20px;'>Name: <span style='color:blue;font-style:italic;'>"+JSON.parse(sstring[h-2])+"</span></p>";
-break;
-}
-else{
+break;}else{
   document.getElementById('stunamek').style.display = "none";
-}
-}
+}}
 
 var xValues = ["Correct", "Not Answered","Wrong"];
 var yValues = [count, ntansd,wrng];

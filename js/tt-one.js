@@ -306,7 +306,6 @@ function ctrlqus(){
   document.getElementById('textcomp').style.display = 'none';
   document.getElementById('qcontainer').style.display = 'none';
   document.getElementById('feedback').style.display = 'block';
-
 }
 
 function checkresult(){
@@ -431,7 +430,6 @@ $('#sgconwexid').click(function(){
 $("#clsanrpt").click(function() {
   $('#anrprt').hide();
 });
-
 
 $("#opanrpt").click(function() {
   $('#anrprt').show();

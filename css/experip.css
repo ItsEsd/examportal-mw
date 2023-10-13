@@ -329,19 +329,18 @@
   }
   #chresult{
     font-size:16px;
-    
-  
   }
+
   #resbrd{
     width:100%;
-    top:100px;
+    top:80px;
     left:0px;
     position:fixed;
     display: none;
     z-index: 11;
     padding:10px;
-  
   }
+  
   #chresform{
     background-color: white;
     padding:20px;

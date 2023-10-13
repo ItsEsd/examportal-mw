@@ -778,3 +778,25 @@ width:100%;
 }
 
 }
+
+ #crtans2{
+    height:139px;
+    overflow-y:auto;
+    border:1px solid grey;
+    padding:5px;
+    margin-bottom:10px;
+  }
+    
+    #crtans2::-webkit-scrollbar {
+        width:6px;
+        }
+        #crtans2::-webkit-scrollbar-thumb {
+        background: #cccccc;
+        }
+        #crtans2::-webkit-scrollbar-track {
+        background: #212121;
+        border:2.5px solid white;
+        }
+        #crtans2::-webkit-scrollbar-thumb:hover {
+        background: #8d8d8d;
+        }
