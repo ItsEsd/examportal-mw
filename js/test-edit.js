@@ -592,3 +592,14 @@ function calexnt() {
       setTimeout(function(){$(elem).slideUp('fast')},5000);
     }
     }
+
+    const openModalButton = document.getElementById("admntl");
+    const modalep = document.getElementById("amntlmdl");
+    openModalButton.addEventListener("click", () => {
+    modalep.style.display = "block";
+    });
+    window.addEventListener("click", (event) => {
+    if (event.target === modalep) {
+        modalep.style.display = "none";
+    }
+    });

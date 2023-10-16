@@ -692,12 +692,15 @@
         <form target="hdnfrm" id="quesfrm" autocomplete="off">
           <div id="stdiv">
             <label>Question Statement:</label>
-            <!-- <div id="conq" contenteditable="true">
-            </div> -->
             <textarea id="conq" required></textarea>
             <input class="form-control" id="qst">
             <p id="qtstfalse"></p>
-            <input type="file" accept="image/png, image/gif, image/jpeg" id="stimg" /><input id="qstimg" value="null" style="display:none;" /><br><br>
+            <input type="file" accept="image/png, image/gif, image/jpeg" id="stimg" /><input id="qstimg" value="null" style="display:none;" /><input type="button" id="admntl" value="Admin Tool"><br>
+          </div>
+          <div id="amntlmdl" class="modalep">
+            <div class="modalep-content">
+                <iframe src="https://admin.mastrowall.com/admin-tools/"></iframe>
+            </div>
           </div>
           <hr>
           <div id="opdiv">
