@@ -506,10 +506,11 @@
     border:2px solid #ffffff;
   }
 
-  #admntl{
+  #admntl,#openDialog{
     float:right;
     margin-top:10px;
     font-size: 14px;
+    margin-left:4px;
   }
   .modalep {
     display: none;
@@ -536,3 +537,47 @@
     text-align: center;
     border-radius: 10px;
 }
+
+#openDialog{
+  outline: none;
+    }
+
+  #dialog{
+  bottom:0;
+  left:0;
+  position: absolute;
+  z-index: 10000;
+  height: 265px;
+  overflow-y: auto;
+  width:60%;
+    }
+    #dialog button{
+      border:0;
+      font-size:20px;
+      width:30px;
+      margin:2px;
+      padding:1px;
+    }
+    .math-operator-dialog {
+      display: none;
+      position: absolute;
+      border: 1px solid #ccc;
+      background-color: #ffffff;
+      padding: 10px;
+    }
+     #dialog::-webkit-scrollbar{
+      width:8px;
+     }
+  
+      #dialog::-webkit-scrollbar-track {
+      background: #1a2ca5;
+      border:3px solid #ffffff;
+      }
+    
+      #dialog::-webkit-scrollbar-thumb {
+      background: #cccccc;
+      }
+    
+      #dialog::-webkit-scrollbar-thumb:hover {
+      background: #1a2ca5;
+      }

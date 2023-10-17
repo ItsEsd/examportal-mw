@@ -21,7 +21,6 @@ qst.addEventListener('input',(event) =>{
 conq.addEventListener('input',(event) =>{
     $('#qtstfalse').hide();
   document.getElementById('conq').style.border='2px solid #6a67fa';
-  // var innerh = document.getElementById('conq').innerHTML;
   var innerh = $('#conq').val();
   document.getElementById('qst').value = innerh;
   });
@@ -36,10 +35,9 @@ conq.addEventListener('input',(event) =>{
   // $(document).ready(function(){
   //   document.querySelector('[contenteditable]').addEventListener('paste', function(event) {
   //     event.preventDefault();
-//     document.execCommand('inserttext', false, event.clipboardData.getData('text/plain'));
-//   });
-// });
-
+  //     document.execCommand('inserttext', false, event.clipboardData.getData('text/plain'));
+  //   });
+  // });
 
   function readImage(input) {
     if ( input.files) {
@@ -603,3 +601,79 @@ function calexnt() {
         modalep.style.display = "none";
     }
     });
+
+    const editableDiv = document.getElementById("conq");
+    editableDiv.addEventListener("input", function() {
+      const content = editableDiv.value;
+      const modifiedContent = content.replace(/"/g, "'");
+      const selection = window.getSelection();
+      const range = selection.getRangeAt(0);
+      const startOffset = range.startOffset;
+      editableDiv.value = modifiedContent;
+      range.setStart(editableDiv.firstChild, startOffset);
+      range.setEnd(editableDiv.firstChild, startOffset);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    });
+
+  const editor = document.getElementById("conq");
+  const openDialogButton = document.getElementById("openDialog");
+
+  const dialog = document.createElement("div");
+  dialog.classList.add("math-operator-dialog");
+  dialog.id = "dialog";
+  document.body.appendChild(dialog);
+
+  const operators = [
+      '∀', '∁', '∂', '∃', '∄', '∅', '∆', '∇', '∈', '∉', '∊', '∋', '∌', '∍', '∎', '∏', '∐', '∑',
+      '−', '∓', '∔', '∕', '∖', '∗', '∘', '∙', '√', '∛', '∜', '∝', '∞', '∟', '∠', '∡', '∢', '∣', '∤', '∥',
+      '∦', '∧', '∨', '∩', '∪', '∫', '∬', '∭', '∮', '∯', '∰', '∱', '∲', '∳', '∴', '∵', '∶', '∷', '∸', '∹',
+      '∺', '∻', '∼', '∽', '∾', '∿', '≀', '≁', '≂', '≃', '≄', '≅', '≆', '≇', '≈', '≉', '≊', '≋', '≌', '≍',
+      '≎', '≏', '≐', '≑', '≒', '≓', '≔', '≕', '≖', '≗', '≘', '≙', '≚', '≛', '≜', '≝', '≞', '≟', '≠', '≡',
+      '≢', '≣', '≤', '≥', '≦', '≧', '≨', '≩', '≪', '≫', '≬', '≭', '≮', '≯', '≰', '≱', '≲', '≳', '≴', '≵',
+      '≶', '≷', '≸', '≹', '≺', '≻', '≼', '≽', '≾', '≿', '⊀', '⊁', '⊂', '⊃', '⊄', '⊅', '⊆', '⊇', '⊈',
+      '⊉', '⊊', '⊋', '⊌', '⊍', '⊎', '⊏', '⊐', '⊑', '⊒', '⊓', '⊔', '⊕', '⊖', '⊗', '⊘', '⊙', '⊚',
+      '⊛', '⊜', '⊝', '⊞', '⊟', '⊠', '⊡', '⊢', '⊣', '⊤', '⊥', '⊦', '⊧', '⊨', '⊩', '⊪', '⊫', '⊬',
+      '⊭', '⊮', '⊯', '⊰', '⊱', '⊲', '⊳', '⊴', '⊵', '⊶', '⊷', '⊸', '⊹', '⊺', '⊻', '⊼', '⊽', '⊾', '⊿',
+      '⋀', '⋁', '⋂', '⋃', '⋄', '⋅', '⋆', '⋇', '⋈', '⋉', '⋊', '⋋', '⋌', '⋍', '⋎', '⋏', '⋐', '⋑', '⋒',
+      '⋓', '⋔', '⋕', '⋖', '⋗', '⋘', '⋙', '⋚', '⋛', '⋜', '⋝', '⋞', '⋟', '⋠', '⋡', '⋢', '⋣', '⋤', '⋥',
+      '⋦', '⋧', '⋨', '⋩', '⋪', '⋫', '⋬', '⋭', '⋮', '⋯', '⋰', '⋱', '⋲', '⋳', '⋴', '⋵', '⋶', '⋷', '⋸', '⋹',
+      '⋺', '⋻', '⋼', '⋽', '⋾', '⋿', 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π',
+      'ρ', 'ς', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϕ'
+  ];
+
+  function createDialog() {
+      dialog.innerHTML = "";
+      operators.forEach((operator) => {
+          const operatorButton = document.createElement("button");
+          operatorButton.textContent = operator;
+          operatorButton.addEventListener("click", () => {
+              insertOperator(operator);
+              dialog.style.display = "none";
+          });
+          dialog.appendChild(operatorButton);
+      });
+  }
+
+  openDialogButton.addEventListener("click", () => {
+      createDialog();
+      dialog.style.display = "block";
+  });
+
+  function insertOperator(operator) {
+      const startPosition = editor.selectionStart;
+      const endPosition = editor.selectionEnd;
+      const textBefore = editor.value.substring(0, startPosition);
+      const textAfter = editor.value.substring(endPosition, editor.value.length);
+      const selectedText = operator;
+      editor.value = textBefore + selectedText + textAfter;
+      editor.selectionStart = startPosition + selectedText.length;
+      editor.selectionEnd = startPosition + selectedText.length;
+      editor.focus();
+  }
+
+  window.addEventListener("click", (event) => {
+    if (event.target !== openDialogButton && event.target !== dialog) {
+        dialog.style.display = "none";
+    }
+});
