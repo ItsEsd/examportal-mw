@@ -123,8 +123,8 @@
     var emid =$('#edueid').val();
     var tmilisec = $("#totalsec").val();
     var tmstr = $("#timestr").val();
-    var epass =escape(JSON.stringify($('#confirmpasskey').val()));
-    var spass =escape(JSON.stringify($('#exampass').val()));
+    var epass =encodeURIComponent(JSON.stringify($('#confirmpasskey').val()));
+    var spass =encodeURIComponent(JSON.stringify($('#exampass').val()));
     var examid =$('#examid').val();
     var time =$('#dateQ').val();
     var url1="https://script.google.com/macros/s/";
