@@ -212,11 +212,11 @@ document.getElementById('loader-resch').style.display = "none";
 
   stuassign.addEventListener('submit', (event) => { 
     document.getElementById('loader-enst').style.display="block";
-  var namestu = escape(JSON.stringify($('#stuname').val()));
-  var eid  =escape(JSON.stringify($('#stueid').val()));
+  var namestu = encodeURIComponent(JSON.stringify($('#stuname').val()));
+  var eid  =encodeURIComponent(JSON.stringify($('#stueid').val()));
   var examid  =$('#exid').val();
   var epass  =JSON.stringify($('#expass').val());
-  var enid  =escape(JSON.stringify($('#enrollid').val()));
+  var enid  =encodeURIComponent(JSON.stringify($('#enrollid').val()));
   var url1 = "https://script.google.com/macros/s/";
   var url2 = "AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
   var url = url1+url2+"/exec"+"?callback=ctrlqstex&exid=" +examid+"&expass="+epass+"&stuname="+namestu+"&stueid="+eid+"&enrollid="+enid+"&action=gentestenroll";
