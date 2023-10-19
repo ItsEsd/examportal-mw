@@ -726,20 +726,21 @@
             <hr>
             <div>
               <div style="font-size:14px;padding:10px;">
-                <div class='eduinfoex' id="eduinfofordqset">
+                <div class="row" style="width: 100%;"><div class="col-md-6"><div class='eduinfoex'><div id="eduinfofordqset">
                   <p>Educator Name: <b><span id="eduexname" class="exeduinfoid">......</span></b></p>
                   <p>Exam Title: <b><span id="eduextitle" class="exeduinfoid">......</span></b></p>
                   <p>Description: <b><span id="eduexdescp" class="exeduinfoid">......</span></b></p>
                   <p>Test Duration: <b><span id="eduextimedur" class="exeduinfoid">......</span></b></p>
                   <p>Exam Pass: <b><span id="eduexmpss" class="exeduinfoid">......</span></b></p>
-                </div>
-                <div class='eduinfoex'>
+                </div><p id="btngtlnkstp"><hr><button type="button" id="stdassign" class="btn btn-outline-warning" disabled>🔗 Get link: Student Enroll</button></p>
+                </div></div>
+                <div class="col-md-6"> <div class='eduinfoex'>
                   <p style="color:#f75858;">Question Set Storage Used: <span id="qststorage">....</span></p>
                   <p style="color:#58cc0a;">Number of Enrolled Students: <span id="enrolledstuall">....</span></p>
                   <p style="color:#1612f0;">Test Room Size Occupied: <span id="troomsize">....</span></p>
-                  <button class="btn btn-dark" type="button" onclick="downloadqset();" style="padding:6px 10px;">Download/ Print Question Set</button>
-                </div>
-                <div id="qsetanst"></div><br>
+                  <hr><button class="btn btn-dark" type="button" onclick="downloadqset();" style="padding:6px 10px;font-size:14px;width:100%;">Download/ Print Question Set</button>
+                </div></div></div>
+                <div id="qsetanst"></div><br><hr>
                <div id="examstate"> <div class="form-check form-switch" style="display:inline-block;">
                   <input class="form-check-input" type="checkbox" id="exlvnt" onclick="lvexnt()">
                   <label class="form-check-label" for="flexSwitchCheckDefault">LIVE</label>

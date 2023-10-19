@@ -174,3 +174,41 @@
     var k ="ep/"+Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
     document.getElementById('examid').value = k;
     });
+
+    document.getElementById('stdassign').addEventListener('click', function() {
+      var button =document.getElementById('stdassign');
+      var exmid = document.getElementById('chexamidedu').value;
+      var exps = document.getElementById('eduexmpss').innerText;
+      var aslnk = 'https://exam-portal.mastrowall.com' + "?e=" + encodeURIComponent(exmid) + "&p=" + encodeURIComponent(exps) + "&valid=true";
+      var tempTextArea = document.createElement('textarea');
+      tempTextArea.value = aslnk; console.log(aslnk);
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy'); 
+        console.log('Link copied to clipboard: ' + aslnk);
+        button.innerText = "Copied!";
+        setTimeout(function() {
+          button.innerText = "Get link: Student Enroll";
+        }, 10000); 
+      } catch (err) {
+        console.error('Unable to copy link to clipboard');
+      }
+      document.body.removeChild(tempTextArea); 
+    });
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var dig = url.searchParams.get("e");
+var key = url.searchParams.get("p");
+var rtv = url.searchParams.get("valid");
+if (rtv == "true") {
+  setTimeout(function(){
+  document.getElementById('navicon').click();
+  document.getElementById('assgntst').click();
+  document.getElementById('exid').value = decodeURIComponent(dig); 
+  document.getElementById('exid').disabled =true;
+  document.getElementById('expass').value = key; 
+  document.getElementById('expass').disabled =true;
+},2000);
+}

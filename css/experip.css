@@ -425,7 +425,7 @@
   .exeduinfoid{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     font-style:italic;
     color:#0821ad;
   }
@@ -450,12 +450,14 @@
   }
   .eduinfoex{
     margin:10px;
-    max-width:400px;
+    min-width:350px;
+    max-width:380px;
     display:inline-block;
     padding:10px;
     border: 1px solid #c2c2c2;
     background-color: #e1e1e2;
   }
+
   #examstate{
     margin-top:10px;
     padding:10px;
@@ -580,4 +582,11 @@
     
       #dialog::-webkit-scrollbar-thumb:hover {
       background: #1a2ca5;
+      }
+
+      #stdassign{
+        float: right;
+        font-size:14px;
+        width:100%;
+        background-color: white;
       }
