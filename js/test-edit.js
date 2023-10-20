@@ -254,12 +254,12 @@ function dwnldqsetaftrexend() {
     url: urlcp,
     method: "GET",
     dataType: "jsonp"
-  });console.log(urlcp) }
+  });}
 
   function prevqsetexend(e){
     var reslt = e.records;
 if(reslt != "ID not found!"){
-  prevqset(e);console.log(reslt);
+  prevqset(e);
 }
 setTimeout(function(){
   var elem1 = document.getElementById("previews");
@@ -623,7 +623,6 @@ function allwdwnld() {
           method: "GET",
           dataType: "jsonp"
         });
-        console.log(url);
   }
 }
 
