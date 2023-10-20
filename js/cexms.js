@@ -186,7 +186,6 @@
       tempTextArea.select();
       try {
         document.execCommand('copy'); 
-        console.log('Link copied to clipboard: ' + aslnk);
         button.innerText = "Copied!";
         setTimeout(function() {
           button.innerText = "Get link: Student Enroll";

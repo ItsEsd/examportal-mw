@@ -48,14 +48,15 @@
 function ldalrslt(e){
   var res = e.records; 
   if(res != "ID not found!"){
-    var exmhd = `<div class="row"><div class="col-md-6">
+    var exmhd = `<div class="row"><div class="col-sm-8">
 <p>Educator Name: <b><span class="exeduinfoid">`+res[0].EducatorName+`</span></b></p>
 <p>Exam Title: <b><span class="exeduinfoid">`+res[0].ExamTitle+`</span></b></p>
 <p>Description: <b><span class="exeduinfoid">`+res[0].ExamDescp+`</span></b></p>
 <p>Test Duration: <b><span class="exeduinfoid">`+res[0].TDuration+`</span></b></p>
-<p>Exam Pass: <b><span class="exeduinfoid">`+JSON.parse(res[0].ExamPass)+`</span></b></p>
-</div><div class="col-md-6"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;float:right;display:block;"></div></div><hr>`;
-    $('#stresultall').empty();
+<p><span class="exdcrtedt">Exam ID: <b><span class="exeduinfoid">`+res[0].ExamID+`</span></b></span>
+<span class="exdcrtedt">Exam Pass: <b><span class="exeduinfoid">`+JSON.parse(res[0].ExamPass)+`</span></b></span></p>
+</div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;float:right;display:block;"></div></div><hr>`;
+    $('#stresultall,#exmdscrpprfn').empty();
     var restren = JSON.parse(JSON.stringify(res[0].EnrolledStuFinal));
     var sprestren = restren.split(',');
     var lenstren = sprestren.length;
