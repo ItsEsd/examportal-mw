@@ -409,18 +409,30 @@
     z-index: 100;
   }
   
-  #stresultall::-webkit-scrollbar {
+  #d365eqw::-webkit-scrollbar {
     width: 10px;
     color: #0a0a0a;
   }
-  
+  #d365eqw{
+    overflow-y: scroll;
+    max-height:350px;
+    max-width:600px;
+    background-color: white;
+  }
   #stresultall{
     background-color:white;
     padding:20px;
-    overflow-y: scroll;
-    max-height:310px;
     max-width:600px;
   }
+  #exmdscrpprfn{
+    background-color:#ededed;
+    padding:20px;
+    padding-bottom: 0px;
+    height:100%;
+    max-width:600px;
+    text-align: left;
+  }
+  #exmdscrpprfn .row{width:100%;}
   
   .exeduinfoid{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -589,4 +601,18 @@
         font-size:14px;
         width:100%;
         background-color: white;
+      }
+      #dwnqstexend{
+        font-size: 14px;
+        width:200px;
+        display: block;
+        cursor: pointer;
+        margin-top:20px;
+        background-color:#d0d0d0;
+        padding:4px 10px;
+        border-radius: 20px;
+      }
+      #dwnqstexend:hover{
+        text-decoration: underline;
+        opacity: 0.6;
       }

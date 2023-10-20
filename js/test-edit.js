@@ -242,7 +242,46 @@ var urlcp = url1+url2+"/exec"+ "?callback=prevqset&chexid="+exid+"&chkey="+ekey+
   method: "GET",
   dataType: "jsonp"
 });}
+function dwnldqsetaftrexend() {
+    var exid=$("#chexid").val();
+  var ekey=JSON.stringify($("#chpass").val());
+  var url1 = "https://script.google.com/macros/s/";
+  var url2 = "AKfycby609cKn5mTtCk3F86SqLpiTYbcDtoK611N3gzFlAaAgpY5tQBk5iIEVEzebCeEMCdoxw";
+  document.getElementById('loaderCon').style.display = "block";
+  var urlcp = url1+url2+"/exec"+ "?callback=prevqsetexend&chexid="+exid+"&chkey="+ekey+"&action=dwnldqst";
+   var request = jQuery.ajax({
+    crossDomain: true,
+    url: urlcp,
+    method: "GET",
+    dataType: "jsonp"
+  });console.log(urlcp) }
 
+  function prevqsetexend(e){
+    var reslt = e.records;
+if(reslt != "ID not found!"){
+  prevqset(e);console.log(reslt);
+}
+setTimeout(function(){
+  var elem1 = document.getElementById("previews");
+  var elem2 = document.getElementById("eduinfofordqset");
+  var elem3 = document.getElementById("qsetanst");
+  var pdnme = document.getElementById("eduextitle").innerText;
+  var pdby = document.getElementById("eduexname").innerText;
+  var title = pdnme +" by "+pdby;
+  var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
+  if (oPrntWin === null || typeof oPrntWin === 'undefined') {
+  alert('Pop-up was blocked. Please enable pop-ups for this site.');
+  } else {
+  setTimeout(function() {
+    oPrntWin.close();
+  }, 5000);
+  }
+      oPrntWin.document.open();
+      oPrntWin.document.write("<!doctype html><html><head><title>"+title+" - MASTROWALL - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/css/style.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'><div class='col-md-6'><div style=\"text-align:left;font-size:18px;font-weight:400;\">" + elem2.innerHTML + "<\/div></div><div class='col-md-6'><a target='_blank' href=\"https://mastrowall.com\" style='cursor:pointer;'><img src=\"https://mastrowall.com/images/logoRecBWsvg.svg\" style='width:80px;float:right;display:block;' oncontextmenu=\"return false;\"><\/a></div></div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a target='_blank' href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#0c29cd;\"><b>M A S T R O W A L L</b><\/a><\/h4><\/div><\/center><\/body><\/html>");
+      oPrntWin.document.close();
+
+},3000);
+  }
 
 function prevqset(e){
 var reslt = e.records;
@@ -273,6 +312,9 @@ document.getElementById('exlvnt').checked="true";
 }
 if(reslt[0].Calculator == "Enabled"){
   document.getElementById('excalnt').checked="true";
+}
+if(reslt[0].AllowDownload == "Allowed"){
+  document.getElementById('exaldwnd').checked="true";
 }
 
 var enststr = reslt[0].EnrolledStuFinal;
@@ -523,7 +565,7 @@ function ctrlcrtexid(e){}
   }
   function setvallv(stv){
     ur1="https://script.google.com/macros/s/";
-    ur2="AKfycbyx2fIuxo--Sw1D6MfTxBnZjS8xS4yCqRg83eUMXA2eNdrG2KDk5W_DvtWAzuhyD_uNvQ";
+    ur2="AKfycby609cKn5mTtCk3F86SqLpiTYbcDtoK611N3gzFlAaAgpY5tQBk5iIEVEzebCeEMCdoxw";
       var url = ur1+ ur2+"/exec"+"?callback=liveup&edid="+eeid+"&pdid="+ppid+"&stid="+stv+"&action=uplv";
         var request = jQuery.ajax({
           crossDomain: true,
@@ -548,7 +590,7 @@ function calexnt() {
   }
   function setcalv(stv){
     ur1="https://script.google.com/macros/s/";
-    ur2="AKfycbyx2fIuxo--Sw1D6MfTxBnZjS8xS4yCqRg83eUMXA2eNdrG2KDk5W_DvtWAzuhyD_uNvQ";
+    ur2="AKfycby609cKn5mTtCk3F86SqLpiTYbcDtoK611N3gzFlAaAgpY5tQBk5iIEVEzebCeEMCdoxw";
       var url = ur1+ ur2+"/exec"+"?callback=liveupcl&edid="+eeid+"&pdid="+ppid+"&stid="+ssid+"&action=upcl";
         var request = jQuery.ajax({
           crossDomain: true,
@@ -558,6 +600,51 @@ function calexnt() {
         });
   }
 }
+
+function allwdwnld() {
+  var checkBox = document.getElementById("exaldwnd");
+  var eeid=$("#chexamidedu").val();
+    var ppid=JSON.stringify($("#chkey").val());
+  if (checkBox.checked == true){
+    var ssid="Allowed";
+    setdwnld(ssid);
+ 
+  } else {
+    var ssid="";
+    setdwnld(ssid);
+  }
+  function setdwnld(stv){
+    ur1="https://script.google.com/macros/s/";
+    ur2="AKfycby609cKn5mTtCk3F86SqLpiTYbcDtoK611N3gzFlAaAgpY5tQBk5iIEVEzebCeEMCdoxw";
+      var url = ur1+ ur2+"/exec"+"?callback=alwdwld&edid="+eeid+"&pdid="+ppid+"&stid="+ssid+"&action=updwnd";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+        console.log(url);
+  }
+}
+
+function alwdwld(e){
+  if(e.result == "Value updated successfully!" && document.getElementById("exaldwnd").checked==true){
+  var elem = document.createElement('div');
+  elem.id="notifyact";
+  elem.innerHTML="Question Set and Answer Key are Allowed for Download ✅"
+  $('body').append(elem);
+  setTimeout(function(){$(elem).slideUp('fast')},5000)
+  }
+  else{
+    var elem = document.createElement('div');
+    elem.id="notifyact";
+    elem.innerHTML="Question Set and Answer Key NOT Allowed for Download ❎"
+    $('body').append(elem);
+    setTimeout(function(){$(elem).slideUp('fast')},5000)
+  }
+  }
+
+
 
   function liveup(e){
   if(e.result == "Value updated successfully!" && document.getElementById("exlvnt").checked==true){

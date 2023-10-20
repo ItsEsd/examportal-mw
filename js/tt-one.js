@@ -47,6 +47,9 @@ $('#expdetails').append(nwlm);
     if(res[0].Calculator != "Enabled"){
       document.getElementById('calbtnex').disabled="true";
     }
+    if(res[0].AllowDownload != "Allowed"){
+      document.getElementById('dwnqstexend').style.display='none';
+    }
     var qstate = JSON.parse(JSON.stringify(res[0].QuesSTFinal));
     var qstateimg = JSON.parse(JSON.stringify(res[0].QSTimgFinal));
     var qstateops = JSON.parse(JSON.stringify(res[0].OPfinal));

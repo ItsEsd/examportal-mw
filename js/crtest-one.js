@@ -46,8 +46,15 @@
   });    });
 
 function ldalrslt(e){
-  var res = e.records;
+  var res = e.records; console.log(res);
   if(res != "ID not found!"){
+    var exmhd = `<div class="row"><div class="col-md-6">
+<p>Educator Name: <b><span class="exeduinfoid">`+res[0].EducatorName+`</span></b></p>
+<p>Exam Title: <b><span class="exeduinfoid">`+res[0].ExamTitle+`</span></b></p>
+<p>Description: <b><span class="exeduinfoid">`+res[0].ExamDescp+`</span></b></p>
+<p>Test Duration: <b><span class="exeduinfoid">`+res[0].TDuration+`</span></b></p>
+<p>Exam Pass: <b><span class="exeduinfoid">`+JSON.parse(res[0].ExamPass)+`</span></b></p>
+</div><div class="col-md-6"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;float:right;display:block;"></div></div><hr>`;
     $('#stresultall').empty();
     var restren = JSON.parse(JSON.stringify(res[0].EnrolledStuFinal));
     var sprestren = restren.split(',');
@@ -78,11 +85,12 @@ function ldalrslt(e){
     }
     document.getElementById('eduexloginform').style.display = "none";
     document.getElementById('loadercp').style.display = "block";
-    document.getElementById('stresultall').innerHTML += "<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>"  ;   
+    document.getElementById('stresultall').innerHTML +="<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>" ;   
     document.getElementById('backcp').style.display = "block";
     document.getElementById('loader-cp').style.display = "none";
     document.getElementById('sbmtchprm').disabled= false;
     }
+    document.getElementById('exmdscrpprfn').innerHTML = exmhd;
   }
 
   else{
@@ -94,10 +102,10 @@ function ldalrslt(e){
 
 
    function examresultpdf() {
-    var elem = document.getElementById("stresultall");
+    var elem = document.getElementById("d365eqw");
     var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
         oPrntWin.document.open();
-        oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:2px solid grey;\">" + elem.innerHTML + "<\/div><\/div><\/body><\/html>");
+        oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/css/style.css\"><\/head><body style=\"width:100%;padding:10px;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:1px solid #e2e2e2;text-align:left;background-color:white;\">" + elem.innerHTML + "<h4 style=\"width:100%;text-align:center;color:#0c29cd;\"><a style=\"text-decoration:none;color:#0c29cd;\" target=\"_blank\" href=\"https://mastrowall.com\">M A S T R O W A L L<\/a><\/h4><\/div><\/div><\/body><\/html>");
         oPrntWin.document.close();
    }
 

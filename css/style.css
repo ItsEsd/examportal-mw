@@ -478,7 +478,7 @@ display: block;
     background-color: #d6d6d6;
 }
 #anrprt2 div,#anrprt2smp div{
-    max-width: 500px;
+    max-width: 500px; max-height: 500px;
     padding:10px;
     background-color: #ffffff;
 }

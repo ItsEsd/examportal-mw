@@ -212,3 +212,4 @@ if (rtv == "true") {
   document.getElementById('expass').disabled =true;
 },2000);
 }
+$('#dwnqstexend').click(function(){dwnldqsetaftrexend()});
