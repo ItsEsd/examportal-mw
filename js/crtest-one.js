@@ -46,7 +46,7 @@
   });    });
 
 function ldalrslt(e){
-  var res = e.records; console.log(res);
+  var res = e.records; 
   if(res != "ID not found!"){
     var exmhd = `<div class="row"><div class="col-md-6">
 <p>Educator Name: <b><span class="exeduinfoid">`+res[0].EducatorName+`</span></b></p>
