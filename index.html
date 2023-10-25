@@ -688,7 +688,7 @@
   <section>
     <div id="otserviceexamid">
       <div id="formcontainer">
-        <form target="hdnfrm" id="quesfrm" autocomplete="off">
+        <form onsubmit="event.preventDefault();" id="quesfrm" autocomplete="off">
           <div id="stdiv">
             <label>Question Statement:</label> <span id="qtstfalse"></span>
             <textarea id="conq" required></textarea>
@@ -816,7 +816,7 @@
   <section>
     <div id="assignstuexam" align="center">
       <div id="assignstuexform">
-        <form id="stuassign" target="hdnfrm">
+        <form id="stuassign" onsubmit="event.preventDefault();">
           <label>Name:</label>
           <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();idelem.donotdowrd();" required /><br>
           <label>Email Address:</label>
@@ -839,7 +839,7 @@
   <section>
     <div id="resbrd" align='center'>
       <div id="chresform">
-        <form id="chresult" target="hdnfrm">
+        <form id="chresult" onsubmit="event.preventDefault();">
           <label>Exam ID:</label>
           <input class="form-control" type="text" id="checkexamid" style="text-align:center;" placeholder="Enter Exam ID" required /><br>
           <label>Enrollment ID:</label>
@@ -889,7 +889,7 @@
   <section>
     <div id="continueexamid" align="center">
       <div id="formcontainerexid">
-        <form id="checkexid" target="hdnfrm">
+        <form id="checkexid" onsubmit="event.preventDefault();">
           <label>Exam ID:</label>
           <input type="text" class="form-control" id="chexamidedu" placeholder="Enter Exam ID" required /><br>
           <label>Key:</label>
@@ -918,7 +918,6 @@
     </div>
   </section>
   <div ng-include="'divsec/create-examid.html'"></div>
-  <iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
  <script src="/js/tt-one.js"></script>
  <script src="/js/timer.js"></script>
