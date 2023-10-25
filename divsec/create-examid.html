@@ -3,7 +3,7 @@
     <div id="createid" class="otserviceinfo"><div class="otservprp">
       <span class="closeot" style="float:right;" title="Close">X</span>
       <h4>Create Exam ID</h4><hr style="border-width: 2px;border-color:#ffffff;">
-    <form id="cridone" target="hdnfrm" autocomplete="off">
+    <form id="cridone" onsubmit="event.preventDefault();" autocomplete="off">
       <div id="crtestone">
       <label>Name:</label>
       <input type="text" class="form-control" style="text-transform: capitalize;" id="eduname" placeholder="Full name" required/><br/>
@@ -36,7 +36,7 @@
       <input type="submit" class="submitform"  value="Next">
      
       </div></form> 
-      <form id="cridtwo" target="hdnfrm" style="display: none;" autocomplete="off">
+      <form id="cridtwo" onsubmit="event.preventDefault();" style="display: none;" autocomplete="off">
         <input  class="form-control" id="timestr" style="display: none;" />
       <input class="form-control" id="totalsec" style="display: none;" />
       <div id="crtestthree">
