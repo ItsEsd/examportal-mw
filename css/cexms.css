@@ -94,7 +94,10 @@ padding-right:10px;}
   z-index: 10;
   border-bottom: 4px solid #2727ee86;
   }
-
+.ldngsmpltst{
+  color:white;
+  margin-top:50vh;
+}
   .closeotserv{
     float:right;
     background-color: #ffffff;
@@ -375,6 +378,12 @@ font-size: 16px;
   display: inline-block;
   width: 40px;
   height: 40px;
+}
+#loaderfls{
+  width:20px;
+  height:20px;
+  font-weight: 100;
+  margin-left:10px;
 }
 #loaderCon{
 margin-top:120px;
