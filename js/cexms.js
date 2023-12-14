@@ -201,6 +201,7 @@ var url = new URL(url_string);
 var dig = url.searchParams.get("e");
 var key = url.searchParams.get("p");
 var rtv = url.searchParams.get("valid");
+var q = url.searchParams.get("q");
 if (rtv == "true") {
   setTimeout(function(){
   document.getElementById('navicon').click();
@@ -210,5 +211,10 @@ if (rtv == "true") {
   document.getElementById('expass').value = key; 
   document.getElementById('expass').disabled =true;
 },2000);
+}
+else if(q =="sampletest"){
+  document.getElementById('navicon').click();
+  $('.smprtlOne').slideDown();
+  $('.closesmprtl').css('display','none');
 }
 $('#dwnqstexend').click(function(){dwnldqsetaftrexend()});
