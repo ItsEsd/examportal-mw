@@ -13,6 +13,7 @@ $('.clsexmscrn').click(function(){
 function getSampleExams(){
 var pElem = document.createElement('div');
 pElem.className= "smprtlOne";
+pElem.innerHTML= '<center class="ldngsmpltst">Loading... <div id="loaderfls" class="spinner-border text-light" style="display: inline-block;"></div></center>';
 $("body").append(pElem);
 var n2Elem = document.createElement('div');
 n2Elem.className = "smprtlTwo";
@@ -77,6 +78,7 @@ function getExams(ownap){
 }
 
 function ctrlqexms(e){
+ $('.ldngsmpltst').remove();
   var n1Elem = document.createElement('div');
   var n2Elem = document.createElement('div');
   n1Elem.className = "condata";
