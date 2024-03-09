@@ -56,6 +56,9 @@ var userSetCookie = function (exdays, uid) {
       "; expires=" +
       expires +
       ";path=/;domain=mastrowall.com";
+    document.body.style.backgroundImage = "none";
+    document.body.innerHTML =
+      "<center style='margin-top:35vh;font-size:20px;color:#0c29cd;font-weight:bold;'><p>Loading...</p><h4 style='color:#484848;font-weight:bold;'>Exam Portal | MASTROWALL</h4><br><pre><font size='2'>©️ MASTROWALL 2024</font></pre></center>";
     setTimeout(function () {
       window.location.reload();
     }, 1000);
@@ -465,6 +468,29 @@ function sbmtsmpans() {
   $("#qnstfrm").submit();
   document.getElementById("qcontainer").style.display = "none";
   $("#feedbacksmp").slideDown("slow");
+}
+
+let lastScrollTop = 0;
+let width = window.innerWidth;
+if (width <= 768) {
+  window.addEventListener("scroll", function () {
+    let currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down
+      document.getElementById("calculatorbtn").style.display = "none";
+      document.getElementById("boxexp-two").style.display = "none";
+    } else {
+      // Scrolling up
+      document.getElementById("calculatorbtn").style.display = "block";
+      document.getElementById("boxexp-two").style.display = "block";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+} else {
+  document.getElementById("calculatorbtn").style.display = "block";
+  document.getElementById("boxexp-two").style.display = "block";
 }
 
 function checkresultsmp() {

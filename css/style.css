@@ -72,9 +72,10 @@ html {
   padding-left: 20px;
   padding-right: 20px;
   width: 98%;
-  max-width: 900px;
+  max-width: 1000px;
   min-width: 350px;
   text-align: left;
+  word-wrap: break-word;
 }
 
 #qsetanst {
@@ -221,19 +222,20 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #b1abff;
+  background: #f0eaea;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffffff;
+  background: #2c2ceb;
+  border: 2.5px solid #f0eaea;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f86774;
+  background: #525252;
 }
 
 .showopsimg {
@@ -361,7 +363,7 @@ html {
 }
 #calculatorbtn button {
   border-radius: 0px;
-  padding: 4px 10px;
+  padding: 3.5px 10px;
 }
 #calculatorbtn svg {
   margin-top: -4px;
@@ -850,12 +852,30 @@ html {
   #boxexp-one {
     margin-top: 40px;
   }
+  #viewqset {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+  #calculatorbtn {
+    left: 0px;
+  }
+  #calculatorbtn button {
+    width: 55vw;
+  }
   #viewqset img {
     width: 100%;
   }
-
+  #updwn {
+    display: none;
+  }
+  #uparw {
+    display: block;
+  }
   #timeleft {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #testtimer {
@@ -863,14 +883,23 @@ html {
     right: 5px;
     position: fixed;
   }
+  #examheader {
+    margin-bottom: 60px;
+  }
   #enrmail {
-    width: 100%;
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   #quesindex {
-    display: block;
-    bottom: 40px;
+    background-color: #2d2d2dd8;
+    display: none;
+    bottom: 0px;
     right: 0px;
     position: fixed;
+    padding: 10px;
+    padding-bottom: 50px;
   }
 
   .tdton {
