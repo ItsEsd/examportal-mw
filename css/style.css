@@ -42,13 +42,15 @@ html {
   z-index: 0;
 }
 #left-block {
-  margin-top: 60px;
+  margin-top: 80px;
   width: 100%;
   max-width: 800px;
   height: 100%;
+  text-align: center;
 }
 #right-block {
   margin-top: 160px;
+  width: 100%;
   padding: 40px;
   height: 100%;
   border-right: 40px solid #f0f1fc;
@@ -700,6 +702,10 @@ html {
   float: left;
   color: #3a3a3a;
   cursor: not-allowed;
+  border-radius: 2px;
+  border: none;
+  padding: 2px 10px;
+  background-color: #e4e4e4;
 }
 
 .tdton {
@@ -837,7 +843,7 @@ html {
   display: none;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .closesmprtl {
     font-size: 14px;
     padding: 8px 10px;
@@ -846,9 +852,6 @@ html {
     font-size: 14px;
     padding: 4px 6px;
   }
-}
-
-@media screen and (max-width: 600px) {
   #boxexp-one {
     margin-top: 40px;
   }
@@ -927,4 +930,64 @@ html {
 }
 #crtans2::-webkit-scrollbar-thumb:hover {
   background: #8d8d8d;
+}
+@media screen and (min-width: 600px) and (max-width: 1066px) {
+  #expdash {
+    margin-top: 60px;
+  }
+  #left-block {
+    margin-top: 150px;
+    display: inline-block;
+  }
+
+  #viewqset {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+  #calculatorbtn {
+    left: 0px;
+  }
+  #calculatorbtn button {
+    width: 20vw;
+  }
+
+  #updwn {
+    display: none;
+  }
+  #uparw {
+    display: block;
+  }
+  #timeleft {
+    font-size: 18px;
+  }
+
+  #testtimer {
+    top: 5px;
+    right: 5px;
+    position: fixed;
+  }
+
+  #enrmail {
+    display: inline-flex;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #quesindex {
+    background-color: #2d2d2dd8;
+    display: none;
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+    padding: 10px;
+    padding-bottom: 50px;
+  }
+
+  .tdton {
+    font-size: 16px;
+  }
 }
