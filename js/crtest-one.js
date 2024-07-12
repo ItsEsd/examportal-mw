@@ -394,25 +394,35 @@ function enrollmentinfo() {
 function sendStmail() {
   var elemed = document.getElementById("enrolledinfo").innerHTML;
   var mailat = $("#stueid").val();
-  Email.send({
-    SecureToken: "dce269d4-508e-4b89-bc50-2201fb9f60a8",
-    To: mailat,
-    From: "MASTROWALL<examportal@mastrowall.com>",
-    Subject: "Exam Portal - MASTROWALL",
-    Body:
-      elemed +
-      "<br><p style='text-align:center;font-size:14px;'>N.B. Do not reply to this email</p>",
-  }).then(function (message) {
-    if ((message = "OK")) {
+  var embody =
+    elemed +
+    "<br><p style='text-align:center;font-size:14px;'>N.B. Do not reply to this email</p>";
+
+  var formData = {
+    to: mailat,
+    subject: "Exam Portal - MASTROWALL",
+    text: embody,
+  };
+
+  $.ajax({
+    type: "POST",
+    url: "https://api.amrit-corp.com/_email/noreply/mastrowall/",
+    data: JSON.stringify(formData),
+    contentType: "application/json",
+    success: function (response) {
       document.getElementById("mailsentstu").style.display = "block";
       document.getElementById("mailsentstu").innerHTML =
         "Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.";
       setTimeout(function () {
         jQuery("#mailsentstu").fadeOut("fast");
       }, 20000);
-    } else {
+    },
+    error: function (error) {
       document.getElementById("mailsentstu").style.display = "none";
-    }
+      alert(
+        "Error sending verification email! Please check Internet connection."
+      );
+    },
   });
 }
 

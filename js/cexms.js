@@ -168,24 +168,32 @@ function sendEdmail() {
     `</div> </div> </td> </tr> </tbody> </table> <p style='text-align:right;margin:10px;font-size:14px;'>Your Key / Password: <em style="color:#0c29cd;"><b>` +
     passk +
     `</b></em></p> <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"> <tbody> <tr> <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 0px;font-family:'Raleway',sans-serif;" align="left"> <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%"> <tbody> <tr style="vertical-align: top"> <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%"> <span>&nbsp;</span> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"> <tbody> <tr> <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 40px;font-family:'Raleway',sans-serif;" align="left"> <div style="font-size: 14px; line-height: 160%; text-align: center; word-wrap: break-word;"> <p style="font-size: 14px; line-height: 160%;">N.B: Do not reply to this email.</p> <p style="font-size: 14px; line-height: 160%;"><br>Contact: <a rel="noopener" href="mailto:mail@mastrowall.com" target="_blank">mail@mastrowall.com</a><br>Arambagh. Hooghly. WB. India.<br>PIN: 712601</p> <p style="font-size: 14px; line-height: 160%;"> </p> </div> </td> </tr> </tbody> </table> </div> </div> </div> </div> </div> </div> </td> </tr> </tbody> </table> </body></html>`;
-  Email.send({
-    SecureToken: "dce269d4-508e-4b89-bc50-2201fb9f60a8",
-    To: mailat,
-    From: "MASTROWALL<examportal@mastrowall.com>",
-    Subject: "Exam Portal - MASTROWALL",
-    // Body:  elemed+"<p style='text-align:right;margin:10px;font-size:14px;'>Your Key/Password: "+passk+"</p><br><span style='float:left;font-size:14px;'>N.B. Do not reply to this email</span>",
-    Body: embody,
-  }).then(function (message) {
-    if (message == "OK") {
+
+  var formData = {
+    to: mailat,
+    subject: "Exam Portal - MASTROWALL",
+    text: embody,
+  };
+
+  $.ajax({
+    type: "POST",
+    url: "https://api.amrit-corp.com/_email/noreply/mastrowall/",
+    data: JSON.stringify(formData),
+    contentType: "application/json",
+    success: function (response) {
       document.getElementById("mailsented").style.display = "block";
       document.getElementById("mailsented").innerHTML =
         "Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.";
       setTimeout(function () {
         jQuery("#mailsented").fadeOut("fast");
       }, 20000);
-    } else {
+    },
+    error: function (error) {
       document.getElementById("mailsented").style.display = "none";
-    }
+      alert(
+        "Error sending verification email! Please check Internet connection."
+      );
+    },
   });
 }
 cridtwo.addEventListener("submit", (event) => {
