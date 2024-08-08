@@ -83,7 +83,7 @@ function ldalqset(e) {
     var len = qstate2.length;
     var oplen = qstateops2.length;
     var opq = 4;
-    document.getElementById("responqsindx").innerHTML = "1 - " + (len - 2);
+    document.getElementById("responqsindx").innerHTML = "Q.1 - Q." + (len - 2);
     for (var k = 0; k < len - 2; k++) {
       if (k == 0) {
         var qs = qstate2[k].substring(1);
