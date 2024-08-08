@@ -366,6 +366,7 @@ html {
 #calculatorbtn button {
   border-radius: 0px;
   padding: 3.5px 10px;
+  height: 35px;
 }
 #calculatorbtn svg {
   margin-top: -4px;
@@ -481,6 +482,7 @@ html {
   cursor: pointer;
   width: 138px;
   font-weight: 500;
+  height: 35px;
 }
 #upndd {
   bottom: 0px;
@@ -489,6 +491,7 @@ html {
   cursor: pointer;
   background-color: #f5cc14;
   padding-top: 2px;
+  height: 35px;
 }
 #upndd svg {
   width: 30.5px;
@@ -862,12 +865,12 @@ html {
     max-width: 100%;
     text-align: left;
   }
-  #calculatorbtn {
+  /* #calculatorbtn {
     left: 0px;
-  }
-  #calculatorbtn button {
+  } */
+  /* #calculatorbtn button {
     width: 55vw;
-  }
+  } */
   #viewqset img {
     width: 100%;
   }
@@ -947,12 +950,12 @@ html {
     max-width: 100%;
     text-align: left;
   }
-  #calculatorbtn {
+  /* #calculatorbtn {
     left: 0px;
-  }
-  #calculatorbtn button {
+  } */
+  /* #calculatorbtn button {
     width: 20vw;
-  }
+  } */
 
   #updwn {
     display: none;
