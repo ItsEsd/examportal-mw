@@ -87,7 +87,11 @@ html {
   width: 100%;
   max-width: 600px;
 }
-
+@media print {
+  .edtrfunc {
+    display: none !important;
+  }
+}
 .leftimg {
   width: 100%;
   max-width: 600px;
