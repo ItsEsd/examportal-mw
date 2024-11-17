@@ -847,24 +847,64 @@ function downloadqset() {
   var pdnme = document.getElementById("eduextitle").innerText;
   var pdby = document.getElementById("eduexname").innerText;
   var title = pdnme + " by " + pdby;
-  var oPrntWin = window.open(
-    "",
-    "_blank",
-    "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
-  );
-  oPrntWin.document.open();
-  oPrntWin.document.write(
-    "<!doctype html><html><head><title>" +
-      title +
-      ' - MASTROWALL - Exam Portal</title><link rel="stylesheet" href="/css/vendor/bootstrap.min.css"><link rel="stylesheet" href="css/style.css"></head><style>.delquesone {display: none !important;}</style><body onload="print();" style="margin:40px;"><center><div class=\'row\' style=\'background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;\'><div class=\'col-md-6\'><div style="text-align:left;font-size:18px;font-weight:400;">' +
-      elem2.innerHTML +
-      '</div></div><div class=\'col-md-6\'><a target=\'_blank\' href="https://mastrowall.com" style=\'cursor:pointer;\'><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style=\'width:80px;float:right;display:block;\' oncontextmenu="return false;"></a></div></div><hr style="max-width:1000px;"><div align="center" style="max-width:1000px;"><div>' +
-      elem1.innerHTML +
-      '</div><div align="left" style="max-width:1000px;background-color:#d6d6d6;padding:10px;">Answer Key:<br>' +
-      elem3.innerHTML +
-      '</div><hr style="max-width:1000px;"><h4><a target=\'_blank\' href="https://mastrowall.com" style="text-decoration:none;color:#0c29cd;"><b>M A S T R O W A L L</b></a></h4><hr></div></center></body></html>'
-  );
-  oPrntWin.document.close();
+  var printContent = `
+ <!doctype html>
+ <html>
+   <head>
+     <title>${title} - MASTROWALL - Exam Portal</title>
+     <link rel="stylesheet" href="online-test/css/vendor/bootstrap.min.css">
+     <link rel="stylesheet" href="online-test/css/dqset.css">
+     <style>.delquesone {display: none !important;}</style>
+   </head>
+   <body style="margin:20px;">
+     <center>
+       <div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'>
+         <div class='col-md-6'>
+           <div style="text-align:left;font-size:18px;font-weight:400;">${elem2.innerHTML}</div>
+         </div>
+         <div class='col-md-6'>
+           <a target='_blank' href="https://mastrowall.com" style='cursor:pointer;'>
+             <img src="https://mastrowall.com/images/thumbnail.png" style='width:80px;float:right;display:block;' oncontextmenu="return false;">
+           </a>
+         </div>
+       </div>
+       <hr style="max-width:1000px;">
+       <div align="center" style="max-width:1000px;">
+         <div>${elem1.innerHTML}</div>
+         <div align="left" style="max-width:1000px;background-color:#d6d6d6;padding:10px;">
+           Answer Key:<br>${elem3.innerHTML}
+         </div>
+         <hr style="max-width:1000px;">
+         <h4>
+           <a target="_blank" href="https://mastrowall.com" style="text-decoration:none;color:#d6d6d6;">
+             <b>M A S T R O W A L L</b>
+           </a>
+         </h4>
+       </div>
+     </center>
+   </body>
+ </html>
+`;
+
+  var pdfrndrd = document.createElement("div");
+  pdfrndrd.style.display = "block";
+  pdfrndrd.innerHTML = printContent;
+  document.body.appendChild(pdfrndrd);
+
+  setTimeout(() => {
+    html2pdf()
+      .from(pdfrndrd)
+      .set({
+        margin: 0.5,
+        filename: `${title} - MASTROWALL.pdf`,
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+      })
+      .save()
+      .then(() => {
+        document.body.removeChild(pdfrndrd);
+      });
+  }, 500);
 }
 
 function lvexnt() {
