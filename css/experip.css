@@ -545,9 +545,9 @@
   #admntl,
   #openDialog {
     display: inline-block !important;
-    float: none;
-    margin-left: 0px;
-    margin-right: 4px;
+    float: none !important;
+    margin-left: 0px !important;
+    margin-right: 4px !important;
   }
   .tgglqsetvw {
     display: block;
