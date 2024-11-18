@@ -507,7 +507,7 @@
   background-color: #eaeaea;
   padding: 2px 10px;
   margin: 5px;
-  display: none;
+  display: block;
 }
 .delquesone:hover {
   cursor: pointer;
@@ -542,6 +542,13 @@
   filter: grayscale(0.5);
 }
 @media screen and (max-width: 1090px) {
+  #admntl,
+  #openDialog {
+    display: inline-block !important;
+    float: none;
+    margin-left: 0px;
+    margin-right: 4px;
+  }
   .tgglqsetvw {
     display: block;
   }
