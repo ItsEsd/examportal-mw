@@ -51,7 +51,11 @@ var userSetCookie = function (exdays, uid) {
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     var expires = "expires=" + d.toUTCString();
     document.cookie =
-      "_mwallemp=" + uid + "; expires=" + expires + ";path=/;domain=127.0.0.1";
+      "_mwallemp=" +
+      uid +
+      "; expires=" +
+      expires +
+      ";path=/;domain=mastrowall.com";
     document.body.style.backgroundImage = "none";
     document.body.innerHTML =
       "<center style='margin-top:35vh;font-size:20px;color:#0c29cd;font-weight:bold;'><p>Loading...</p><h4 style='color:#484848;font-weight:bold;'>Exam Portal | MASTROWALL</h4><br><pre><font size='2'>©️ MASTROWALL 2024</font></pre></center>";
