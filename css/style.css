@@ -917,12 +917,12 @@ html {
   }
 }
 
-#crtans2 {
-  height: 139px;
-  overflow-y: auto;
+#crtans {
+  height: 150px;
+  overflow-y: scroll;
   border: 1px solid grey;
   padding: 5px;
-  margin-bottom: 10px;
+  padding-top: 7px !important;
 }
 
 #crtans2::-webkit-scrollbar {
