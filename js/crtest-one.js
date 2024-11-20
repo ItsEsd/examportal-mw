@@ -84,7 +84,7 @@ function ldalrslt(e) {
 <span class="exdcrtedt">Exam Pass: <b><span class="exeduinfoid">` +
       JSON.parse(res[0].ExamPass) +
       `</span></b></span></p>
-</div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;float:right;display:block;"></div></div><hr>`;
+</div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;top:0px;right:15px;position:absolute;"></div></div><hr>`;
     $("#stresultall,#exmdscrpprfn").empty();
     var restren = JSON.parse(JSON.stringify(res[0].EnrolledStuFinal));
     var sprestren = restren.split(",");
