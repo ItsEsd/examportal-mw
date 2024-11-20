@@ -145,7 +145,7 @@ function examresultpdf() {
   );
   oPrntWin.document.open();
   oPrntWin.document.write(
-    '<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title><link rel="stylesheet" href="css/vendor/bootstrap.min.css"><link rel="stylesheet" href="/css/style.css"></head><body style="width:100%;padding:10px;" onload="print();"><div align="center"><div style="max-width:800px;padding:10px;border:1px solid #e2e2e2;text-align:left;background-color:white;">' +
+    '<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title><link rel="stylesheet" href="css/vendor/bootstrap.min.css"><link rel="stylesheet" href="/css/style.css"></head><body style="width:100%;" onload="print();"><div align="center"><div style="max-width:800px;padding:10px;border:1px solid #e2e2e2;text-align:left;background-color:white;">' +
       elem.innerHTML +
       '<h4 style="width:100%;text-align:center;color:#0c29cd;"><a style="text-decoration:none;color:#0c29cd;" target="_blank" href="https://mastrowall.com">M A S T R O W A L L</a></h4></div></div></body></html>'
   );
