@@ -851,6 +851,9 @@ html {
 }
 
 @media screen and (max-width: 600px) {
+  #exportalpromo {
+    display: none !important;
+  }
   .closesmprtl {
     font-size: 14px;
     padding: 8px 10px;
