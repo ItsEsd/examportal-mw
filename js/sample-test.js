@@ -21,7 +21,7 @@ function getSampleExams() {
 
   n2Elem.innerHTML =
     "<center><div class='headsmptst'>" +
-    "<span><form id='submtsmptst'><input id='srchsamtest' type='text' class='form-control' placeholder='Search Exam (Not Available! 📢 2025 Update)' required disabled><input type='submit' value='Go' id='submtbtnsmp'></form></span>" +
+    "<span><form id='submtsmptst'><input id='srchsamtest' type='text' class='form-control' placeholder='MASTROWALL Sample Exams' required disabled><input type='submit' value='Go' style='display:none;' id='submtbtnsmp'></form></span>" +
     "<span class='closesmprtl'>Close</span></div></center>";
 
   pElem.appendChild(n2Elem);
