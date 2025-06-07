@@ -80,11 +80,23 @@ $("document").ready(function () {
           var imageUrl = result.url;
           imageUrl = "https://api.mastrowall.in/_img/v/" + btoa(imageUrl);
           document.getElementById("qstimg").value = imageUrl;
+          if ($("#previewst").length) {
+            $("#previewst").remove();
+          }
+
+          const previewst =
+            `<div style="100%;padding:10px;"><img src='` +
+            imageUrl +
+            `' style="width:200px;" id="previewst"/></div>`;
+
+          $(previewst).insertAfter("#conq");
         } else {
           console.error("Upload failed:", result.message || result);
         }
       } catch (error) {
-        document.getElementById("qstimg").value = "Error uploading image";
+        ddocument.getElementById("qstimg").value = "null";
+        const previewst = `<p style="color:red;width:100%;"  id="previewst">Error uploading image</p>`;
+        $(previewst).insertAfter("#conq");
         console.error("Error uploading image:", error);
       }
     }
@@ -117,13 +129,23 @@ $("document").ready(function () {
         const result = await response.json();
         if (result.success) {
           var imageUrl = result.url;
+          if ($("#previewop").length) {
+            $("#previewop").remove();
+          }
+          const previewop =
+            `<div style="100%;padding:10px;"><img src='` +
+            imageUrl +
+            `' style="width:200px;" id="previewop"/></div>`;
+          $(previewop).insertAfter("#opsimg");
           imageUrl = "https://api.mastrowall.in/_img/v/" + btoa(imageUrl);
           document.getElementById("opimg").value = imageUrl;
         } else {
           console.error("Upload failed:", result.message || result);
         }
       } catch (error) {
-        document.getElementById("opimg").value = "Error uploading image";
+        document.getElementById("opimg").value = "null";
+        const previewop = `<p style="color:#f75252;width:100%;"  id="previewop">Error uploading image</p>`;
+        $(previewop).insertAfter("#opsimg");
         console.error("Error uploading image:", error);
       }
     }
@@ -190,6 +212,7 @@ quesfrm.addEventListener("submit", (event) => {
 });
 
 function ctrlqs(e) {
+  $("#previewst, #previewop").remove();
   var re = e.result;
   if (re === "Value updated successfully!") {
     document.getElementById("qupdated").style.display = "block";
