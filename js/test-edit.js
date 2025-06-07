@@ -57,43 +57,42 @@ $("#opsimg").change(function () {
   readImage(this);
 });
 $("document").ready(function () {
-  $("#stimg").on("change", function () {
-    var $files = $(this).get(0).files;
+  $("#stimg").on("change", async function () {
+    var files = $(this).get(0).files;
     readImage(this);
-    if ($files.length) {
+    if (files.length) {
       // Reject big files
-      if ($files[0].size > $(this).data("max-size") * 1024) {
+      if (files[0].size > $(this).data("max-size") * 1024) {
+        console.log("Please select a smaller file");
         return false;
       }
-      var apiUrl = "https://api.imgur.com/3/image";
-      var apiKey = "f1fb111ea7f4e5b";
-      var settings = {
-        async: false,
-        crossDomain: true,
-        processData: false,
-        contentType: false,
-        type: "POST",
-        url: apiUrl,
-        headers: {
-          Authorization: "Client-ID " + apiKey,
-          Accept: "application/json",
-        },
-        mimeType: "multipart/form-data",
-      };
-      var formData = new FormData();
-      formData.append("image", $files[0]);
-      settings.data = formData;
-      $.ajax(settings).done(function (response) {
-        var k = response;
-        var url = JSON.parse(response);
-        document.getElementById("qstimg").value = url.data.link;
-      });
+      document.getElementById("qstimg").value = "uploading image...";
+      const formData = new FormData();
+      formData.append("image", files[0]);
+      const apiUrl = "https://api.mastrowall.in/_file/image";
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          body: formData,
+        });
+        const result = await response.json();
+        if (result.success) {
+          var imageUrl = result.url;
+          imageUrl = "https://api.mastrowall.in/_img/v/" + btoa(imageUrl);
+          document.getElementById("qstimg").value = imageUrl;
+        } else {
+          console.error("Upload failed:", result.message || result);
+        }
+      } catch (error) {
+        document.getElementById("qstimg").value = "Error uploading image";
+        console.error("Error uploading image:", error);
+      }
     }
   });
 });
 $("document").ready(function () {
-  $("#opsimg").on("change", function () {
-    var $files = $(this).get(0).files;
+  $("#opsimg").on("change", async function () {
+    var files = $(this).get(0).files;
     for (var k = 0; k <= 3; k++) {
       document
         .getElementsByClassName("optionss")
@@ -101,35 +100,32 @@ $("document").ready(function () {
       document.getElementsByClassName("optionss")[k].value = "null";
     }
     readImage(this);
-    if ($files.length) {
-      // Reject big files
-      if ($files[0].size > $(this).data("max-size") * 1024) {
+    if (files.length) {
+      if (files[0].size > $(this).data("max-size") * 1024) {
+        console.log("Please select a smaller file");
         return false;
       }
-      var apiUrl = "https://api.imgur.com/3/image";
-      var apiKey = "f1fb111ea7f4e5b";
-
-      var settings = {
-        async: false,
-        crossDomain: true,
-        processData: false,
-        contentType: false,
-        type: "POST",
-        url: apiUrl,
-        headers: {
-          Authorization: "Client-ID " + apiKey,
-          Accept: "application/json",
-        },
-        mimeType: "multipart/form-data",
-      };
-      var formData = new FormData();
-      formData.append("image", $files[0]);
-      settings.data = formData;
-      $.ajax(settings).done(function (response) {
-        var k = response;
-        var url = JSON.parse(response);
-        document.getElementById("opimg").value = url.data.link;
-      });
+      document.getElementById("opimg").value = "uploading image...";
+      const formData = new FormData();
+      formData.append("image", files[0]);
+      const apiUrl = "https://api.mastrowall.in/_file/image";
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          body: formData,
+        });
+        const result = await response.json();
+        if (result.success) {
+          var imageUrl = result.url;
+          imageUrl = "https://api.mastrowall.in/_img/v/" + btoa(imageUrl);
+          document.getElementById("opimg").value = imageUrl;
+        } else {
+          console.error("Upload failed:", result.message || result);
+        }
+      } catch (error) {
+        document.getElementById("opimg").value = "Error uploading image";
+        console.error("Error uploading image:", error);
+      }
     }
   });
 });
