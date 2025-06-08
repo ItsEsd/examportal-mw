@@ -85,16 +85,16 @@ $("document").ready(function () {
           }
 
           const previewst =
-            `<div style="100%;padding:10px;"><img src='` +
+            `<div style="width:220px;padding:10px;"><img src='` +
             imageUrl +
-            `' style="width:200px;" id="previewst"/></div>`;
+            `' style="width:200px;" id="previewst"/><button style="margin-top:5px;font-size:14px;padding:4px 6px;color:red;background:white;cursor:pointer;width:200px;border-radius:5px;display:inline-block;" onclick='document.getElementById("qstimg").value = "null";$("#previewst").remove();$(this).remove();'>Remove</button></div>`;
 
           $(previewst).insertAfter("#conq");
         } else {
           console.error("Upload failed:", result.message || result);
         }
       } catch (error) {
-        ddocument.getElementById("qstimg").value = "null";
+        document.getElementById("qstimg").value = "null";
         const previewst = `<p style="color:red;width:100%;"  id="previewst">Error uploading image</p>`;
         $(previewst).insertAfter("#conq");
         console.error("Error uploading image:", error);
@@ -133,9 +133,9 @@ $("document").ready(function () {
             $("#previewop").remove();
           }
           const previewop =
-            `<div style="100%;padding:10px;"><img src='` +
+            `<div style="width:220px;padding:10px;"><img src='` +
             imageUrl +
-            `' style="width:200px;" id="previewop"/></div>`;
+            `' style="width:200px;margin-top:20px;" id="previewop"/><button style="margin-top:5px;font-size:14px;padding:4px 6px;color:red;background:white;cursor:pointer;width:200px;border-radius:5px;display:inline-block;" onclick='document.getElementById("opimg").value = "null";$("#previewop").remove();$(this).remove(); for (var k = 0; k <= 3; k++) { document.getElementsByClassName("optionss")[k].required = true; document.getElementsByClassName("optionss")[k].value = ""; }'>Remove</button></div>`;
           $(previewop).insertAfter("#opsimg");
           imageUrl = "https://api.mastrowall.in/_img/v/" + btoa(imageUrl);
           document.getElementById("opimg").value = imageUrl;
