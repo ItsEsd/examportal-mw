@@ -90,6 +90,11 @@ function ldalrslt(e) {
     var sprestren = restren.split(",");
     var lenstren = sprestren.length;
     var restr = JSON.parse(JSON.stringify(res[0].StuAnsFinal));
+    if (!restr || restr.trim() === "") {
+      document.getElementById("loader-cp").style.display = "none";
+      document.getElementById("sbmtchprm").disabled = false;
+      return;
+    }
     var sprestr = restr.split("{anst},");
     var lenstr = sprestr.length;
     var ansk = JSON.parse(JSON.stringify(res[0].AnsSTfinal));
