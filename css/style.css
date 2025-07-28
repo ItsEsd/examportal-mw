@@ -409,13 +409,20 @@ html {
   width: 100%;
   display: block;
   z-index: 10;
-  padding: 10px;
+  padding: 0px;
   padding-right: 30px;
+  font-size: 12px;
 }
 #info a {
   text-decoration: none;
   cursor: pointer;
-  color: #041563;
+  color: #ffffff;
+  background-color: #04156392;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+#info a:hover {
+  opacity: 0.7;
 }
 
 #navicon {
@@ -917,6 +924,10 @@ html {
 
   .tdton {
     font-size: 16px;
+  }
+  #right-block {
+    border-right: 20px solid #f0f1fc;
+    border-left: 20px solid #f0f1fc;
   }
 }
 
