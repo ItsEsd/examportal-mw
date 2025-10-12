@@ -6,7 +6,6 @@ expone.addEventListener("submit", (event) => {
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
     "AKfycbx0ZZCXac0UZbHPbsR196JqKWadbYadinnrR4Mb86YVX_1KTJO3Zq7Ax3ocgL7dKYix0A";
-  var url = url1 + url2 + "/exec" + "?action=gentestrd";
   document.getElementById("loader-vq").style.display = "block";
   var urlexpo =
     url1 +
@@ -29,6 +28,7 @@ function ldalqset(e) {
   var res = e.records;
   document.getElementById("empinf").value = JSON.stringify(res);
   if (res != "ID not found!") {
+    document.getElementById("loader-vq").style.display = "none";
     var testroom = res[0].StuAnsFinal;
     var testroomsize = testroom.length;
     if (testroomsize > 46000) {
