@@ -249,7 +249,7 @@ function chkldrslt(e) {
         document.getElementById("stunamek").style.display = "none";
       }
     }
-    var chartCanvas = document.getElementById("anchartans2smp");
+    var chartCanvas = document.getElementById("anchartans");
     if (chartCanvas.chart) {
       chartCanvas.chart.destroy();
     }
