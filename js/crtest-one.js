@@ -257,7 +257,7 @@ function chkldrslt(e) {
     var yValues = [count, ntansd, wrng];
     var barColors = ["#1e7145", "#e8c3b9", "#b91d47"];
 
-    new Chart("anchartans", {
+    chartCanvas.chart = new Chart("anchartans", {
       type: "pie",
       data: {
         labels: xValues,
@@ -280,39 +280,6 @@ function chkldrslt(e) {
   } else {
     document.getElementById("loader-resch").style.display = "none";
   }
-}
-
-let myChart = null;
-
-function drawPerformanceChart(count, ntansd, wrng) {
-  var xValues = ["Correct", "Not Answered", "Wrong"];
-  var yValues = [count, ntansd, wrng];
-  var barColors = ["#1e7145", "#e8c3b9", "#b91d47"];
-
-  // 🧹 Destroy existing chart if it exists
-  if (myChart) {
-    myChart.destroy();
-  }
-
-  // 🎨 Create new chart
-  myChart = new Chart(document.getElementById("anchartans"), {
-    type: "pie",
-    data: {
-      labels: xValues,
-      datasets: [
-        {
-          backgroundColor: barColors,
-          data: yValues,
-        },
-      ],
-    },
-    options: {
-      title: {
-        display: true,
-        text: "Overall Performance",
-      },
-    },
-  });
 }
 
 stuassign.addEventListener("submit", (event) => {
