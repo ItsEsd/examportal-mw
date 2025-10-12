@@ -28,7 +28,6 @@ function ldalqset(e) {
   var res = e.records;
   document.getElementById("empinf").value = JSON.stringify(res);
   if (res != "ID not found!") {
-    document.getElementById("loader-vq").style.display = "none";
     var testroom = res[0].StuAnsFinal;
     var testroomsize = testroom.length;
     if (testroomsize > 46000) {
