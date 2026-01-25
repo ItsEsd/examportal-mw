@@ -180,7 +180,7 @@ $(document).on("keyup search", "#srchsamtest", function () {
   if (!found) {
     if (!$("#noTodFound").length) {
       $(".smprtlOne").append(
-        '<div id="noTodFound" class="condata" style="text-align:center;padding:20px;color:#777;font-weight:500;background:#bcb6f8;width:100%;max-width:800px;">No Sample Exam found</div>',
+        '<div id="noTodFound" class="condata" style="text-align:center;padding:35px;color:#000;font-weight:500;background:#bcb6f8;width:100%;max-width:800px;height:100px;">No Sample Exam found</div>',
       );
     }
   } else {
