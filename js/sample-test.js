@@ -21,7 +21,7 @@ function getSampleExams() {
 
   n2Elem.innerHTML =
     "<center><div class='headsmptst'>" +
-    "<span><form id='submtsmptst'><input id='srchsamtest' type='text' class='form-control' placeholder='MASTROWALL Sample Exams' required disabled><input type='submit' value='Go' style='display:none;' id='submtbtnsmp'></form></span>" +
+    "<span><form id='submtsmptst'><input id='srchsamtest' type='search' class='form-control' placeholder='Search Sample Exams'></form></span>" +
     "<span class='closesmprtl'>Close</span></div></center>";
 
   pElem.appendChild(n2Elem);
@@ -113,7 +113,13 @@ function ctrlqexms(e) {
     var exdt = samdata[elm];
     var tsdt = exdt[0];
     var htm = (n2Elem.innerHTML +=
-      "<div style='width:100%;' align='center'><div class='smprtlThr'><div class='row'><div class='col-sm-8'>" +
+      "<div style='width:100%;' align='center' class='smplexmmep' data-title='" +
+      tsdt.ExamTitle +
+      "' data-desp='" +
+      tsdt.ExamDescp +
+      "' data-eductr='" +
+      tsdt.EducatorName +
+      "'><div class='smprtlThr'><div class='row'><div class='col-sm-8'>" +
       "<div class='tdton'><span>Exam Title : </span>" +
       tsdt.ExamTitle +
       "</div>" +
@@ -147,6 +153,40 @@ function ctrlqexms(e) {
   $("body").append(dtelm);
   $(".smprtlTwo").show();
 }
+
+$(document).on("keyup search", "#srchsamtest", function () {
+  var q = $(this).val().toLowerCase();
+  var found = 0;
+
+  if (!q) {
+    $(".smprtlOne .smplexmmep").show().next("hr").show();
+    $("#noTodFound").remove();
+    return;
+  }
+
+  $(".smprtlOne .smplexmmep").each(function () {
+    var id = $(this).data("title").toString().toLowerCase();
+    var key = $(this).data("desp").toString().toLowerCase();
+    var remark = $(this).data("eductr").toLowerCase();
+
+    if (id.includes(q) || key.includes(q) || remark.includes(q)) {
+      $(this).show().next("hr").show();
+      found++;
+    } else {
+      $(this).hide().next("hr").hide();
+    }
+  });
+
+  if (!found) {
+    if (!$("#noTodFound").length) {
+      $(".smprtlOne").append(
+        '<div id="noTodFound" class="condata" style="text-align:center;padding:20px;color:#777;font-weight:500;background:#bcb6f8;width:100%;max-width:800px;">No Sample Exam found</div>',
+      );
+    }
+  } else {
+    $("#noTodFound").remove();
+  }
+});
 
 function startsmpexm(label) {
   var list = document.getElementsByClassName("tksmpexm");
@@ -460,7 +500,7 @@ function strtmpexmfn() {
   document.getElementById("qcontainer").style.display = "block";
   document.getElementById("qcontainer").style.zIndex = "100000";
   $(
-    "#navicon,#expdash,#exmscrn,.smprtlOne,.otservice,#falsesecback,#flsback"
+    "#navicon,#expdash,#exmscrn,.smprtlOne,.otservice,#falsesecback,#flsback",
   ).hide();
 }
 

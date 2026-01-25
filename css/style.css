@@ -664,7 +664,7 @@ html {
   font-size: 14px;
 }
 .condata {
-  width: 100%;
+  width: 95%;
   max-width: 800px;
   height: 100%;
   max-height: 80vh;
@@ -677,6 +677,8 @@ html {
   padding: 4px 10px;
   float: right;
   cursor: pointer;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 .closesmprtl:hover {
   background-color: #e62222;
@@ -692,11 +694,10 @@ html {
 #srchsamtest {
   float: left;
   width: 100%;
-  max-width: 80%;
+  max-width: 85%;
   background-color: #e0e0e4;
   border-radius: 0px;
   margin-right: 6px;
-  cursor: not-allowed;
 }
 
 #srchsamtest:active,
@@ -708,19 +709,9 @@ html {
 }
 
 .headsmptst {
-  width: 100%;
+  width: 95%;
   max-width: 800px;
   font-size: 20px;
-}
-
-#submtbtnsmp {
-  float: left;
-  color: #3a3a3a;
-  cursor: not-allowed;
-  border-radius: 2px;
-  border: none;
-  padding: 2px 10px;
-  background-color: #e4e4e4;
 }
 
 .tdton {
